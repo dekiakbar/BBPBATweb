@@ -13,7 +13,7 @@
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
-    		Laravel Artikel
+    		Admin Blog
   		</div>
 		<div class="ui pointing dropdown link item">
 			<span class="text">Artikel</span>
