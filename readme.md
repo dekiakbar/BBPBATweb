@@ -1,5 +1,10 @@
 # Artikel Laravel
-Projek ini dibuat sebagai Portofolio.
+Projek ini dibuat sebagai Salah satu persyaratan untuk memenuhi program kerja Magang di BBPBAT kota sukabumi.
+## Kontributor
+- [Deki Akbar-Back End](https://github.com/dekiakbar)
+- [Restu Nugraha-Front End](https://web.facebook.com/reztu.nugraha)
+- [Saepul Rahman-Front End](https://web.facebook.com/portgas.rahman)
+
 ## Penunjang
 - [MySql-Server](https://dev.mysql.com/downloads/mysql/)
 - [Composer](https://getcomposer.org/)
@@ -8,8 +13,8 @@ Projek ini dibuat sebagai Portofolio.
 - [NIAT](https://id.wikipedia.org/wiki/Niat)
 
 ## Instalasi
-1. Download repositori ini menggunakan git-CLI : `git clone https://github.com/dekiakbar/ArtikelCrud.git`
-2. Navigasi ke direktori tersebut, gunakan terminal dan ketik : `cd ArtikelCrud`
+1. Download repositori ini menggunakan git-CLI : `git clone https://github.com/dekiakbar/BBPBATwebsite.git`
+2. Navigasi ke direktori tersebut, gunakan terminal dan ketik : `cd BBPBATwebsite`
 3. Kemudian ketikan perintah ini untuk menginstal depedency laravel : `composer install`
 4. Lewati langkah ini kalo kamu menggunakan window, ketikan perintah : `cp .env.example .env` 
 5. Lalu buka file .env dan ubah Database,password dan usernamenya sesuai dengan server localhost kamu.

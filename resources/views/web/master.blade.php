@@ -15,7 +15,7 @@
 
 	<div class="ui secondary pointing menu blue">
 		<a href="{{ url('/') }}" class="header item">
-    		Artikel Laravel
+    		Blog BBPBAT
 		</a>
 		<a class="active item">
 			Home
