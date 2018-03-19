@@ -1,4 +1,4 @@
-# Artikel Laravel
+# Website Badan Besar Penelitian Budidaya Air Tawar Kota Sukabumi
 Projek ini dibuat sebagai Salah satu persyaratan untuk memenuhi program kerja Magang di BBPBAT kota sukabumi.
 ## Kontributor
 - [Deki Akbar-Back End](https://github.com/dekiakbar)
