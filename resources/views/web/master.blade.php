@@ -15,7 +15,7 @@
 
 	<div class="ui secondary pointing menu blue">
 		<a href="{{ url('/') }}" class="header item">
-    		Blog BBPBAT
+    		Blog
 		</a>
 		<a class="active item">
 			Home

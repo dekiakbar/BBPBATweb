@@ -66,7 +66,6 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 	|--------------------------------------------------------------------------
 	|
 	*/
-
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
@@ -78,6 +77,18 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+});
+
+/*
+|--------------------------------------------------------------------------
+| Override Route Filemanager
+|--------------------------------------------------------------------------
+|
+*/
+Route::domain('bbpbat.go.id')->group(function(){
+	Route::get('/',function(){
+		return view('portal.master');
+	});
 });
 
 /*
