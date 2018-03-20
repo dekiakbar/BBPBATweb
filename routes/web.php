@@ -87,7 +87,7 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('portal.master');
+		return view('admin.portal.dashboard');
 	});
 });
 
