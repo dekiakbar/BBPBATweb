@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\kategoriPerpus;
+
 class PerpusCont extends Controller
 {
     /**
@@ -81,4 +83,20 @@ class PerpusCont extends Controller
     {
         //
     }
+
+    public function Ktambah(Request $request)
+    {
+        $simpan = kategoriPerpus::create([
+            'nama_kategori' => $request->input('nama_kategori')
+        ]);
+
+        $simpan->save();
+        return redirect('admin/kategori/tambah');
+    }
+
+    public function Ktampil()
+    {
+        return view('admin.perpus.Tperpus');
+    }
+
 }

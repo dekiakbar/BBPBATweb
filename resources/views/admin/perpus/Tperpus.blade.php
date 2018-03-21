@@ -19,15 +19,19 @@
 	<br>
 
 	<div class=" ui container">
-		<div class="ui secondary semgment">
-			<form class="ui form" action="{{route('kategori.store')}}" method="post">
-				<div class="one fields">
-					<div class="field">
-						<label>Nama Kategori</label>
-						<input type="text" name="nama_kategori">
-					</div>
-				</div>
-			</form>
+		<div class="ui stackable centered grid">
+    	 	<div class="six wide column center aligned">
+    			<form class="ui form" method="post" action="{{route('kategori.tambah')}}">
+    				{{csrf_field()}}
+    				<div class="field">
+    					<label>Tambah Kategori</label>
+    					<input placeholder="Isi Kategori Buku Baru" name="nama_kategori" type="text">
+    				</div>
+    				<div class="field">
+    					<button class="ui button blue" type="submit"> Simpan</button>
+    				</div>
+				</form>
+			</div>
 		</div>
 
 		<div class="ui secondary segment">
