@@ -5,7 +5,7 @@
 	<div class="ui stackable centered grid">
 	  	<div class="sixteen wide column center aligned">
 	      	<div class="ui segment">
-				<h2 class="ui icon header">
+				<h2 class="ui tiny icon header">
 				  	<i class="settings icon"></i>
 				  	<div class="content">
 				    	Admin Perpustakaan
@@ -16,6 +16,7 @@
 	  	</div>
 	</div>
 
+	<br>
 
 	<div class="ui container">
 	    <table class="ui celled table">

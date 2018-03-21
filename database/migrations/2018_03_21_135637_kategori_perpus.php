@@ -15,6 +15,7 @@ class KategoriPerpus extends Migration
     {
         Schema::create('kategoriPerpus', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nama_kategori');
             $table->timestamps();
         });
     }
