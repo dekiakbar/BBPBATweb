@@ -18,7 +18,7 @@
 
 	<br>
 
-	<div class=" ui container">
+	<div class=" ui container" style="margin-bottom: 62px;">
 		<div class="ui stackable centered grid">
     	 	<div class="six wide column center aligned">
     			<form class="ui form" method="post" action="{{route('kategori.tambah')}}">
@@ -35,7 +35,7 @@
 		</div>
 
 		<div class="ui divider"></div>
-		
+
 		<div class="ui secondary segment">
 
 			<form class="ui form">
@@ -72,8 +72,4 @@
 
 		</div>
 	</div>
-
-<br>
-	 
-  
 @endsection
