@@ -81,13 +81,31 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
-| Override Route Filemanager
+| Route Sub Domain perpus.bbpbat.go.id
+|--------------------------------------------------------------------------
+|
+*/
+Route::domain('perpus.bbpbat.go.id')->group(function(){
+	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+		Route::resource('/kategori','kPerpusCont');
+	});
+
+	//Route Login
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Route Domain utama bbpbat.go.id
 |--------------------------------------------------------------------------
 |
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('admin.perpus.Iperpus');
+		return view('admin.perpus.Tperpus');
 	});
 });
 

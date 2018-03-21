@@ -9,7 +9,7 @@
 			  		<i class="settings icon"></i>
 			  		<div class="content">
 			    		Admin Perpustakaan
-			    		<div class="sub header">Halaman Untuk Edit Buku </div>
+			    		<div class="sub header">Halaman Untuk Tambah Data Buku </div>
 			  		</div>
 				</h2>
 	  		</div>
@@ -19,6 +19,17 @@
 	<br>
 
 	<div class=" ui container">
+		<div class="ui secondary semgment">
+			<form class="ui form" action="{{route('kategori.store')}}" method="post">
+				<div class="one fields">
+					<div class="field">
+						<label>Nama Kategori</label>
+						<input type="text" name="nama_kategori">
+					</div>
+				</div>
+			</form>
+		</div>
+
 		<div class="ui secondary segment">
 
 			<form class="ui form">
