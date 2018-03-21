@@ -31,20 +31,26 @@
 			</thead>
 	  		
 	  		<tbody>
-	  			<tr>
-	      			<td>Mengarang</td>
-	        		<td>Sinar Dunia</td>
-	        		<td>Kesehatan</td>
-	        		<td>1995</td>
-	        		<td>
-		  				<div class="sixteen wide column center aligned">
-		        			<a class="ui button teal"><i class="edit icon"></i> Edit</a>
-		        			<a class="ui button blue"><i class="zoom icon"></i> Lihat</a>
-		        			<a class="ui button red"><i class="trash icon"></i> Hapus</a>
-	      				</div>
-	      			</td>
-	      		</tr>
+	  			@foreach($bukus as $buku)
+	  				<tr>
+		      			<td>{{$buku->judul_buku}}</td>
+		        		<td>{{$buku->pengarang}}</td>
+		        		<td>{{$buku->kategori->first()->nama_kategori}}</td>
+		        		<td>{{$buku->tahun_terbit}}</td>
+		        		<td>
+			  				<div class="sixteen wide column center aligned">
+			        			<a class="ui button teal"><i class="edit icon"></i> Edit</a>
+			        			<a class="ui button blue"><i class="zoom icon"></i> Lihat</a>
+			        			<a class="ui button red"><i class="trash icon"></i> Hapus</a>
+		      				</div>
+		      			</td>
+		      		</tr>
+	  			@endforeach
 	      	</tbody>
 		</table>
+
+		<div class="ui container center aligned">
+			{{ $bukus->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
+		</div>
 	</div>
 @endsection

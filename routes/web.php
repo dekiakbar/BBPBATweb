@@ -90,6 +90,10 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 		// Route::resource('/kategori','kPerpusCont');
 		Route::get('kategori/tambah','PerpusCont@Ktampil');
 		Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
+
+		Route::get('buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
+		Route::post('buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
+		Route::get('buku','PerpusCont@index');
 	});
 
 	//Route Login

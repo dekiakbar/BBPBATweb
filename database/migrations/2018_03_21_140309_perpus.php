@@ -16,14 +16,14 @@ class Perpus extends Migration
         Schema::create('perpus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul_buku');
-            $table->string('penerbit');
-            $table->integer('kategori_id')->unsigned();
+            $table->string('pengarang');
+            $table->integer('kategoriPerpus_id')->unsigned();
             $table->string('tahun_terbit');
             $table->timestamps();
         });
 
         Schema::table('perpus',function (Blueprint $t){
-            $t->foreign('kategori_id')->references('id')->on('kategoriPerpus')->onDelete('cascade')->onUpdate('cascade');
+            $t->foreign('kategoriPerpus_id')->references('id')->on('kategoriPerpus')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

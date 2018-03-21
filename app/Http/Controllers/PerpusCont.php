@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\kategoriPerpus;
+use App\Perpus;
 
 class PerpusCont extends Controller
 {
@@ -13,9 +14,10 @@ class PerpusCont extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $bukus = Perpus::with('kategori')->paginate(10);
+        return view('admin.perpus.Iperpus',compact('bukus'))->with('no',($request->input('page',1)-1)*10);
     }
 
     /**
@@ -23,9 +25,10 @@ class PerpusCont extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function tambah()
     {
-        //
+        $kategoris = kategoriPerpus::all();
+        return view('admin.perpus.Tperpus',compact('kategoris'));
     }
 
     /**
@@ -34,9 +37,18 @@ class PerpusCont extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function simpan(Request $request)
     {
-        //
+        $buku = Perpus::create([
+            'judul_buku' => $request->input('judul'),
+            'kategoriPerpus_id' => $request->input('kategori'),
+            'pengarang' => $request->input('pengarang'),
+            'tahun_terbit' => $request->input('tahun'),
+        ]);
+
+        $buku->save();
+
+        return redirect('admin/buku/tambah');
     }
 
     /**
@@ -96,7 +108,8 @@ class PerpusCont extends Controller
 
     public function Ktampil()
     {
-        return view('admin.perpus.Tperpus');
+        $kategoris = kategoriPerpus::all();
+        return view('admin.perpus.Tperpus',compact('kategoris'));
     }
 
 }

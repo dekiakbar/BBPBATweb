@@ -38,17 +38,20 @@
 
 		<div class="ui secondary segment">
 
-			<form class="ui form">
+			<form class="ui form" action="{{route('perpus.simpan')}}" method="post">
+				{{csrf_field()}}
 			  	<div class="two fields">
 				    <div class="field">
 				      	<label>Judul Buku</label>
-				      	<input placeholder="Isi Judul Buku" type="text">
+				      	<input placeholder="Isi Judul Buku" type="text" name="judul">
 				    </div>
 				    <div class="field">
 				      	<label>Kategori</label>
-				       	<select class="ui fluid dropdown">
-				       	 	<input name="Kategori" type="hidden">
-				  		</select>
+				       	<select class="ui dropdown" name="kategori">
+						  	@foreach($kategoris as $kategori)
+						  		<option value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
+						  	@endforeach
+						</select>
 				  	</div>
 				</div>
 
@@ -56,11 +59,11 @@
 				  	<div class="two fields">
 				    	<div class="field">
 				      		<label>Pengarang</label>
-				      		<input placeholder="Isi Nama Pengarang" type="text">
+				      		<input placeholder="Isi Nama Pengarang" type="text" name="pengarang">
 				    	</div>
 				    	<div class="field">
 				      		<label>Tahun</label>
-				      		<input placeholder="Isi tahun Terbit" type="text">
+				      		<input placeholder="Isi tahun Terbit" type="text" name="tahun">
 				  		</div>
 					</div>
 				</div>
