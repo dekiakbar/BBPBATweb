@@ -34,6 +34,8 @@
 			</div>
 		</div>
 
+		<div class="ui divider"></div>
+		
 		<div class="ui secondary segment">
 
 			<form class="ui form">
