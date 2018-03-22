@@ -23,13 +23,15 @@
     		<div class="ui segment">
           		<div class="ui segment">
   					<div class="sixteen wide column" style="float: right;margin-bottom: 5px">
-						<div class="ui fluid category search">
-						  	<div class="ui icon input">
-						    	<input class="prompt" placeholder="Cari Buku..." type="text">
-						    	<i class="search icon"></i>
-						  	</div>
-						  	<div class="results"></div>
-						</div>
+						<form method="post" action="{{route('perpus.cari')}}">
+							{{csrf_field()}}
+							<div class="ui fluid category search">
+							  	<div class="ui icon input">
+							    	<input name="cari" class="prompt" placeholder="Cari Buku..." type="text">
+							    	<i class="search icon"></i>
+							  	</div>
+							</div>
+						</form>
 					</div>
 
   					<div class="ui container">

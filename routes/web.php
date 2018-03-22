@@ -102,6 +102,8 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 
 	//Route User Web
 	Route::get('/','WebPerpusCont@tampil');
+	Route::post('/','WebPerpusCont@cari')->name('perpus.cari');
+	Route::get('/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
 
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
