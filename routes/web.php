@@ -86,6 +86,7 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 |
 */
 Route::domain('perpus.bbpbat.go.id')->group(function(){
+	// Route admin perpus 
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
 		// Route::resource('/kategori','kPerpusCont');
 		Route::get('kategori/tambah','PerpusCont@Ktampil');
@@ -97,6 +98,11 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 		Route::get('buku/{id}','PerpusCont@edit')->name('perpus.edit');
 		Route::patch('buku/{id}','PerpusCont@update')->name('perpus.update');
 		Route::delete('buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
+	});
+
+	//Route User Web
+	Route::get('/',function(){
+		return view('perpus.index');
 	});
 
 	//Route Login
