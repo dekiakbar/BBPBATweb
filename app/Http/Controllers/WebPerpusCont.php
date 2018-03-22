@@ -27,9 +27,13 @@ class WebPerpusCont extends Controller
     	return view('perpus.index',compact('bukus','kategoris'))->with('no',($request->input('page',1)-1)*10);
     }
 
-    public function kategori()
+    public function kategori(Request $request,$id)
     {
     	$bukus = Perpus::join('kategoriPerpus','perpus.kategoriPerpus_id','kategoriPerpus.id')
-    					->select('*','')
+    					->select('*')
+    					->where('nama_kategori',$id)
+    					->paginate(10);
+    	$kategoris = kategoriPerpus::all();
+    	return view('perpus.index',compact('bukus','kategoris'))->with('no',($request->input('page',1)-1)*10);	
     }
 }

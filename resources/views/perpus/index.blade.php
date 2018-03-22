@@ -5,19 +5,11 @@
 	<div class="ui grid">
 		<div class="three wide column">
 		  	<div class="ui vertical menu">
-		    	<a class="item">
-		    	  Home
-		    	</a>
-		    	<a class="item">
-		    	  Kategori
-		    	</a>
-		    	<a class="item">
-		    	  Companies
-		    	</a>
-		    	<a class="item">
-		    	  Links
-		    	</a>
-		  	</div>
+		  		<div class="item header">Kategori</div>
+		    	@foreach($kategoris as $kategori)
+		    		<a href="{{url('/',$kategori->nama_kategori)}}" class="item">{{$kategori->nama_kategori}}</a>
+		    	@endforeach
+		    </div>
 		</div>
   		<div class="thirteen wide stretched column">
     		<div class="ui segment">
