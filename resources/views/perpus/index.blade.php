@@ -3,7 +3,7 @@
 @section('header','BBPBAT')
 @section('isi')
 	<div class="ui grid">
-		<div class="four wide column">
+		<div class="three wide column">
 		  	<div class="ui vertical menu">
 		    	<a class="item">
 		    	  Home
@@ -19,7 +19,7 @@
 		    	</a>
 		  	</div>
 		</div>
-  		<div class="twelve wide stretched column">
+  		<div class="thirteen wide stretched column">
     		<div class="ui segment">
           		<div class="ui segment">
   					<div class="sixteen wide column" style="float: right;margin-bottom: 5px">
@@ -36,13 +36,29 @@
       					<table class="ui celled table">
 						  	<thead>
 							    <tr>
+							    	<th>No</th>
 							    	<th>Judul Buku</th>
-							    	<th>Penerbit</th>
+							    	<th>Pengarang</th>
 							    	<th>Kategori</th>
 							    	<th>Tahun</th>  
 							  	</tr>
 							</thead>
+							<tbody>
+								@foreach($bukus as $buku)
+									<tr>
+										<td>{{++$no}}</td>
+										<td>{{$buku->judul_buku}}</td>
+										<td>{{$buku->pengarang}}</td>
+										<td>{{$buku->kategori->nama_kategori}}</td>
+										<td>{{$buku->tahun_terbit}}</td>
+									</tr>
+								@endforeach
+							</tbody>
 						</table>
+
+						<div class="ui container center aligned">
+							{{ $bukus->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
+						</div>
 					</div>
     			</div>
   			</div>

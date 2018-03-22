@@ -44,7 +44,7 @@
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
 		<div class="header item">
-    		Laravel Artikel
+    		BBPBAT
   		</div>
   		<div class="right menu">
   			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>

@@ -101,9 +101,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 	});
 
 	//Route User Web
-	Route::get('/',function(){
-		return view('perpus.index');
-	});
+	Route::get('/','WebPerpusCont@tampil');
 
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
