@@ -22,6 +22,7 @@
 	    <table class="ui celled table">
 			<thead>
 			    <tr>
+			    	<th class="center aligned">No</th>
 			    	<th class="center aligned">Judul Buku</th>
 			    	<th class="center aligned">Penerbit</th>
 			    	<th class="center aligned">Kategori</th>
@@ -33,14 +34,14 @@
 	  		<tbody>
 	  			@foreach($bukus as $buku)
 	  				<tr>
+	  					<td>{{++$no}}</td>
 		      			<td>{{$buku->judul_buku}}</td>
 		        		<td>{{$buku->pengarang}}</td>
-		        		<td>{{$buku->kategori->first()->nama_kategori}}</td>
+		        		<td>{{$buku->kategori->nama_kategori}}</td>
 		        		<td>{{$buku->tahun_terbit}}</td>
 		        		<td>
 			  				<div class="sixteen wide column center aligned">
 			        			<a class="ui button teal"><i class="edit icon"></i> Edit</a>
-			        			<a class="ui button blue"><i class="zoom icon"></i> Lihat</a>
 			        			<a class="ui button red"><i class="trash icon"></i> Hapus</a>
 		      				</div>
 		      			</td>
