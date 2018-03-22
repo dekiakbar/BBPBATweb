@@ -21,15 +21,13 @@ class BperpusSeeder extends Seeder
     					'Atkinon,L.P','Gunarso, Wisnu','Maarif, Syamsul','Rompas, Max Rizald','Mutis, Thoby','Anwar, Chairi','Berthold, Robert',
     					'TIM DKP'
     				];
-    	$kategori_id= rand(1,24);
-    	$tahun		= rand(2005,2018);
 
        		foreach ($judul as $indek => $data) {
        			DB::table('perpus')->insert([
 		        	'judul_buku' 		=> $data ,
 		        	'pengarang' 		=> $pengarang[$indek] ,
-		        	'kategoriPerpus_id' => $kategori_id ,
-		        	'tahun_terbit' 		=> $tahun ,
+		        	'kategoriPerpus_id' => rand(1,24) ,
+		        	'tahun_terbit' 		=> rand(2005,2018) ,
 		        ]);
        		}
     }

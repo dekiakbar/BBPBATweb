@@ -41,7 +41,7 @@
 		        		<td>{{$buku->tahun_terbit}}</td>
 		        		<td>
 			  				<div class="sixteen wide column center aligned">
-			        			<a class="ui button teal"><i class="edit icon"></i> Edit</a>
+			        			<a href="{{route('perpus.edit',encrypt($buku->id))}}" class="ui button teal"><i class="edit icon"></i> Edit</a>
 			        			<a class="ui button red"><i class="trash icon"></i> Hapus</a>
 		      				</div>
 		      			</td>

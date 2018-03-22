@@ -52,17 +52,6 @@ class PerpusCont extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -70,7 +59,9 @@ class PerpusCont extends Controller
      */
     public function edit($id)
     {
-        //
+        $kategoris = kategoriPerpus::all();
+        $edit = Perpus::with('kategori')->where('id',decrypt($id))->firstOrFail();
+        return view('admin.perpus.Eperpus',compact('kategoris','edit'));
     }
 
     /**
@@ -82,7 +73,14 @@ class PerpusCont extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $buku = Perpus::with('kategori')->where('id',decrypt($id))->firstOrFail();
+        $buku->judul_buku = $request->input('judul');
+        $buku->kategoriPerpus_id = $request->input('kategori');
+        $buku->pengarang = $request->input('pengarang');
+        $buku->tahun_terbit = $request->input('tahun');
+        $buku->save();
+
+        return redirect('/admin/buku');
     }
 
     /**

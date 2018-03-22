@@ -94,6 +94,8 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 		Route::get('buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
 		Route::post('buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
 		Route::get('buku','PerpusCont@index');
+		Route::get('buku/{id}','PerpusCont@edit')->name('perpus.edit');
+		Route::patch('buku/{id}','PerpusCont@update')->name('perpus.update');
 	});
 
 	//Route Login
