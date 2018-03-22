@@ -66,7 +66,6 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 	|--------------------------------------------------------------------------
 	|
 	*/
-
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
@@ -78,6 +77,51 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+});
+
+/*
+|--------------------------------------------------------------------------
+| Route Sub Domain perpus.bbpbat.go.id
+|--------------------------------------------------------------------------
+|
+*/
+Route::domain('perpus.bbpbat.go.id')->group(function(){
+	// Route admin perpus 
+	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+		// Route::resource('/kategori','kPerpusCont');
+		Route::get('kategori/tambah','PerpusCont@Ktampil');
+		Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
+
+		Route::get('buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
+		Route::post('buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
+		Route::get('buku','PerpusCont@index');
+		Route::get('buku/{id}','PerpusCont@edit')->name('perpus.edit');
+		Route::patch('buku/{id}','PerpusCont@update')->name('perpus.update');
+		Route::delete('buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
+	});
+
+	//Route User Web
+	Route::get('/','WebPerpusCont@tampil');
+	Route::post('/','WebPerpusCont@cari')->name('perpus.cari');
+	Route::get('/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
+
+	//Route Login
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| Route Domain utama bbpbat.go.id
+|--------------------------------------------------------------------------
+|
+*/
+Route::domain('bbpbat.go.id')->group(function(){
+	Route::get('/',function(){
+		return view('admin.perpus.Tperpus');
+	});
 });
 
 /*

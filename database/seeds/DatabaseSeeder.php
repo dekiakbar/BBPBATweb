@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(adminSeeder::class);
         $this->call(artikelSeeder::class);
         $this->call(tamuSeeder::class);
+        $this->call(KperpusSeeder::class);
+        $this->call(BperpusSeeder::class);
     }
 }
