@@ -2,6 +2,26 @@
 @section('judul','Admin Perpus | Daftar Data Buku')
 
 @section('isi')
+	<div class="ui small modal">
+		<div class="ui icon header">
+			<i class="trash icon"></i>
+			Hapus Data Buku
+		</div>
+		<div class="content right floated">
+			<p>Data buku yang telah dihapus tidak bisa dikembalikan, Anda yakin ingin menghapus buku ini?</p>
+		</div>
+		<div class="actions">
+			<div class="ui red inverted cancel inverted button tidak">
+				<i class="remove icon"></i>
+				Tidak
+			</div>
+			<div class="ui green ok inverted button tidak ya">
+				<i class="checkmark icon"></i>
+				Iya
+			</div>
+		</div>
+	</div>
+
 	<div class="ui stackable centered grid">
 	  	<div class="sixteen wide column center aligned">
 	      	<div class="ui segment">
@@ -42,7 +62,9 @@
 		        		<td>
 			  				<div class="sixteen wide column center aligned">
 			        			<a href="{{route('perpus.edit',encrypt($buku->id))}}" class="ui button teal"><i class="edit icon"></i> Edit</a>
-			        			<a class="ui button red"><i class="trash icon"></i> Hapus</a>
+			        			<a onclick="hapus()" id="hapus" data-slug="/admin/buku/{{ $buku->id }}" data-token="{{ csrf_token() }}" class="ui button red">
+								    <i class="trash icon"></i> Hapus
+								</a>
 		      				</div>
 		      			</td>
 		      		</tr>

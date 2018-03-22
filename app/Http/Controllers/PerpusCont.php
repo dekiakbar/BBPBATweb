@@ -91,7 +91,9 @@ class PerpusCont extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hapus = Perpus::where('id',$id)->firstOrFail();
+        $hapus->delete();
+        return redirect('admin/buku');
     }
 
     public function Ktambah(Request $request)
