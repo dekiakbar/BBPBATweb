@@ -63,7 +63,7 @@ class JuktekController extends Controller
     		$update->save();
 
     		$status = $foto->move($tempat,$nama);
-    		//$hapus = unlink('/storage/juktek/'.$update->foto);
+    		$hapus = @unlink('/storage/juktek/'.$update->foto);
     	}else{
     		$update = Juktek::where('slug',$slug)->FirstOrFail();
     		$update->judul_juktek = $request->input('judul');
@@ -80,6 +80,13 @@ class JuktekController extends Controller
     {
     	$detail = Juktek::where('slug',$slug)->firstOrFail();
     	return view('admin.juktek.Djuktek',compact('detail'));
+    }
+
+    public function hapus($slug)
+    {
+    	$hapus = Juktek::where('slug',$slug)->firstOrFail();
+    	@unlink('/storage/juktek/'.$hapus->foto);
+    	$hapus->delete();
     }
 
 }

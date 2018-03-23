@@ -1,6 +1,27 @@
 @extends('admin.master')
 @section('judul','Daftar Petunjuk Teknis')
 @section('isi')
+
+  <div class="ui small modal">
+    <div class="ui icon header">
+      <i class="trash icon"></i>
+      Hapus Data Petunjuk Teknis
+    </div>
+    <div class="content right floated">
+      <p>Data petunjuk teknis yang telah dihapus tidak bisa dikembalikan, Anda yakin ingin menghapus petunjuk teknis ini?</p>
+    </div>
+    <div class="actions">
+      <div class="ui red inverted cancel inverted button">
+        <i class="remove icon"></i>
+        Tidak
+      </div>
+      <div class="ui green ok inverted button tidak ya">
+        <i class="checkmark icon"></i>
+        Iya
+      </div>
+    </div>
+  </div>
+
 <div class="ui stackable centered grid">
   <div class="sixteen wide column center aligned">
       <div class="ui segment">
@@ -35,12 +56,18 @@
               <td class="center aligned">
                 <a href="{{route('juktek.edit',$data->slug)}}" class="ui button teal"><i class="edit icon"></i> Edit</a>
                 <a href="{{route('juktek.detail',$data->slug)}}" class="ui button blue"><i class="zoom icon"></i> Lihat</a>
-                <a class="ui button red"><i class="trash icon"></i> Hapus</a>
+                <a onclick="hapus()" id="hapus" data-slug="{{route('juktek.hapus',$data->slug)}}" data-token="{{ csrf_token() }}" class="ui button red">
+                  <i class="trash icon"></i> 
+                  Hapus
+                </a>
               </td>
             </tr>
           @endforeach          
         </tbody>
       </table>
+    </div>
+    <div class="ui container center aligned">
+      {{ $datas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
     </div>
   </div>
 </div>

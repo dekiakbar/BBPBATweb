@@ -63,7 +63,7 @@ function hapus(){
                 function() 
                   {
                      location.reload();
-                  }, 0001);  
+                  }, 0001); 
             }
           })
       }
