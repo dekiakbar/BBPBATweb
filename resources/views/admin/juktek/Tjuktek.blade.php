@@ -3,6 +3,7 @@
 @section('isi')
 <div class="ui stackable centered grid">
 	<div class="sixteen wide column center aligned">
+		
 		<div class="ui segment">
     		<h2 class="ui icon header">
   				<i class="settings icon"></i>
@@ -13,8 +14,9 @@
 			</h2>
   		</div>
 
-	   <div class="ui segment">
+	   	<div class="ui segment">
 			<form class="ui form">
+				
 	  			<div class="three fields">
 
 	    			<div class="seven wide field">
@@ -54,6 +56,7 @@
 
 			</form>
 		</div>
+
 	</div>
 </div>
 @endsection
