@@ -110,7 +110,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('admin.juktek.Ijuktek');
+		return view('admin.juktek.Djuktek');
 	});
 });
 
