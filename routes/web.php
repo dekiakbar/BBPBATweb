@@ -117,6 +117,7 @@ Route::domain('bbpbat.go.id')->group(function(){
 		Route::get('juktek/tambah','JuktekController@tambah');
 		Route::post('juktek/tambah','JuktekController@simpan')->name('juktek.simpan');
 		Route::get('juktek','JuktekController@index');
+		Route::get('juktek/{slug}/edit','JuktekController@edit')->name('juktek.edit');
 	});
 
 	//Route Login

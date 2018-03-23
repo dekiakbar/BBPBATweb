@@ -40,4 +40,10 @@ class JuktekController extends Controller
     	return redirect('admin/juktek/tambah');
     }
 
+    public function edit($slug)
+    {
+    	$edit = Juktek::where('slug',$slug)->FirstOrFail();
+    	return view('admin.juktek.Ejuktek',compact('edit')); 
+    }
+
 }
