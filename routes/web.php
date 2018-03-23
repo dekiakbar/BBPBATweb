@@ -76,9 +76,9 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 |
 */
 Route::domain('perpus.bbpbat.go.id')->group(function(){
+	
 	// Route admin perpus 
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-		// Route::resource('/kategori','kPerpusCont');
 		Route::get('kategori/tambah','PerpusCont@Ktampil');
 		Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
 
@@ -110,7 +110,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('admin.perpus.Tperpus');
+		return view('portal.master');
 	});
 });
 
