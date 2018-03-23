@@ -33,8 +33,8 @@
                 <img class="ui middle aligned tiny image" src="{{asset('storage/juktek')}}/{{$data->foto}}">
               </td>
               <td class="center aligned">
-                <a class="ui button teal"><i class="edit icon"></i> Edit</a>
-                <a class="ui button blue"><i class="zoom icon"></i> Lihat</a>
+                <a href="{{route('juktek.edit',$data->slug)}}" class="ui button teal"><i class="edit icon"></i> Edit</a>
+                <a href="{{route('juktek.detail',$data->slug)}}" class="ui button blue"><i class="zoom icon"></i> Lihat</a>
                 <a class="ui button red"><i class="trash icon"></i> Hapus</a>
               </td>
             </tr>

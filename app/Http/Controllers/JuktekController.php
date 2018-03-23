@@ -76,4 +76,10 @@ class JuktekController extends Controller
     	return redirect('admin/juktek');
     }
 
+    public function detail($slug)
+    {
+    	$detail = Juktek::where('slug',$slug)->firstOrFail();
+    	return view('admin.juktek.Djuktek',compact('detail'));
+    }
+
 }
