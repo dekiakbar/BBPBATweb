@@ -1,9 +1,9 @@
 # Website Badan Besar Penelitian Budidaya Air Tawar Kota Sukabumi
 Projek ini dibuat sebagai Salah satu persyaratan untuk memenuhi program kerja Magang di BBPBAT kota sukabumi.
 ## Kontributor
-- [Deki Akbar-Back End](https://github.com/dekiakbar)
-- [Restu Nugraha-Front End](https://web.facebook.com/reztu.nugraha)
-- [Saepul Rahman-Front End](https://web.facebook.com/portgas.rahman)
+- [Deki Akbar - Back End](https://github.com/dekiakbar)
+- [Restu Nugraha - Front End](https://web.facebook.com/reztu.nugraha)
+- [Saepul Rahman - Front End](https://web.facebook.com/portgas.rahman)
 
 ## Penunjang
 - [MySql-Server](https://dev.mysql.com/downloads/mysql/)

@@ -3,6 +3,7 @@
 @section('isi')
 <div class="ui stackable centered grid">
 	<div class="sixteen wide column center aligned">
+		
 		<div class="ui segment">
     		<h2 class="ui icon header">
   				<i class="settings icon"></i>
@@ -13,8 +14,9 @@
 			</h2>
   		</div>
 
-	   <div class="ui segment">
-			<form class="ui form">
+	   	<div class="ui segment">
+			<form class="ui form" action="{{route('juktek.simpan')}}" method="post" enctype="multipart/form-data">
+				{{csrf_field()}}
 	  			<div class="three fields">
 
 	    			<div class="seven wide field">
@@ -24,7 +26,7 @@
 
 	    			<div class="seven wide field">
 	    				<label>Slug</label>
-	    		 		<input type="text" name="slug" id="slug" disabled placeholder="Untuk URL Petunjuk Teknis">
+	    		 		<input type="text" name="slug" id="slug" placeholder="Untuk URL Petunjuk Teknis">
 	    			</div>
 
 	    			<div class="two wide field">
@@ -54,6 +56,7 @@
 
 			</form>
 		</div>
+
 	</div>
 </div>
 @endsection
