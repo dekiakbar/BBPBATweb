@@ -18,28 +18,15 @@
   		<a class="item">
   			Website
   		</a>
-  		<a class="active item">
+  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="active item">
 			Perpustakaan
 		</a>
-		<a class="item">
+		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
 		 	Blog
 		</a>
 		<a class="item">
 			Market
 		</a>
-		<div class="right menu">
-		  	<a href="{{ route('logout') }}" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
-		  		<div class="hidden content">
-					<i class="sign out icon"></i>
-				</div>
-				<div class="visible content">
-					Keluar    
-				</div>
-		  	</a>
-		  	<form id="keluar" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-		</div>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
@@ -59,10 +46,10 @@
 		  			<a class="item">
 			  			Website
 			  		</a>
-			  		<a class="active item">
+			  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="active item">
 						Perpustakaan
 					</a>
-					<a class="item">
+					<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
 					 	Blog
 					</a>
 					<a class="item">

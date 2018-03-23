@@ -1,19 +1,7 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-/*
-|--------------------------------------------------------------------------
-| Route subdomain blog 
+| Route subdomain blog.bbpbat.go.id
 |--------------------------------------------------------------------------
 |
 */
@@ -79,6 +67,8 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 
 });
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Route Sub Domain perpus.bbpbat.go.id
@@ -86,9 +76,9 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 |
 */
 Route::domain('perpus.bbpbat.go.id')->group(function(){
+	
 	// Route admin perpus 
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-		// Route::resource('/kategori','kPerpusCont');
 		Route::get('kategori/tambah','PerpusCont@Ktampil');
 		Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
 
@@ -103,7 +93,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 	//Route User Web
 	Route::get('/','WebPerpusCont@tampil');
 	Route::post('/','WebPerpusCont@cari')->name('perpus.cari');
-	Route::get('/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
+	Route::get('/kategori/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
 
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -120,7 +110,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('admin.perpus.Tperpus');
+		return view('admin.juktek.Djuktek');
 	});
 });
 

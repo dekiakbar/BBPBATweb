@@ -7,7 +7,7 @@
 		  	<div class="ui vertical menu">
 		  		<div class="item header">Kategori</div>
 		    	@foreach($kategoris as $kategori)
-		    		<a href="{{url('/',$kategori->nama_kategori)}}" class="item">{{$kategori->nama_kategori}}</a>
+		    		<a href="{{url('/kategori',$kategori->nama_kategori)}}" class="item">{{$kategori->nama_kategori}}</a>
 		    	@endforeach
 		    </div>
 		</div>
