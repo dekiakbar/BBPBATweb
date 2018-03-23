@@ -24,7 +24,7 @@ class JuktekController extends Controller
     {
     	if ($request->hasFile('foto')) {
     		$foto = $request->file('foto');
-    		$nama = time().$request->file('foto')->getClientOriginalExtension();
+    		$nama = time().'.'.$request->file('foto')->getClientOriginalExtension();
     		$tempat = public_path('/storage/juktek');
     		$status = $foto->move($tempat,$nama);
 
@@ -44,6 +44,36 @@ class JuktekController extends Controller
     {
     	$edit = Juktek::where('slug',$slug)->FirstOrFail();
     	return view('admin.juktek.Ejuktek',compact('edit')); 
+    }
+
+    public function perbaharui(Request $request,$slug)
+    {
+    	if ($request->hasFile('foto')) {
+
+    		$foto = $request->file('foto');
+    		$nama = time().'.'.$request->file('foto')->getClientOriginalExtension();
+    		$tempat = public_path('/storage/juktek');
+
+    		$update = Juktek::where('slug',$slug)->FirstOrFail();
+    		$update->judul_juktek = $request->input('judul');
+    		$update->slug = $request->input('slug');
+    		$update->kutipan = $request->input('kutipan');
+    		$update->isi = $request->input('artikel');
+    		$update->foto = $nama;
+    		$update->save();
+
+    		$status = $foto->move($tempat,$nama);
+    		//$hapus = unlink('/storage/juktek/'.$update->foto);
+    	}else{
+    		$update = Juktek::where('slug',$slug)->FirstOrFail();
+    		$update->judul_juktek = $request->input('judul');
+    		$update->slug = $request->input('slug');
+    		$update->kutipan = $request->input('kutipan');
+    		$update->isi = $request->input('artikel');
+    		$update->foto = $request->input('fotolama');
+    	}
+    	
+    	return redirect('admin/juktek');
     }
 
 }
