@@ -16,7 +16,8 @@ class Juktek extends Migration
         Schema::create('juktek', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul_juktek');
-            $table->string('kutipan');
+            $table->string('slug');
+            $table->text('kutipan');
             $table->text('isi');
             $table->string('foto');
             $table->timestamps();

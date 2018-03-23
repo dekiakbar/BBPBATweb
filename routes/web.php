@@ -115,6 +115,7 @@ Route::domain('bbpbat.go.id')->group(function(){
 
 	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
 		Route::get('juktek/tambah','JuktekController@tambah');
+		Route::post('juktek/tambah','JuktekController@simpan')->name('juktek.simpan');
 	});
 
 	//Route Login
