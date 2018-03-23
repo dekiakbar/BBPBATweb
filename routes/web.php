@@ -112,6 +112,15 @@ Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
 		return view('admin.juktek.Djuktek');
 	});
+
+	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
+		Route::get('juktek/tambah','JuktekController@tambah');
+	});
+
+	//Route Login
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 });
 
 /*
