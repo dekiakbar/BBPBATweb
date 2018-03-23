@@ -8,9 +8,11 @@ use App\Juktek;
 
 class JuktekController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+    	$datas = Juktek::paginate(10);
 
+    	return view('admin.juktek.Ijuktek',compact('datas'))->with('no',($request->input('page',1)-1)*10);
     }
 
     public function tambah()
@@ -37,4 +39,5 @@ class JuktekController extends Controller
 
     	return redirect('admin/juktek/tambah');
     }
+
 }
