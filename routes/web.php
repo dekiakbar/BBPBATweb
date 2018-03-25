@@ -110,7 +110,7 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 */
 Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('/',function(){
-		return view('portal.master');
+		return view('admin.shop.listbarang');
 	});
 
 	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
