@@ -8,10 +8,10 @@ class KshopCont extends Controller
 {
     public function index()
     {
-
+        return view('admin.shop.Tmarket');
     }
 
-    public function tambah()
+    public function KStambah()
     {
         return view('admin.shop.Tmarket');
     }

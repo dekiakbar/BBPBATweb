@@ -104,6 +104,29 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 
 /*
 |--------------------------------------------------------------------------
+| Route admin Marketplace
+|--------------------------------------------------------------------------
+|
+*/
+Route::domain('shop.bbpbat.go.id')->group(function(){
+
+	route::get('/',function(){
+		return view('admin.shop.Tmarket');
+	});
+
+	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
+		Route::get('kategori/tambah','KshopCont@KStambah');
+		Route::get('/','KshopCont@index');
+	});
+
+	//Route Login
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	Route::post('login', 'Auth\LoginController@login');
+	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+});
+
+/*
+|--------------------------------------------------------------------------
 | Route Domain utama bbpbat.go.id
 |--------------------------------------------------------------------------
 |
@@ -129,18 +152,6 @@ Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-});
-
-/*
-|--------------------------------------------------------------------------
-| Route admin Marketplace
-|--------------------------------------------------------------------------
-|
-*/
-Route::domain('shop.bbpbat.go.id')->group(function(){
-	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
-		
-	});
 });
 
 /*
