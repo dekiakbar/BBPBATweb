@@ -5,13 +5,7 @@
 |--------------------------------------------------------------------------
 |
 */
-Route::domain('blog.bbpbat.go.id')->group(function () {
-
-	Route::get('/', 'WebController@tampil');
-	Route::get('kategori/{kategori}','WebController@kategori');
-	Route::get('tag/{tag}','WebController@tag');
-	Route::post('/','WebController@cari');
-	Route::get('detail/{slug}','WebController@detail');
+Route::domain('blog.bbpbat.com')->group(function () {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -20,6 +14,7 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 	|
 	*/
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+
 		Route::get('/', 'HomeController@index')->name('home');
 		Route::post('/','HomeController@gantiPas');
 
@@ -45,8 +40,14 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 		
 		//route json kategori
 		Route::get('tag/{kategori_id}', 'TagController@ambilTag');
-
 	});
+
+		//route web user
+		Route::get('/', 'WebController@tampil');
+		Route::get('kategori/{kategori}','WebController@kategori');
+		Route::get('tag/{tag}','WebController@tag');
+		Route::post('/','WebController@cari');
+		Route::get('detail/{slug}','WebController@detail');
 
 	/*
 	|--------------------------------------------------------------------------
@@ -75,7 +76,7 @@ Route::domain('blog.bbpbat.go.id')->group(function () {
 |--------------------------------------------------------------------------
 |
 */
-Route::domain('perpus.bbpbat.go.id')->group(function(){
+Route::domain('perpus.bbpbat.com')->group(function(){
 	
 	// Route admin perpus 
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
@@ -108,21 +109,24 @@ Route::domain('perpus.bbpbat.go.id')->group(function(){
 |--------------------------------------------------------------------------
 |
 */
-Route::domain('shop.bbpbat.go.id')->group(function(){
 
-	route::get('/',function(){
-		return view('admin.shop.Tmarket');
-	});
+Route::domain('shop.bbpbat.com')->group(function(){
 
-	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
-		Route::get('kategori/tambah','KshopCont@KStambah');
-		Route::get('/','KshopCont@index');
+	//Route Admin Shop
+	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+
+		Route::get('kategori-shop/tambah','KshopCont@KStambah');
+		Route::get('kategori-shop/','KshopCont@index');
 	});
 
 	//Route Login
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+	route::get('/',function(){
+		return view('admin.shop.Tmarket');
+	});
 });
 
 /*
@@ -131,11 +135,7 @@ Route::domain('shop.bbpbat.go.id')->group(function(){
 |--------------------------------------------------------------------------
 |
 */
-Route::domain('bbpbat.go.id')->group(function(){
-	Route::get('/',function(){
-		return view('admin.shop.Tmarket');
-	});
-
+Route::domain('bbpbat.com')->group(function(){
 	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
 
 		//route admin Petunjuk teknis
@@ -152,6 +152,11 @@ Route::domain('bbpbat.go.id')->group(function(){
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+	Route::get('/',function(){
+		return view('admin.shop.Tmarket');
+	});
+
 });
 
 /*
