@@ -117,6 +117,7 @@ Route::domain('shop.bbpbat.com')->group(function(){
 
 		Route::get('kategori-shop/tambah','KshopCont@KStambah');
 		Route::get('kategori-shop/','KshopCont@index');
+
 	});
 
 	//Route Login
@@ -144,7 +145,7 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('juktek','JuktekController@index');
 		Route::get('juktek/{slug}/edit','JuktekController@edit')->name('juktek.edit');
 		Route::patch('juktek/{slug}','JuktekController@perbaharui')->name('juktek.perbaharui');
-		Route::get('juktek/{slug}','JuktekController@detail')->name('juktek.detail');
+		//Route::get('juktek/{slug}','JuktekController@detail')->name('juktek.detail');
 		Route::delete('juktek/{slug}','JuktekController@hapus')->name('juktek.hapus');
 	});
 
@@ -154,7 +155,7 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 	Route::get('/',function(){
-		return view('admin.shop.Tmarket');
+		return view('shop.pembelian');
 	});
 
 });

@@ -18,7 +18,7 @@ class Juktek extends Migration
             $table->string('judul_juktek');
             $table->string('slug');
             $table->text('kutipan');
-            $table->text('isi');
+            $table->string('file');
             $table->string('foto');
             $table->timestamps();
         });

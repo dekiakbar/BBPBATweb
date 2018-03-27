@@ -19,14 +19,22 @@
 				{{csrf_field()}}
 	  			<div class="three fields">
 
-	    			<div class="seven wide field">
+	    			<div class="six wide field">
 	    			  	<label>Judul Petunjuk</label>
 	    			  	<input placeholder="Judul Petunjuk Teknis" name="judul" type="text" id="dataSlug" onkeyup="buatSlug()">
 	    			</div>
 
-	    			<div class="seven wide field">
+	    			<div class="six wide field">
 	    				<label>Slug</label>
 	    		 		<input type="text" name="slug" id="slug" placeholder="Untuk URL Petunjuk Teknis">
+	    			</div>
+
+	    			<div class="two wide field">
+	    				<input type="file" name="file" id="labelfile" style="opacity: 0;overflow: hidden;margin-top: -28px;" />
+						<label for="labelfile" class="ui huge blue button">
+							<i class="ui upload icon"></i> 
+							Upload File
+						</label>
 	    			</div>
 
 	    			<div class="two wide field">
@@ -41,11 +49,6 @@
 	      		<div class="field">
 	      			<label>Kutipan</label>
 	      			<textarea name="kutipan"></textarea>
-	      		</div>
-
-	      		<div class="field">
-      				<label>Masukan Petunjuk Teknis</label>
-      				<textarea name="artikel"></textarea>
 	      		</div>
 
 				<div class="ui stackable centered grid">

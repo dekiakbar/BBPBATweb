@@ -31,6 +31,15 @@
 	    			</div>
 
 	    			<div class="two wide field">
+	    				<input type="file" name="file" id="labelfile" style="opacity: 0;overflow: hidden;margin-top: -28px;" />
+						<label for="labelfile" class="ui huge blue button">
+							<i class="ui upload icon"></i> 
+							Upload File
+						</label>
+	    			</div>
+	    			<input type="hidden" name="filelama" value="{{$edit->file}}">
+
+	    			<div class="two wide field">
 	    				<input type="file" name="foto" id="labelinput" style="opacity: 0;overflow: hidden;margin-top: -28px;" />
 						<label for="labelinput" class="ui huge green button">
 							<i class="ui upload icon"></i> 
@@ -43,11 +52,6 @@
 	      		<div class="field">
 	      			<label>Kutipan</label>
 	      			<textarea name="kutipan">{{$edit->kutipan}}</textarea>
-	      		</div>
-
-	      		<div class="field">
-      				<label>Masukan Petunjuk Teknis</label>
-      				<textarea name="artikel">{{$edit->isi}}</textarea>
 	      		</div>
 
 				<div class="ui stackable centered grid">
