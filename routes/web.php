@@ -111,12 +111,11 @@ Route::domain('perpus.bbpbat.com')->group(function(){
 */
 
 Route::domain('shop.bbpbat.com')->group(function(){
-
 	//Route Admin Shop
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-
+		Route::get('/', 'HomeController@index')->name('home');
 		Route::get('kategori-shop/tambah','KshopCont@KStambah');
-		Route::get('kategori-shop/','KshopCont@index');
+		Route::get('kategori/','KshopCont@index');
 
 	});
 
@@ -124,10 +123,6 @@ Route::domain('shop.bbpbat.com')->group(function(){
 	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	Route::post('login', 'Auth\LoginController@login');
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-
-	route::get('/',function(){
-		return view('admin.shop.Tmarket');
-	});
 });
 
 /*
