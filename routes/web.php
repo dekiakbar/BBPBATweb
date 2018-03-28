@@ -56,15 +56,15 @@ Route::domain('blog.bbpbat.com')->group(function () {
 	|
 	*/
 	//Route Login
-	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-	Route::post('login', 'Auth\LoginController@login');
-	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+	// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	// Route::post('login', 'Auth\LoginController@login');
+	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 	// Lupa password
-	Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-	Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+	// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+	// Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+	// Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+	// Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 });
 
@@ -97,9 +97,9 @@ Route::domain('perpus.bbpbat.com')->group(function(){
 	Route::get('/kategori/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
 
 	//Route Login
-	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-	Route::post('login', 'Auth\LoginController@login');
-	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+	// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	// Route::post('login', 'Auth\LoginController@login');
+	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 });
 
@@ -113,16 +113,16 @@ Route::domain('perpus.bbpbat.com')->group(function(){
 Route::domain('shop.bbpbat.com')->group(function(){
 	//Route Admin Shop
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-		Route::get('/', 'HomeController@index')->name('home');
-		Route::get('kategori-shop/tambah','KshopCont@KStambah');
-		Route::get('kategori/','KshopCont@index');
+		// Route::get('/', 'HomeController@index')->name('home');
+		// Route::get('kategori-shop/tambah','KshopCont@KStambah');
+		// Route::get('kategori/','KshopCont@index');
 
 	});
 
 	//Route Login
-	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-	Route::post('login', 'Auth\LoginController@login');
-	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+	// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+	// Route::post('login', 'Auth\LoginController@login');
+	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 });
 
 /*
@@ -183,6 +183,10 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::patch('perpus/buku/{id}','PerpusCont@update')->name('perpus.update');
 		Route::delete('perpus/buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
 
+		//===================================SHOP===========================================
+
+		Route::get('shop/kategori/tambah','KshopCont@KStampil');
+		Route::post('shop/kategori/tambah','KshopCont@KStambah')->name('Kshop.tambah');
 	});
 
 	//Route Login
@@ -191,7 +195,7 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 	Route::get('/',function(){
-		return view('shop.pembelian');
+		return view('portal');
 	});
 
 });

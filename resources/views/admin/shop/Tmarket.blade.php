@@ -71,11 +71,12 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form">
+        <form class="ui form" method="post" action="{{route('Kshop.tambah')}}">
+        	{{csrf_field()}}
           <div class="two fields">
             <div class="field">
             <label>Kategori</label>
-            <input type="text" name="first-name" placeholder="Masukan Ketegori">
+            <input type="text" name="nama_kategori" placeholder="Masukan Ketegori">
           </div>
             </div>
             <button class="ui button" type="submit">Submit</button>

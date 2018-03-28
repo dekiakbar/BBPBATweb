@@ -16,6 +16,7 @@ class Shop extends Migration
         Schema::create('shop', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_ikan');
+            $table->integer('kategori_id')->unsigned();
             $table->string('harga');
             $table->string('jenis');
             $table->string('ukuran');
@@ -23,6 +24,10 @@ class Shop extends Migration
             $table->string('foto');
             $table->text('keterangan');
             $table->timestamps();
+        });
+
+        Schema::table('shop',function (Blueprint $t){
+            $t->foreign('kategori_id')->references('id')->on('Kshop')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
