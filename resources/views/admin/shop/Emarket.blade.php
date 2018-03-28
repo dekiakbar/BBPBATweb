@@ -11,14 +11,14 @@
           <div class="two fields">
             <div class="field">
             <label>Nama Ikan</label>
-            <input type="text" name="nama_ikan" id="dataSlug" onkeyup="buatSlug()" placeholder="Nama Ikan">
-            <input type="hidden" name="slug" id="slug">
+            <input type="text" name="nama_ikan" id="dataSlug" onkeyup="buatSlug()" placeholder="Nama Ikan" value="{{$edit->nama_ikan}}">
+            <input type="hidden" name="slug" id="slug" value="{{$edit->slug}}">
           </div>
             <div class="field">
             <label>Harga Ikan</label>
             <div class="ui right labeled input">
               <label for="harga" class="ui label">Rp.</label>
-              <input type="text" placeholder="Harga Ikan" name="harga">
+              <input type="text" placeholder="Harga Ikan" name="harga" value="{{$edit->harga}}">
               <div class="ui dropdown label" >
               	<input type="hidden" name="harga1" >
                 <div class="text">Ekor</div>
@@ -38,20 +38,24 @@
             <label>Kategori Ikan</label>
             <select class="ui fluid dropdown" name="kategori_ikan">
             	@foreach($kategoris as $k)
-            		<option value="{{$k->id}}">{{$k->nama_kategori}}</option>
-            	@endforeach
+                @if($k->id == $edit->kategori->id)
+            		  <option value="{{$k->id}}" selected>{{$k->nama_kategori}}</option>
+            	  @else
+                  <option value="{{$k->id}}">{{$k->nama_kategori}}</option>
+                @endif
+              @endforeach
             </select>
           </div>
             <div class="field">
             <label>Ukuran Ikan</label>
-            <input type="text" name="ukuran_ikan" placeholder="Ukuran Ikan">
+            <input type="text" name="ukuran_ikan" placeholder="Ukuran Ikan" value="{{$edit->ukuran}}">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Stock Ikan</label>
             <div class="ui right labeled input">
-              <input type="text" placeholder="Stock Ikan" name="stok">
+              <input type="text" placeholder="Stock Ikan" name="stok" value="{{$edit->stok}}">
               <div class="ui label">
                 <div class="text">Ekor</div>
               </div>
@@ -61,30 +65,13 @@
             <div class="field">
             <label>Uplode Gambar</label>
             <input type="file" name="foto" placeholder="Nama Ikan">
+            <input type="hidden" name="fotolama" value="{{$edit->foto}}">
           </div>
           </div>
             </div>
             <div class="field">
             <label>Keterangan</label>
-            <textarea rows="3" name="keterangan"></textarea>
-            </div>
-            <button class="ui button" type="submit">Submit</button>
-        </form>
-        </div>
-        </div>
-    </div>
-    <br>
-    <h3 class="ui center aligned header" style="margin-bottom: 30px">INPUT KATEGORI MARKET</h3>
-    <div class="ui one column stackable grid container">
-        <div class="ui one column raised segment">
-      <div class="column">
-        <form class="ui form" method="post" action="{{route('Kshop.tambah')}}">
-        	{{csrf_field()}}
-          <div class="two fields">
-            <div class="field">
-            <label>Kategori</label>
-            <input type="text" name="nama_kategori" placeholder="Masukan Ketegori">
-          </div>
+            <textarea rows="3" name="keterangan">{{$edit->keterangan}}</textarea>
             </div>
             <button class="ui button" type="submit">Submit</button>
         </form>

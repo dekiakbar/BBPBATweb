@@ -21,23 +21,76 @@ class ShopCont extends Controller
 
     public function tambah(Request $request)
     {
-    	$foto = $request->file('foto');
-    	$namaF = time().'.'.$foto->getClientOriginalExtension();
-    	$tempat = public_path('storage/shop'); 
-    	$tatus = $foto->move($tempat,$namaF);
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $namaF = time().'.'.$foto->getClientOriginalExtension();
+            $tempat = public_path('storage/shop'); 
+            $tatus = $foto->move($tempat,$namaF);
 
-    	$tambah = Shop::create([
-    		'nama_ikan' => $request->input('nama_ikan'),
-    		'kategori_id' => $request->input('kategori_ikan'),
-    		'harga' => $request->input('harga').'/'.$request->input('harga1'),
-    		'ukuran' => $request->input('ukuran_ikan'),
-    		'stok' => $request->input('stok'),
-    		'foto' => $namaF,
-    		'keterangan' => $request->input('keterangan'),
-    	]);
+            $tambah = Shop::create([
+                'nama_ikan' => $request->input('nama_ikan'),
+                'kategori_id' => $request->input('kategori_ikan'),
+                'slug' => $request->input('slug'),
+                'harga' => $request->input('harga').'/'.$request->input('harga1'),
+                'ukuran' => $request->input('ukuran_ikan'),
+                'stok' => $request->input('stok'),
+                'foto' => $namaF,
+                'keterangan' => $request->input('keterangan'),
+            ]);
+        }else{
+            $tambah = Shop::create([
+                'nama_ikan' => $request->input('nama_ikan'),
+                'kategori_id' => $request->input('kategori_ikan'),
+                'slug' => $request->input('slug'),
+                'harga' => $request->input('harga').'/'.$request->input('harga1'),
+                'ukuran' => $request->input('ukuran_ikan'),
+                'stok' => $request->input('stok'),
+                'keterangan' => $request->input('keterangan'),
+            ]);
+        }
+    	
 
     	$tambah->save();
 
     	return redirect('admin/shop/tambah');
+    }
+
+    public function edit($slug)
+    {
+        $edit = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
+        return view('admin.shop.Emarket',compact('edit'));
+    }
+
+    public function simpan(Request $request,$slug)
+    {
+        if ($request->hasFile('foto')) {
+            $update = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
+            $update->nama_ikan = $request->input('nama_ikan');
+            $update->kategori_id = $request->input('kategori_ikan');
+            $update->slug = $request->input('slug');
+            $update->harga = $request->input('harga');
+            $update->ukuran = $request->input('ukuran_ikan');
+            $update->stok = $request->input('stok');
+            $update->foto = $request->input('fotolama');
+            $update->keterangan = $request->input('keterangan');
+        }else{
+
+            $foto = $request->file('foto');
+            $namaF = time().'.'.$foto->getClientOriginalExtension();
+            $tempat = public_path('storage/shop'); 
+            $tatus = $foto->move($tempat,$namaF);
+
+            $update = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
+            $update->nama_ikan = $request->input('nama_ikan');
+            $update->kategori_id = $request->input('kategori_ikan');
+            $update->slug = $request->input('slug');
+            $update->harga = $request->input('harga');
+            $update->ukuran = $request->input('ukuran_ikan');
+            $update->stok = $request->input('stok');
+            $update->foto = $namaF;
+            $update->keterangan = $request->input('keterangan');
+        } 
+
+        return redirect('admin/shop/tambah');
     }
 }

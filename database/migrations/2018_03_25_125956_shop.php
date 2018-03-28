@@ -17,10 +17,11 @@ class Shop extends Migration
             $table->increments('id');
             $table->string('nama_ikan');
             $table->integer('kategori_id')->unsigned();
+            $table->string('slug');
             $table->string('harga');
             $table->string('ukuran');
             $table->string('stok');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->text('keterangan');
             $table->timestamps();
         });
