@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('judul','Tambah Kategori Market')
+@section('judul','Edit Produk')
 
 @section('isi')
     <h3 class="ui center aligned header" style="margin-bottom: 30px">INPUT DATA PRODAK</h3>

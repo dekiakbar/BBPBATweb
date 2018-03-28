@@ -10,7 +10,8 @@ class ShopCont extends Controller
 {
     public function index()
     {
-    	return view('admin.shop.Tmarket');
+        $datas = Shop::paginate(10);
+    	return view('admin.shop.index', compact('datas'));
     }
 
     public function tampil()
