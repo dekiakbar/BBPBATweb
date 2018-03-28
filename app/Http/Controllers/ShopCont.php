@@ -8,10 +8,10 @@ use App\Kshop;
 
 class ShopCont extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $datas = Shop::paginate(10);
-    	return view('admin.shop.Index', compact('datas'));
+    	return view('admin.shop.Imarket', compact('datas'))->with('no',($request->input('page',1)-1)*10);
     }
 
     public function tampil()
@@ -52,7 +52,7 @@ class ShopCont extends Controller
     	
     	$tambah->save();
 
-    	return redirect('admin/shop/tambah');
+    	return redirect('admin/shop/produk/tambah');
     }
 
     public function edit($slug)

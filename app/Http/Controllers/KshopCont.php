@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use App\Kshop;
 class KshopCont extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $datas = Kshop::paginate(10);
-        return view('admin.shop.IndexKategori',compact('datas'));
+        return view('admin.shop.IndexKategori',compact('datas'))->with('no',($request->input('page',1)-1)*10);
     }
 
     public function KStampil()

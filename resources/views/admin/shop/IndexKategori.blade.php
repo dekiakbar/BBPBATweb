@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('judul','Daftar Produk')
+@section('judul','Daftar Kategori Produk')
 
 @section('isi')
 	<div class="ui small modal">
@@ -27,12 +27,15 @@
             <table class="ui celled table">
               <thead>
                 <tr>
-                <th>Nama Kategori</th>
-               	<th class="four wide column" >Opsi</th>
-              </tr></thead>
+                  <th>No</th>
+                  <th>Nama Kategori</th>
+               	  <th class="four wide column" >Opsi</th>
+                </tr>
+              </thead>
               <tbody>
                 @foreach($datas as $data)
                 	<tr>
+                      <td>{{++$no}}</td>
                     	<td>{{$data->nama_kategori}}</td>
                     	<td style="text-align: center">
                     	   <a onclick="hapus()" id="hapus" data-slug="{{route('Kshop.hapus',$data->id)}}" data-token="{{ csrf_token() }}" class="ui red button">Hapus</a>
@@ -41,7 +44,9 @@
                 @endforeach
               </tbody>
             </table>
-            
+            <div class="ui container center aligned">
+                {{ $datas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
+            </div>
         </div>
     </div>
 
