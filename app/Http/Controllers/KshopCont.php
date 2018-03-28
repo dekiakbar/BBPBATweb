@@ -14,7 +14,8 @@ class KshopCont extends Controller
 
     public function KStampil()
     {
-        return view('admin.shop.Tmarket');
+        $kategoris = Kshop::all();
+        return view('admin.shop.Tmarket',compact('kategoris'));
     }
 
     public function KStambah(Request $request)

@@ -185,8 +185,14 @@ Route::domain('bbpbat.com')->group(function(){
 
 		//===================================SHOP===========================================
 
+		//kategori shop
 		Route::get('shop/kategori/tambah','KshopCont@KStampil');
 		Route::post('shop/kategori/tambah','KshopCont@KStambah')->name('Kshop.tambah');
+		Route::delete('shop/kategori','KshopCont@hapus')->name('Kshop.hapus');
+
+		//shop na
+		Route::get('shop/tambah','ShopCont@tampil');
+		Route::post('shop/tambah','ShopCont@tambah')->name('shop.tambah');
 	});
 
 	//Route Login
