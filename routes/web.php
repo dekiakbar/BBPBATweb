@@ -194,7 +194,7 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('shop/produk/tambah','ShopCont@tampil');
 		Route::post('shop/produk/tambah','ShopCont@tambah')->name('shop.tambah');
 		Route::get('shop/produk/{slug}/edit','ShopCont@edit')->name('shop.edit');
-		Route::patch('shop/produk/{slug}','ShopCont@update')->name('shop.update');
+		Route::patch('shop/produk/{slug}','ShopCont@simpan')->name('shop.update');
 	});
 
 	//Route Login

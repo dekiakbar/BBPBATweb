@@ -6,8 +6,9 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form enctype="multipart/form-data" class="ui form" action="{{route('shop.tambah')}}" method="post">
+        <form enctype="multipart/form-data" class="ui form" action="{{route('shop.update',$edit->slug)}}" method="post">
         	{{csrf_field()}}
+          <input type="hidden" name="_method" value="PATCH">
           <div class="two fields">
             <div class="field">
             <label>Nama Ikan</label>

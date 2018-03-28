@@ -49,7 +49,6 @@ class ShopCont extends Controller
             ]);
         }
     	
-
     	$tambah->save();
 
     	return redirect('admin/shop/tambah');
@@ -58,23 +57,13 @@ class ShopCont extends Controller
     public function edit($slug)
     {
         $edit = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
-        return view('admin.shop.Emarket',compact('edit'));
+        $kategoris = Kshop::all();
+        return view('admin.shop.Emarket',compact('edit','kategoris'));
     }
 
     public function simpan(Request $request,$slug)
     {
         if ($request->hasFile('foto')) {
-            $update = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
-            $update->nama_ikan = $request->input('nama_ikan');
-            $update->kategori_id = $request->input('kategori_ikan');
-            $update->slug = $request->input('slug');
-            $update->harga = $request->input('harga');
-            $update->ukuran = $request->input('ukuran_ikan');
-            $update->stok = $request->input('stok');
-            $update->foto = $request->input('fotolama');
-            $update->keterangan = $request->input('keterangan');
-        }else{
-
             $foto = $request->file('foto');
             $namaF = time().'.'.$foto->getClientOriginalExtension();
             $tempat = public_path('storage/shop'); 
@@ -89,8 +78,28 @@ class ShopCont extends Controller
             $update->stok = $request->input('stok');
             $update->foto = $namaF;
             $update->keterangan = $request->input('keterangan');
-        } 
 
-        return redirect('admin/shop/tambah');
+            $update->save();
+        }else{
+
+            $update = Shop::with('kategori')->where('slug',$slug)->firstOrFail();
+            $update->nama_ikan = $request->input('nama_ikan');
+            $update->kategori_id = $request->input('kategori_ikan');
+            $update->slug = $request->input('slug');
+            $update->harga = $request->input('harga');
+            $update->ukuran = $request->input('ukuran_ikan');
+            $update->stok = $request->input('stok');
+            $update->foto = $request->input('fotolama');
+            $update->keterangan = $request->input('keterangan');
+
+            $update->save();
+        } 
+        return redirect('admin/shop/produk/tambah');
+    }
+
+    public function hapus($slug)
+    {
+        $hapus = Shop::where('slug',$slug)->firstOrFail();
+        $hapus->delete();
     }
 }
