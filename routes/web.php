@@ -13,34 +13,34 @@ Route::domain('blog.bbpbat.com')->group(function () {
 	|--------------------------------------------------------------------------
 	|
 	*/
-	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+	// Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
 
-		Route::get('/', 'HomeController@index')->name('home');
-		Route::post('/','HomeController@gantiPas');
+	// 	Route::get('/', 'HomeController@index')->name('home');
+	// 	Route::post('/','HomeController@gantiPas');
 
-		// Registrasi Admin
-		Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-		Route::post('register', 'Auth\RegisterController@register');
+	// 	// Registrasi Admin
+	// 	Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+	// 	Route::post('register', 'Auth\RegisterController@register');
 
-		//Routing kategori
-		Route::resource('/kategori','KategoriController',[
-		    'except' => 'show'
-		]);
-		Route::post('/kategori/cari','KategoriController@cari')->name('kategori.cari');
+	// 	//Routing kategori
+	// 	Route::resource('/kategori','KategoriController',[
+	// 	    'except' => 'show'
+	// 	]);
+	// 	Route::post('/kategori/cari','KategoriController@cari')->name('kategori.cari');
 
-		//Routing tag
-		Route::resource('/tag','TagController',[
-			'except' => 'show'
-		]);
-		Route::post('/tag/cari','TagController@cari')->name('tag.cari');
+	// 	//Routing tag
+	// 	Route::resource('/tag','TagController',[
+	// 		'except' => 'show'
+	// 	]);
+	// 	Route::post('/tag/cari','TagController@cari')->name('tag.cari');
 
-		//route artikel
-		Route::resource('/artikel','ArtikelController');
-		Route::post('/artikel/cari','ArtikelController@cari')->name('artikel.cari');
+	// 	//route artikel
+	// 	Route::resource('/artikel','ArtikelController');
+	// 	Route::post('/artikel/cari','ArtikelController@cari')->name('artikel.cari');
 		
-		//route json kategori
-		Route::get('tag/{kategori_id}', 'TagController@ambilTag');
-	});
+	// 	//route json kategori
+	// 	Route::get('tag/{kategori_id}', 'TagController@ambilTag');
+	// });
 
 		//route web user
 		Route::get('/', 'WebController@tampil');
@@ -79,17 +79,17 @@ Route::domain('blog.bbpbat.com')->group(function () {
 Route::domain('perpus.bbpbat.com')->group(function(){
 	
 	// Route admin perpus 
-	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-		Route::get('kategori/tambah','PerpusCont@Ktampil');
-		Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
+	// Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+	// 	Route::get('kategori/tambah','PerpusCont@Ktampil');
+	// 	Route::post('kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
 
-		Route::get('buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
-		Route::post('buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
-		Route::get('buku','PerpusCont@index');
-		Route::get('buku/{id}','PerpusCont@edit')->name('perpus.edit');
-		Route::patch('buku/{id}','PerpusCont@update')->name('perpus.update');
-		Route::delete('buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
-	});
+	// 	Route::get('buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
+	// 	Route::post('buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
+	// 	Route::get('buku','PerpusCont@index');
+	// 	Route::get('buku/{id}','PerpusCont@edit')->name('perpus.edit');
+	// 	Route::patch('buku/{id}','PerpusCont@update')->name('perpus.update');
+	// 	Route::delete('buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
+	// });
 
 	//Route User Web
 	Route::get('/','WebPerpusCont@tampil');
@@ -132,6 +132,7 @@ Route::domain('shop.bbpbat.com')->group(function(){
 |
 */
 Route::domain('bbpbat.com')->group(function(){
+
 	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
 
 		//route admin Petunjuk teknis
@@ -142,6 +143,46 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::patch('juktek/{slug}','JuktekController@perbaharui')->name('juktek.perbaharui');
 		//Route::get('juktek/{slug}','JuktekController@detail')->name('juktek.detail');
 		Route::delete('juktek/{slug}','JuktekController@hapus')->name('juktek.hapus');
+
+		//===============================BLOG=============================================
+		Route::get('blog/', 'HomeController@index')->name('home');
+		Route::post('/','HomeController@gantiPas');
+
+		// Registrasi Admin
+		Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+		Route::post('register', 'Auth\RegisterController@register');
+
+		//Routing kategori
+		Route::resource('/kategori','KategoriController',[
+		    'except' => 'show'
+		]);
+		Route::post('/kategori/cari','KategoriController@cari')->name('kategori.cari');
+
+		//Routing tag
+		Route::resource('/tag','TagController',[
+			'except' => 'show'
+		]);
+		Route::post('/tag/cari','TagController@cari')->name('tag.cari');
+
+		//route artikel
+		Route::resource('/artikel','ArtikelController');
+		Route::post('/artikel/cari','ArtikelController@cari')->name('artikel.cari');
+		
+		//route json kategori
+		Route::get('tag/{kategori_id}', 'TagController@ambilTag');
+
+		//================================PERPUS============================================
+
+		Route::get('perpus/kategori/tambah','PerpusCont@Ktampil');
+		Route::post('perpus/kategori/tambah','PerpusCont@Ktambah')->name('kategori.tambah');
+
+		Route::get('perpus/buku/tambah','PerpusCont@tambah')->name('perpus.tambah');
+		Route::post('perpus/buku/tambah','PerpusCont@simpan')->name('perpus.simpan');
+		Route::get('perpus/buku','PerpusCont@index');
+		Route::get('perpus/buku/{id}','PerpusCont@edit')->name('perpus.edit');
+		Route::patch('perpus/buku/{id}','PerpusCont@update')->name('perpus.update');
+		Route::delete('perpus/buku/{id}','PerpusCont@destroy')->name('perpus.hapus');
+
 	});
 
 	//Route Login
