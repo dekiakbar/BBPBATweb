@@ -18,8 +18,8 @@
             <div class="ui right labeled input">
               <label for="harga" class="ui label">Rp.</label>
               <input type="text" placeholder="Harga Ikan" name="harga" id="harga">
-              <div class="ui dropdown label" name="harga1">
-                <div class="text" name>Ekor</div>
+              <div class="ui dropdown label" >
+                <div class="text">Ekor</div>
                 <i class="dropdown icon"></i>
                 <div class="menu">
                   <div class="item">Ekor</div>
