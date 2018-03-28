@@ -186,10 +186,10 @@ Route::domain('bbpbat.com')->group(function(){
 		//===================================SHOP===========================================
 
 		//kategori shop
-
+		Route::get('shop/kategori','KshopCont@index');
 		Route::get('shop/kategori/tambah','KshopCont@KStampil');
 		Route::post('shop/kategori/tambah','KshopCont@KStambah')->name('Kshop.tambah');
-		Route::delete('shop/kategori','KshopCont@hapus')->name('Kshop.hapus');
+		Route::delete('shop/kategori/{id}','KshopCont@KShapus')->name('Kshop.hapus');
 
 		//shop na
 		Route::get('shop/produk','ShopCont@index');

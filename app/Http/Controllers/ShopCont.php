@@ -11,7 +11,7 @@ class ShopCont extends Controller
     public function index()
     {
         $datas = Shop::paginate(10);
-    	return view('admin.shop.index', compact('datas'));
+    	return view('admin.shop.Index', compact('datas'));
     }
 
     public function tampil()

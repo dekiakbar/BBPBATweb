@@ -9,7 +9,8 @@ class KshopCont extends Controller
 {
     public function index()
     {
-        return view('admin.shop.Tmarket');
+        $datas = Kshop::paginate(10);
+        return view('admin.shop.IndexKategori',compact('datas'));
     }
 
     public function KStampil()
@@ -30,7 +31,7 @@ class KshopCont extends Controller
 
     public function KShapus($id)
     {
-    	$hapus = Ksop::findOrFail($id);
+    	$hapus = Kshop::where('id',$id)->firstOrFail();
     	$hapus->delete();
     }
 }
