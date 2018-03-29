@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="description" content="">
-	<title>template admin nyah</title>
+	<title>Admin | Super Admin</title>
 	<meta name="csrf-token" content="">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link rel="stylesheet" type="text/css" href="css/manual.css'">
@@ -20,8 +20,7 @@
     <div style="background-color:; height: 350px" class="column">
         
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">
-        <p>BBPBAT SUKABUMI
-			</p>
+        <p>BBPBAT SUKABUMI</p>
         </div>
         
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">

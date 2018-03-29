@@ -13,7 +13,7 @@
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
-    		Admin 
+    		Super Admin Dashboard 
   		</div>
 		<div class="ui pointing dropdown link item">
 			<span class="text">Portal</span>
@@ -48,8 +48,10 @@
 			<span class="text">Markets</span>
 			<i class="dropdown icon"></i>
 			<div class="menu">
-			    <a href="{{ url('admin/tag/create') }}" class="item"><i class="icon plus"></i>Tambah Tag</a>
-			    <a href="{{ url('admin/tag') }}" class="item"><i class="icon list"></i>Daftar Tag</a>
+			    <a href="{{ url('admin/shop/produk/tambah') }}" class="item"><i class="icon plus"></i>Tambah Produk</a>
+			    <a href="{{ url('admin/shop/produk') }}" class="item"><i class="icon list"></i>Daftar Produk</a>
+			    <a href="{{ url('admin/shop/kategori/tambah') }}" class="item"><i class="icon plus"></i>Tambah Kategori</a>
+			    <a href="{{ url('admin/shop/kategori') }}" class="item"><i class="icon list"></i>Daftar Kategori</a>
 		  	</div>
 		</div>
 		<div class="right menu">
