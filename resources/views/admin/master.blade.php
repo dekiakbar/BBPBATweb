@@ -16,23 +16,36 @@
     		Admin 
   		</div>
 		<div class="ui pointing dropdown link item">
-			<span class="text">Artikel</span>
+			<span class="text">Portal</span>
 			<i class="dropdown icon"></i>
 			<div class="menu">
-			    <a href="{{ url('admin/artikel/create') }}" class="item"><i class="icon plus"></i>Tambah Artikel</a>
-			    <a href="{{ url('admin/artikel/') }}" class="item"><i class="icon list"></i>Daftar Artikel</a>
+			    <a href="{{ url('admin/juktek/tambah') }}" class="item"><i class="icon plus"></i>Tambah Juktek</a>
+			    <a href="{{ url('admin/juktek') }}" class="item"><i class="icon list"></i>Daftar Juktek</a>
 		  	</div>
 		</div>
 		<div class="ui pointing dropdown link item">
-			<span class="text">Kategori</span>
+			<span class="text">Blog</span>
 			<i class="dropdown icon"></i>
 			<div class="menu">
+				<a href="{{ url('admin/artikel/create') }}" class="item"><i class="icon plus"></i>Tambah Artikel</a>
+			    <a href="{{ url('admin/artikel/') }}" class="item"><i class="icon list"></i>Daftar Artikel</a>
 			    <a href="{{ url('admin/kategori/create') }}" class="item"><i class="icon plus"></i>Tambah Kategori</a>
 			    <a href="{{ url('admin/kategori') }}" class="item"><i class="icon list"></i>Daftar Kategori</a>
+			    <a href="{{ url('admin/tag/create') }}" class="item"><i class="icon plus"></i>Tambah Tag</a>
+			    <a href="{{ url('admin/tag') }}" class="item"><i class="icon list"></i>Daftar Tag</a>
 		  	</div>
 		</div>
 		<div class="ui pointing dropdown link item">
-			<span class="text">Tag</span>
+			<span class="text">Perpustakaan</span>
+			<i class="dropdown icon"></i>
+			<div class="menu">
+			    <a href="{{ url('admin/perpus/buku/tambah') }}" class="item"><i class="icon plus"></i>Tambah Buku</a>
+			    <a href="{{ url('admin/perpus/buku') }}" class="item"><i class="icon list"></i>Daftar Buku</a>
+			    <a href="{{ url('admin/perpus/kategori/tambah') }}" class="item"><i class="icon plus"></i>Tambah Kategori</a>
+		  	</div>
+		</div>
+		<div class="ui pointing dropdown link item">
+			<span class="text">Markets</span>
 			<i class="dropdown icon"></i>
 			<div class="menu">
 			    <a href="{{ url('admin/tag/create') }}" class="item"><i class="icon plus"></i>Tambah Tag</a>
