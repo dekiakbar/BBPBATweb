@@ -218,7 +218,7 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 	Route::get('/',function(){
-		return view('admin.dashboard');
+		return view('index');
 	});
 
 });
