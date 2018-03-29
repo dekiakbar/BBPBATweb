@@ -89,45 +89,42 @@
         </div>
         <div style="text-align: center" class="fifteen wide column">
             <div class="ui blue three item inverted menu">
-              <a class="item">
-                Ikan
-              </a>
-              <a class="item">
-                Kodok
-              </a>
-              <a class="item">
-                Udang
-              </a>
+             @foreach($kats as $kat)
+             	<a class="item">{{$kat->nama_kategori}}</a>
+             @endforeach
             </div>
         </div>
         <div style="margin-left: 43px" class="fifteen wide column">
-        <div class="ui cards">
-          	@foreach($datas as $data)
-          		<div class="ui card">
-	              	<div class="content">
-	                  	<i class="comment icon"></i>
-	                	<a>{{$data->nama_ikan}}</a><br><br>
-	                	<img class="ui small image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
-	              	</div>
-	              	<div class="image">
-	              	  	<img>
-	              	</div>
-	              	<div class="content">
-	              	  	<span class="right floated">
-	              	    	<i class="heart outline like icon"></i>
-	              	    	<a>{{$data->stok}}</a>
-	              	  	</span>
-	              	    <i class="dollar sign icon"></i>
-	              	  	<a>{{$data->harga}}</a>
-	              	</div>
-	               	<div class="content">
-	               	 	<a class="ui icon button">
-	               	   		<i class="shopping cart icon"></i>
-	               	 	</a>
-	              	</div>
-	            </div>
-          	@endforeach
-        </div>
+
+	        <div class="ui segment">
+	        	<div class="ui cards">
+		          	@foreach($datas as $data)
+		          		<div class="ui card">
+			              	<div class="content">
+			                  	<i class="comment icon"></i>
+			                	<a>{{$data->nama_ikan}}</a>
+			                	<br>
+			                	<br>
+			                	<img class="ui small image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
+			              	</div>
+			              	<div class="content">
+			              	  	<span class="right floated">
+			              	    	<i class="gift icon"></i>
+			              	    	<a>{{$data->stok}}</a>
+			              	  	</span>
+			              	    <i class="dollar sign icon"></i>
+			              	  	<a>{{$data->harga}}</a>
+			              	</div>
+			               	<div class="content">
+			               	 	<a class="ui icon button">
+			               	   		<i class="shopping cart icon"></i>
+			               	 	</a>
+			              	</div>
+			            </div>
+		          	@endforeach
+	        	</div>
+	        </div>
+
         </div>
     </div>
 
