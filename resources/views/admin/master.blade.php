@@ -8,7 +8,6 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/manual.css') }}">
-
 </head>
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
@@ -71,7 +70,7 @@
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
 		<div class="header item">
-    		Laravel Artikel
+    		Super Admin Dashboard
   		</div>
   		<div class="right menu">
   			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
@@ -84,26 +83,40 @@
 	  		<div class="ui grid center aligned">
 		  		<div class="ui vertical menu">
 		  			<div class="item">
-				    	<div class="header">Artikel</div>
+				    	<div class="header">Portal</div>
 				    	<div class="menu">
-				      		<a class="item">Tambah Artikel</a>
-				      		<a class="item">Daftar Artikel</a>
+				      		<a href="{{ url('admin/juktek/tambah') }}" class="item">Tambah Juktek</a>
+			    			<a href="{{ url('admin/juktek') }}" class="item">Daftar Juktek</a>
 				    	</div>
 				  	</div>
 			  		<div class="item">
-			    		<div class="header">Kategori</div>
+			    		<div class="header">Blog</div>
 			    		<div class="menu">
-			      			<a class="item">Tambah Kategori</a>
-			      			<a class="item">Daftar Kategori</a>
+			      			<a href="{{ url('admin/artikel/create') }}" class="item">Tambah Artikel</a>
+			    			<a href="{{ url('admin/artikel/') }}" class="item">Daftar Artikel</a>
+			    			<a href="{{ url('admin/kategori/create') }}" class="item">Tambah Kategori</a>
+			    			<a href="{{ url('admin/kategori') }}" class="item">Daftar Kategori</a>
+			    			<a href="{{ url('admin/tag/create') }}" class="item">Tambah Tag</a>
+			    			<a href="{{ url('admin/tag') }}" class="item">Daftar Tag</a>
 			    		</div>
 			  		</div>
 				  	<div class="item">
-				    	<div class="header">Tag</div>
+				    	<div class="header">Perpustakaan</div>
 				    	<div class="menu">
-				      		<a class="item">Tambah Tag</a>
-				      		<a class="item">Daftar Tag</a>
+				      		<a href="{{ url('admin/perpus/buku/tambah') }}" class="item">Tambah Buku</a>
+			    			<a href="{{ url('admin/perpus/buku') }}" class="item">Daftar Buku</a>
+			    			<a href="{{ url('admin/perpus/kategori/tambah') }}" class="item">Tambah Kategori</a>
 				    	</div>
 				  	</div>
+				  	<div class="item">
+				    	<div class="header">Perpustakaan</div>
+				    	<div class="menu">
+				    		<a href="{{ url('admin/shop/produk/tambah') }}" class="item">Tambah Produk</a>
+			    			<a href="{{ url('admin/shop/produk') }}" class="item">Daftar Produk</a>
+			    			<a href="{{ url('admin/shop/kategori/tambah') }}" class="item">Tambah Kategori</a>
+			    			<a href="{{ url('admin/shop/kategori') }}" class="item">Daftar Kategori</a>
+				    	</div>
+				    </div>
 		  		</div>
 			</div>
 		</div>

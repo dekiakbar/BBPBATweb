@@ -112,17 +112,19 @@ Route::domain('perpus.bbpbat.com')->group(function(){
 
 Route::domain('shop.bbpbat.com')->group(function(){
 	//Route Admin Shop
-	Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
-		// Route::get('/', 'HomeController@index')->name('home');
-		// Route::get('kategori-shop/tambah','KshopCont@KStambah');
-		// Route::get('kategori/','KshopCont@index');
+	// Route::group(['prefix' => 'admin', 'middleware' => 'auth'] ,function () {
+	// 	// Route::get('/', 'HomeController@index')->name('home');
+	// 	// Route::get('kategori-shop/tambah','KshopCont@KStambah');
+	// 	// Route::get('kategori/','KshopCont@index');
 
-	});
+	// });
 
 	//Route Login
 	// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	// Route::post('login', 'Auth\LoginController@login');
 	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+	Route::get('/','ShopContClient@index');
 });
 
 /*
