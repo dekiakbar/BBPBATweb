@@ -1,38 +1,55 @@
-@extends('admin.master')
-@section('judul','Dashboard Admin')
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<title>template admin nyah</title>
+	<meta name="csrf-token" content="">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/manual.css'">
 
-@section('isi')    
+</head>
+<body style="background-image: url(jpg/1.jpg);background-size: contain">
+<img class="ui image" src="">
+    
+	
+    
 <div class="ui stackable one column grid">
   <div style="background-color:; height: 200px" class="column">
     </div>
     <div style="background-color:; height: 350px" class="column">
         
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">
-            <p>BBPBAT SUKABUMI</p>
+        <p>BBPBAT SUKABUMI
+			</p>
         </div>
         
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">
             <div class="ui stackable center aligned four column grid">
                 <div class="column">
-                    <button class="ui icon button">
-                        <i style="width: 150px; height: 100px" class="newspaper icon"><p>PORTAL</p></i>
-                    </button>
+                    <a href="" class="ui icon button">
+                      <i style="width: 150px; height: 100px" class="newspaper icon"><p>PORTAL</p></i>
+                    </a>
                 </div>
+                
                 <div class="column">
-                    <button class="ui icon button">
-                        <i style="width: 150px; height: 100px" class="globe icon"><p>BLOG</p></i>
-                    </button>
+                    <a href="{{url('admin/blog')}}" class="ui icon button">
+                      <i style="width: 150px; height: 100px" class="globe icon"><p>BLOG</p></i>
+                    </a>
                 </div>
+
                 <div class="column">
-                    <button class="ui icon button">
-                        <i style="width: 150px; height: 100px" class="book icon"><p>PERPUSTAKAAN</p></i>
-                    </button>
+                    <a href="{{url('admin/perpus/buku')}}" class="ui icon button">
+                      <i style="width: 150px; height: 100px" class="book icon"><p>PERPUSTAKAAN</p></i>
+                    </a>
                 </div>
+
                 <div class="column">
-                    <button class="ui icon button">
-                        <i style="width: 150px; height: 100px" class="shopping cart icon"><p>MARKETS</p></i>
-                    </button>
+                <a href="{{url('admin/shop/produk')}}" class="ui icon button">
+                  <i style="width: 150px; height: 100px" class="shopping cart icon"><p>MARKETS</p></i>
+                </a>
                 </div>
+                
             </div>
         </div>
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">
@@ -50,4 +67,8 @@
     </div>
         
 </div>
-@endsection
+
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/manual.js"></script>
+</body>
+</html>
