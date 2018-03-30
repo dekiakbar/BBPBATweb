@@ -162,7 +162,6 @@
 
 			</div><!-- /slider-wrapper -->
 
-
 <div class="ui segment">
 	<div class="ui inverted segment">
 	<div class="ui centered grid">
