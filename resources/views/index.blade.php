@@ -310,33 +310,37 @@
 <h2>Petunjuk Teknis</h2>
 </div>
 <div class="ui five column grid">
-  <div class="column">
-    <div class="ui segment">
-      <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		            <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-	   </div>
-	</div>
-</div>
+  
+	@foreach($juknis as $juktek)
+		<div class="column">
+		    <div class="ui segment">
+		      <div class="ui special cards">
+				  <div class="card">
+				    <div class="blurring dimmable image">
+				      <div class="ui dimmer">
+				        <div class="content">
+				          <div class="center">
+				            <div class="ui inverted button" >lihat</div>
+				            <br>
+				            <div class="ui inverted button" >Download</div>
+				          </div>
+				        </div>
+				      </div>
+				      <img src="{{asset('storage/juktek')}}/{{$juktek->foto}}">
+				    <div class="content">
+				      <a class="header">{{$juktek->judul_juktek}}</a>
+				      <div class="meta">
+				        <span class="date">{{$juktek->created_at}}</span>
+				      </div>
+				    </div>	  
+				  </div>
+				 </div>
+			   </div>
+			</div>
+		</div>
+	@endforeach
 
-  <div class="column">
+{{--   <div class="column">
     <div class="ui segment">
        <div class="ui special cards">
 		  <div class="card">
@@ -440,7 +444,7 @@
     </div>
   </div>
 </div>
-
+ --}}
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
 		<button class="ui inverted orange button " onclick="Selanjutnya()">Halaman Lain</button>
