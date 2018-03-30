@@ -318,9 +318,7 @@
 				      <div class="ui dimmer">
 				        <div class="content">
 				          <div class="center">
-				            <div class="ui inverted button" >lihat</div>
-				            <br>
-				            <div class="ui inverted button" >Download</div>
+				            <a href="{{asset('storage/juktek')}}/{{$juktek->file}}" class="ui inverted button" >Download</a>
 				          </div>
 				        </div>
 				      </div>
@@ -445,7 +443,7 @@
  --}}
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
-		<button class="ui inverted orange button " onclick="Selanjutnya()">Halaman Lain</button>
+		<a href="{{url('juknis')}}" class="ui inverted orange button">Halaman Lain</a>
 	</div>
 </div>
 </div>
