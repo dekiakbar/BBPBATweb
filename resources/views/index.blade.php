@@ -98,11 +98,10 @@
 				<h1>BBPABT <span>Official Website</span></h1>
 				
 				<nav class="codrops-demos">
-					<a >Link</a>
-					<a >Link</a>
-					<a >Link</a>
-					<a >Link</a>
-					<a class="current-demo" >Demo 2</a>
+					<a>Home</a>
+					<a href="http://perpus.bbpbat.com:8000">Perpustakaan</a>
+					<a href="http://shop.bbpbat.com:8000">Market</a>
+					<a href="http://blog.bbpbat.com:8000">Blog</a>
 				</nav>
 				
 			</header>
