@@ -15,17 +15,20 @@
 		<div class="header item ">
     		@yield('header') 
   		</div>
-  		<a class="item">
-  			Website
+  		<a href="{{url('http://bbpbat.com:8000')}}" class="item">
+  			Website BBPBAT
   		</a>
-  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="active item">
+  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="item @yield('1')">
 			Perpustakaan
 		</a>
-		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
+		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item @yield('2')">
 		 	Blog
 		</a>
-		<a class="item">
+		<a class="item @yield('3')">
 			Market
+		</a>
+		<a class="item @yield('4')">
+			Juknis
 		</a>
 	</div>
 

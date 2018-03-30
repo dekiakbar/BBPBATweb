@@ -55,7 +55,9 @@
               </td>
               <td class="center aligned">
                 <a href="{{route('juktek.edit',$data->slug)}}" class="ui button teal"><i class="edit icon"></i> Edit</a>
-                <a href="{{route('juktek.detail',$data->slug)}}" class="ui button blue"><i class="zoom icon"></i> Lihat</a>
+                @if(!empty($data->file))
+                  <a href="{{asset('storage/juktek')}}/{{$data->file}}" class="ui button blue"><i class="zoom icon"></i> Lihat</a>
+                @endif
                 <a onclick="hapus()" id="hapus" data-slug="{{route('juktek.hapus',$data->slug)}}" data-token="{{ csrf_token() }}" class="ui button red">
                   <i class="trash icon"></i> 
                   Hapus
