@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="" content="">
 	<title>Portal</title>
-	<meta name="csrf-token" content="">
+	<meta name="csrf-token" content="{{csrf_token()}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
 </head>
 <body>
 
-	<div class="ui modal coba" style="margin-left: 250px;padding-top: 25% !important;">
+	<div class="ui modal coba" >
 		<i class="close icon"></i>
 		<div class="image content">
    			<div class="ui medium image">
@@ -98,10 +98,10 @@
 				<h1>BBPABT <span>Official Website</span></h1>
 				
 				<nav class="codrops-demos">
-					<a >Demo 1</a>
-					<a >Demo 1</a>
-					<a >Demo 1</a>
-					<a >Demo 1</a>
+					<a >Link</a>
+					<a >Link</a>
+					<a >Link</a>
+					<a >Link</a>
 					<a class="current-demo" >Demo 2</a>
 				</nav>
 				
@@ -115,7 +115,8 @@
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
 							<h2>A bene placito.</h2>
-							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+							<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p><cite>Ralph Waldo Emerson</cite></blockquote>
 						</div>
 					</div>
 					
@@ -441,9 +442,9 @@
 </div>
 
 <div class="ui grid" style="margin: 0 auto;">
-		 <div class="ui inverted segment">
-<button class="ui inverted orange button " onclick="Selanjutnya()">Halaman Lain</button>
-</div>
+	<div class="ui inverted segment">
+		<button class="ui inverted orange button " onclick="Selanjutnya()">Halaman Lain</button>
+	</div>
 </div>
 </div>
 </div>
@@ -452,19 +453,11 @@
 
 <div class="ui segment">
 <div class="ui centered grid">
-<div class="ui inverted segment">
+{{-- <div class="ui inverted segment"> --}}
 
 <button class="ui inverted orange button" onclick="about()">About</button>
 <br>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla par
-
-iatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</div>
+	{{-- </div> --}}
 </div>
 </div>
 
@@ -531,26 +524,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   			.modal('show');
 		}	
 	</script>
-
-		<script type="text/javascript">$(function() {
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
 	
 	<script type="text/javascript">	
 		$(function() {

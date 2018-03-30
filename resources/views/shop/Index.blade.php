@@ -94,7 +94,7 @@
              @endforeach
             </div>
         </div>
-        <div style="margin-left: 43px" class="fifteen wide column">
+        <div class="fifteen wide column">
 
 	        <div class="ui segment">
 	        	<div class="ui cards">
@@ -103,10 +103,8 @@
 			              	<div class="content">
 			                  	<i class="comment icon"></i>
 			                	<a>{{$data->nama_ikan}}</a>
-			                	<br>
-			                	<br>
-			                	<img class="ui small image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
 			              	</div>
+			              	<img class="ui image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
 			              	<div class="content">
 			              	  	<span class="right floated">
 			              	    	<i class="gift icon"></i>
