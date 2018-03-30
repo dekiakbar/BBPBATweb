@@ -125,6 +125,7 @@ Route::domain('shop.bbpbat.com')->group(function(){
 	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 	Route::get('/','ShopContClient@index');
+	Route::get('/kategori/{id}','ShopContClient@kategori')->name('shop.kategori');
 });
 
 /*

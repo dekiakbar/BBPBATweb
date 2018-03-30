@@ -6,11 +6,12 @@
 	<meta name="" content="">
 	<title>Market BBPBAT</title>
 	<meta name="csrf-token" content="">
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="css/manual.css'">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
 <body>
+
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
     		Market BBPBAT
@@ -19,10 +20,10 @@
 			<span class="text">Kategori</span>
 			<i class="dropdown icon"></i>
 			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Ikan</a>
-			    <a href="" class="item"><i class="icon list"></i>kodok</a>
-                <a href="" class="item"><i class="icon list"></i>Udang</a>
-		  	</div>
+			    @foreach($kategoris as $k)
+			    	<a href="{{route('shop.kategori',$k->id)}}" class="item"><i class="icon plus"></i>{{$k->nama_kategori}}</a>
+			    @endforeach		  	
+			</div>
 		</div>
 		<div class="ui pointing dropdown link item">
 			<span class="text">Keranjang</span>
@@ -31,19 +32,6 @@
 			    <a href="" class="item"><i class="icon plus"></i>List Barang</a>
 			    <a href="" class="item"><i class="icon list"></i>Pembayaran</a>
 		  	</div>
-		</div>
-		<div class="right menu">
-		  	<a href="" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
-		  		<div class="hidden content">
-					<i class="sign out icon"></i>
-				</div>
-				<div class="visible content">
-					Keluar    
-				</div>
-		  	</a>
-		  	<form id="keluar" action="" method="POST" style="display: none;">
- 
-            </form>
 		</div>
 	</div>
 
@@ -138,7 +126,7 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/manual.js"></script>
+	<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
 </body>
 </html>
