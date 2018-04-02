@@ -7,6 +7,12 @@ use App\Pkl;
 
 class PklController extends Controller
 {
+	public function index(Request $request)
+	{
+		$datas = Pkl::paginate(10);
+		return view('indexpkl',compact('datas'))->with('no',($request->input('page',1)-1)*10);
+	}
+
     public function tambah()
     {
     	return view('daftarpkl');
@@ -40,6 +46,25 @@ class PklController extends Controller
     	return view('Edaftarpkl',compact('data'));
     }
 
-    // public function 
+    public function perbaharui(Request $request, $id)
+    {
+    	$update = findOrFail($id);
+    	$update->nama_kegiatan = $request->input('nama_kegiatan');
+    	$update->nama_lengkap = $request->input('nama');
+    	$update->email = $request->input('email');
+    	$update->ttl = $request->input('ttl');
+    	$update->alamat = $request->input('alamat_rumah');
+    	$update->no = $request->input('no');
+    	$update->nama_instansi = $request->input('instansi');
+    	$update->alamat_instansi = $request->input('alamat_instansi');
+    	$update->alamat_tinggal = $request->input('alamat_tinggal');
+    	$update->judul_kegiatan = $request->input('judul_kegiatan');
+    	$update->mulai = $request->input('mulai');
+    	$update->selesai = $request->input('selesai');
+    	$update->golongan = $request->input('golongan');
+
+    	$update->save();
+    	return redirect('pkl/');
+    }
 
 }

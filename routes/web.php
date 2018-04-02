@@ -207,6 +207,7 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::delete('shop/produk/{slug}','ShopCont@hapus')->name('shop.hapus');
 
 		//===================================PKLAN===========================================
+		Route::get('pkl','PklController@index');
 		Route::get('pkl/tambah','PklController@tambah');
 		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
 		Route::get('pkl/{id}/edit','PklController@edit');
@@ -225,10 +226,7 @@ Route::domain('bbpbat.com')->group(function(){
 
 
 	Route::get('juknis','JuknisContClient@index');
-	//Route::get('/','PortalController@index');
-	Route::get('/',function(){
-		return view('daftarpkl');
-	});
+	Route::get('/','PortalController@index');
 
 });
 
