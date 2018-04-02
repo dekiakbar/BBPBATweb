@@ -205,6 +205,10 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('shop/produk/{slug}/edit','ShopCont@edit')->name('shop.edit');
 		Route::patch('shop/produk/{slug}','ShopCont@simpan')->name('shop.update');
 		Route::delete('shop/produk/{slug}','ShopCont@hapus')->name('shop.hapus');
+
+		//===================================PKLAN===========================================
+		Route::get('pkl/tambah','PklController@tambah');
+		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
 	});
 
 	//Route Login

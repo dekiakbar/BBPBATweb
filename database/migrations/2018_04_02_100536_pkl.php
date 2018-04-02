@@ -25,8 +25,9 @@ class Pkl extends Migration
             $table->string('alamat_instansi');
             $table->string('alamat_tinggal');
             $table->string('judul_kegiatan');
-            $table->varchar('mulai');
-            $table->varchar('selesai');
+            $table->string('mulai',25);
+            $table->string('selesai',25);
+            $table->string('golongan',3);
             $table->timestamps();
         });
     }

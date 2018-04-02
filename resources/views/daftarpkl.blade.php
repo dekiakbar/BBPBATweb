@@ -8,7 +8,8 @@
 	<meta name="csrf-token" content="">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
-
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
@@ -99,12 +100,13 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form">
+        <form class="ui form" method="post" action="{{route('pkl.tambah')}}">
+        	{{csrf_field()}}
           <div class="two fields">
             <div class="field">
             <label>Nama Kegiatan</label>
             <div class="ui selection dropdown">
-              <input type="hidden" name="">
+              <input type="hidden" name="nama_kegiatan">
               <i class="dropdown icon"></i>
               <div class="default text">Pilih Kegiatan</div>
               <div class="menu">
@@ -118,57 +120,71 @@
           </div>
             <div class="field">
             <label>Nama Lengkap</label>
-            <input type="text" name="" placeholder="Masukan Nama Lengkap">
+            <input type="text" name="nama" placeholder="Masukan Nama Lengkap">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Email</label>
-            <input type="text" name="" placeholder="Masukan Alamat Email">
+            <input type="text" name="email" placeholder="Masukan Alamat Email">
           </div>
             <div class="field">
             <label>Tempat/tgl. Lahir</label>
-            <input type="text" name="" placeholder="Tempat & Tanggal Lahir">
+            <input type="text" name="ttl" placeholder="Tempat & Tanggal Lahir">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Alamat Rumah</label>
-            <input type="text" name="" placeholder="Masukan Alamat Lengkap">
+            <input type="text" name="alamat_rumah" placeholder="Masukan Alamat Lengkap">
           </div>
             <div class="field">
             <label>No. Telp/Hp</label>
-            <input type="text" name="" placeholder="Masukan No. Telp/Hp">
+            <input type="text" name="no" placeholder="Masukan No. Telp/Hp">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Nama Instansi/P.Tinggi/Sekolah</label>
-            <input type="text" name="" placeholder="Masukan Nama Lengkap Instansi">
+            <input type="text" name="instansi" placeholder="Masukan Nama Lengkap Instansi">
           </div>
             <div class="field">
             <label>Alamat Instansi/P.Tinggi/Sekolah</label>
-            <input type="text" name="" placeholder="Masukan Alamat Lengkap Instansi">
+            <input type="text" name="alamat_instansi" placeholder="Masukan Alamat Lengkap Instansi">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Alamat di Sukabumi</label>
-            <input type="text" name="" placeholder="Masukan Alamat Anda di Sukabumi">
+            <input type="text" name="alamat_tinggal" placeholder="Masukan Alamat Anda di Sukabumi">
           </div>
             <div class="field">
             <label>Judul Kegiatan</label>
-            <input type="text" name="" placeholder="Masukan Judul Kegiatan">
+            <input type="text" name="judul_kegiatan" placeholder="Masukan Judul Kegiatan">
           </div>
             </div>
-            <div class="two fields">
+            <div class="three fields">
             <div class="field">
             <label>Mulai Kegiatan</label>
-            <input type="text" name="" placeholder="">
+            <input type="text" name="mulai" placeholder="" id="mulai">
           </div>
             <div class="field">
             <label>Akhir Kegiatan</label>
-            <input type="text" name="" placeholder="">
+            <input type="text" name="selesai" placeholder="" id="selesai">
+          </div>
+          <div class="field">
+            <label>Golongan Darah</label>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="golongan">
+              <i class="dropdown icon"></i>
+              <div class="default text">Golongan Darah</div>
+              <div class="menu">
+                <div class="item" data-value="A">A</div>
+                <div class="item" data-value="ABs">B</div>
+                <div class="item" data-value="AB">AB</div>
+                <div class="item" data-value="O">O</div>
+              </div>
+            </div>
           </div>
             </div>
             <button class="ui button" type="submit">Submit</button>
@@ -177,8 +193,6 @@
         </div>
     </div>
     <br>
-   
-
 
 	<footer style="margin-top: 30px;">
 		<div class="ui segment center aligned blue">
@@ -193,5 +207,16 @@
 
 	<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script type="text/javascript">
+  	$( function() {
+    	$("#mulai").datepicker();
+  	});
+
+  	$( function() {
+    	$("#selesai").datepicker();
+  	});
+  	</script>
 </body>
 </html>
