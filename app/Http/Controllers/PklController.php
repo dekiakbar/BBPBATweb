@@ -14,7 +14,7 @@ class PklController extends Controller
 
     public function simpan(Request $request)
     {
-    	$simpan = Pkl::create([
+    	$simpan = Pkl::insert([
     		'nama_kegiatan' => $request->input('nama_kegiatan'),
     		'nama_lengkap' => $request->input('nama'),
     		'email' => $request->input('email'),
@@ -33,5 +33,5 @@ class PklController extends Controller
     	$simpan->save();
     	return redirect('pkl/tambah');
     }
-    
+
 }
