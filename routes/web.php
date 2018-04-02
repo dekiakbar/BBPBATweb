@@ -209,6 +209,7 @@ Route::domain('bbpbat.com')->group(function(){
 		//===================================PKLAN===========================================
 		Route::get('pkl/tambah','PklController@tambah');
 		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
+		Route::get('pkl/{id}/edit','PklController@edit');
 	});
 
 	//Route Login

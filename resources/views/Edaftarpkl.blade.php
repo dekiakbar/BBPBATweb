@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="" content="">
-	<title>Formulir Pendaftaran Magang</title>
+	<title>template admin nyah</title>
 	<meta name="csrf-token" content="">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
@@ -102,13 +102,14 @@
       <div class="column">
         <form class="ui form" method="post" action="{{route('pkl.tambah')}}">
         	{{csrf_field()}}
+          <input type="hidden" name="_method" value="PATCH">
           <div class="two fields">
             <div class="field">
             <label>Nama Kegiatan</label>
             <div class="ui selection dropdown">
               <input type="hidden" name="nama_kegiatan">
               <i class="dropdown icon"></i>
-              <div class="default text">Pilih Kegiatan</div>
+              <div class="default text">{{$data->nama_kegiatan}}</div>
               <div class="menu">
                 <div class="item" data-value="Magang">Magang</div>
                 <div class="item" data-value="Magang Khusus">Magang Khusus</div>
@@ -120,64 +121,64 @@
           </div>
             <div class="field">
             <label>Nama Lengkap</label>
-            <input type="text" name="nama" placeholder="Masukan Nama Lengkap">
+            <input type="text" name="nama" placeholder="Masukan Nama Lengkap" value="{{$data->nama_lengkap}}">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Email</label>
-            <input type="text" name="email" placeholder="Masukan Alamat Email">
+            <input type="text" name="email" placeholder="Masukan Alamat Email" value="{{$data->email}}">
           </div>
             <div class="field">
             <label>Tempat/tgl. Lahir</label>
-            <input type="text" name="ttl" placeholder="Tempat & Tanggal Lahir">
+            <input type="text" name="ttl" placeholder="Tempat & Tanggal Lahir" value="{{$data->ttl}}">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Alamat Rumah</label>
-            <input type="text" name="alamat_rumah" placeholder="Masukan Alamat Lengkap">
+            <input type="text" name="alamat_rumah" placeholder="Masukan Alamat Lengkap" value="{{$data->alamat}}">
           </div>
             <div class="field">
             <label>No. Telp/Hp</label>
-            <input type="text" name="no" placeholder="Masukan No. Telp/Hp">
+            <input type="text" name="no" placeholder="Masukan No. Telp/Hp" value="{{$data->no}}">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Nama Instansi/P.Tinggi/Sekolah</label>
-            <input type="text" name="instansi" placeholder="Masukan Nama Lengkap Instansi">
+            <input type="text" name="instansi" placeholder="Masukan Nama Lengkap Instansi" value="{{$data->nama_instansi}}">
           </div>
             <div class="field">
             <label>Alamat Instansi/P.Tinggi/Sekolah</label>
-            <input type="text" name="alamat_instansi" placeholder="Masukan Alamat Lengkap Instansi">
+            <input type="text" name="alamat_instansi" placeholder="Masukan Alamat Lengkap Instansi" value="{{$data->alamat_instansi}}">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Alamat di Sukabumi</label>
-            <input type="text" name="alamat_tinggal" placeholder="Masukan Alamat Anda di Sukabumi">
+            <input type="text" name="alamat_tinggal" placeholder="Masukan Alamat Anda di Sukabumi" value="{{$data->alamat_tinggal}}">
           </div>
             <div class="field">
             <label>Judul Kegiatan</label>
-            <input type="text" name="judul_kegiatan" placeholder="Masukan Judul Kegiatan">
+            <input type="text" name="judul_kegiatan" placeholder="Masukan Judul Kegiatan" value="{{$data->judul_kegiatan}}">
           </div>
             </div>
             <div class="three fields">
             <div class="field">
             <label>Mulai Kegiatan</label>
-            <input type="text" name="mulai" placeholder="" id="mulai">
+            <input type="text" name="mulai" id="mulai" value="{{$data->mulai}}">
           </div>
             <div class="field">
             <label>Akhir Kegiatan</label>
-            <input type="text" name="selesai" placeholder="" id="selesai">
+            <input type="text" name="selesai" id="selesai" value="{{$data->mulai}}">
           </div>
           <div class="field">
             <label>Golongan Darah</label>
             <div class="ui selection dropdown">
               <input type="hidden" name="golongan">
               <i class="dropdown icon"></i>
-              <div class="default text">Golongan Darah</div>
+              <div class="default text">{{$data->golongan}}</div>
               <div class="menu">
                 <div class="item" data-value="A">A</div>
                 <div class="item" data-value="ABs">B</div>

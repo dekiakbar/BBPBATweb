@@ -34,4 +34,12 @@ class PklController extends Controller
     	return redirect('pkl/tambah');
     }
 
+    public function edit($id)
+    {
+    	$data = Pkl::findOrFail($id);
+    	return view('Edaftarpkl',compact('data'));
+    }
+
+    // public function 
+
 }
