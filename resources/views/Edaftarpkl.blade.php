@@ -100,7 +100,7 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form" method="post" action="{{route('pkl.tambah')}}">
+        <form class="ui form" method="post" action="{{route('pkl.update',$data->id)}}">
         	{{csrf_field()}}
           <input type="hidden" name="_method" value="PATCH">
           <div class="two fields">

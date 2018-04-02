@@ -37,7 +37,7 @@ class PklController extends Controller
     	]);
 
     	$simpan->save();
-    	return redirect('pkl/tambah');
+    	return redirect('admin/pkl/tambah');
     }
 
     public function edit($id)
@@ -48,7 +48,7 @@ class PklController extends Controller
 
     public function perbaharui(Request $request, $id)
     {
-    	$update = findOrFail($id);
+    	$update = Pkl::findOrFail($id);
     	$update->nama_kegiatan = $request->input('nama_kegiatan');
     	$update->nama_lengkap = $request->input('nama');
     	$update->email = $request->input('email');
@@ -64,7 +64,7 @@ class PklController extends Controller
     	$update->golongan = $request->input('golongan');
 
     	$update->save();
-    	return redirect('pkl/');
+    	return redirect('admin/pkl');
     }
 
 }

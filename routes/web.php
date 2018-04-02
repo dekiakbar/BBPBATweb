@@ -210,7 +210,8 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('pkl','PklController@index');
 		Route::get('pkl/tambah','PklController@tambah');
 		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
-		Route::get('pkl/{id}/edit','PklController@edit');
+		Route::get('pkl/{id}/edit','PklController@edit')->name('pkl.edit');
+		Route::patch('pkl/{id}','PklController@perbaharui')->name('pkl.update');
 	});
 
 	//Route Login

@@ -5,7 +5,7 @@
 	<meta name="description" content="">
 	<meta name="" content="">
 	<title>template admin nyah</title>
-	<meta name="csrf-token" content="">
+	<meta name="csrf-token" content="{{csrf_token()}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
@@ -131,13 +131,13 @@
                   <tr>
                       <td>{{++$no}}</td>
                       <td>{{$data->nama_lengkap}}</td>
-                      <td>{{$data->instansi}}</td>
+                      <td>{{$data->nama_instansi}}</td>
                       <td>{{$data->judul_kegiatan}}</td>
                       <td>{{$data->mulai}}</td>
                       <td>{{$data->selesai}}</td>
                       <td style="text-align: center">
                           <div class="mini ui buttons">
-                            <button class="ui green button">E</button>
+                            <a href="{{route('pkl.edit',$data->id)}}" class="ui green button">E</a>
                             <div class="or"></div>
                             <button class="ui red button">H</button>
                             <button style="margin-left: 5px" class="ui blue button">PDF</button>
@@ -149,7 +149,9 @@
                 @endforeach
               </tbody>
             </table>
-            
+            <div class="ui container center aligned">
+              {{ $datas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
+            </div>
         </div>
     </div>
 
