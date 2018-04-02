@@ -220,7 +220,10 @@ Route::domain('bbpbat.com')->group(function(){
 
 
 	Route::get('juknis','JuknisContClient@index');
-	Route::get('/','PortalController@index');
+	//Route::get('/','PortalController@index');
+	Route::get('/',function(){
+		return view('daftarpkl');
+	});
 
 });
 
