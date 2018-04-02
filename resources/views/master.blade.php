@@ -8,6 +8,8 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/manual.css') }}">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">  	
 
 </head>
 <body>
@@ -77,6 +79,7 @@
 	</footer>
 
 	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>
 	<script type="text/javascript">

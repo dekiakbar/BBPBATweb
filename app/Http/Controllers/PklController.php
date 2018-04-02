@@ -10,12 +10,12 @@ class PklController extends Controller
 	public function index(Request $request)
 	{
 		$datas = Pkl::paginate(10);
-		return view('pkl.indexpkl',compact('datas'))->with('no',($request->input('page',1)-1)*10);
+		return view('admin.pkl.indexpkl',compact('datas'))->with('no',($request->input('page',1)-1)*10);
 	}
 
     public function tambah()
     {
-    	return view('pkl.daftarpkl');
+    	return view('admin.pkl.daftarpkl');
     }
 
     public function simpan(Request $request)
@@ -37,13 +37,13 @@ class PklController extends Controller
     	]);
 
     	$simpan->save();
-    	return redirect('admin/pkl/tambah');
+    	return redirect('admin/pkl');
     }
 
     public function edit($id)
     {
     	$data = Pkl::findOrFail($id);
-    	return view('pkl.Edaftarpkl',compact('data'));
+    	return view('admin.pkl.Edaftarpkl',compact('data'));
     }
 
     public function perbaharui(Request $request, $id)
@@ -73,4 +73,10 @@ class PklController extends Controller
     	$hapus->delete();
     }
 
+    public function download_csv(Request $req)
+    {
+    	$pkl = Pkl::whereBetween('mulai', [$req->input('dari'), $req->input('sampai')])->get();
+    	$csv = new \Laracsv\Export();
+    	$csv->build($pkl,['email','nama_lengkap'])->download();
+    }
 }
