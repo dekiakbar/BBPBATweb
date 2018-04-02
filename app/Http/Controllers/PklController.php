@@ -10,12 +10,12 @@ class PklController extends Controller
 	public function index(Request $request)
 	{
 		$datas = Pkl::paginate(10);
-		return view('indexpkl',compact('datas'))->with('no',($request->input('page',1)-1)*10);
+		return view('pkl.indexpkl',compact('datas'))->with('no',($request->input('page',1)-1)*10);
 	}
 
     public function tambah()
     {
-    	return view('daftarpkl');
+    	return view('pkl.daftarpkl');
     }
 
     public function simpan(Request $request)
@@ -43,7 +43,7 @@ class PklController extends Controller
     public function edit($id)
     {
     	$data = Pkl::findOrFail($id);
-    	return view('Edaftarpkl',compact('data'));
+    	return view('pkl.Edaftarpkl',compact('data'));
     }
 
     public function perbaharui(Request $request, $id)
@@ -65,6 +65,12 @@ class PklController extends Controller
 
     	$update->save();
     	return redirect('admin/pkl');
+    }
+
+    public function hapus($id)
+    {
+    	$hapus = Pkl::findOrFail($id);
+    	$hapus->delete();
     }
 
 }

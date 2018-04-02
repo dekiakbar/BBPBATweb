@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="" content="">
-	<title>template admin nyah</title>
-	<meta name="csrf-token" content="{{csrf_token()}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
+<!DOCTYPE html> <html> <head>   <meta charset="utf-8">   <meta
+name="description" content="">   <meta name="" content="">   <title>Daftar
+Peserta Magang</title>   <meta name="csrf-token" content="{{csrf_token()}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
 <body>
