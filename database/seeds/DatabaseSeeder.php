@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(tamuSeeder::class);
         $this->call(KperpusSeeder::class);
         $this->call(BperpusSeeder::class);
+        $this->call(PklSeeder::class);
     }
 }

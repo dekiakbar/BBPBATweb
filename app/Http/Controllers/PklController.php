@@ -20,7 +20,12 @@ class PklController extends Controller
 
     public function simpan(Request $request)
     {
-    	$simpan = Pkl::insert([
+    	$mulai = strtotime($request->input('mulai'));
+    	$selesai = strtotime($request->input('selesai'));
+    	$mulai = date('Y-m-d',$mulai);
+    	$selesai = date('Y-m-d',$selesai);
+
+    	$simpan = Pkl::create([
     		'nama_kegiatan' => $request->input('nama_kegiatan'),
     		'nama_lengkap' => $request->input('nama'),
     		'email' => $request->input('email'),
@@ -31,8 +36,8 @@ class PklController extends Controller
     		'alamat_instansi' => $request->input('alamat_instansi'),
     		'alamat_tinggal' => $request->input('alamat_tinggal'),
     		'judul_kegiatan' => $request->input('judul_kegiatan'),
-    		'mulai' => $request->input('mulai'),
-    		'selesai' => $request->input('selesai'),
+    		'mulai' => $mulai,
+    		'selesai' => $selesai,
     		'golongan' => $request->input('golongan')
     	]);
 
@@ -48,6 +53,11 @@ class PklController extends Controller
 
     public function perbaharui(Request $request, $id)
     {
+    	$mulai = strtotime($request->input('mulai'));
+    	$selesai = strtotime($request->input('selesai'));
+    	$mulai = date('Y-m-d',$mulai);
+    	$selesai = date('Y-m-d',$selesai);
+
     	$update = Pkl::findOrFail($id);
     	$update->nama_kegiatan = $request->input('nama_kegiatan');
     	$update->nama_lengkap = $request->input('nama');
@@ -59,8 +69,8 @@ class PklController extends Controller
     	$update->alamat_instansi = $request->input('alamat_instansi');
     	$update->alamat_tinggal = $request->input('alamat_tinggal');
     	$update->judul_kegiatan = $request->input('judul_kegiatan');
-    	$update->mulai = $request->input('mulai');
-    	$update->selesai = $request->input('selesai');
+    	$update->mulai = $mulai;
+    	$update->selesai = $selesai;
     	$update->golongan = $request->input('golongan');
 
     	$update->save();
