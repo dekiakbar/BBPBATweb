@@ -55,7 +55,7 @@
                       <td>{{$data->nama_lengkap}}</td>
                       <td>{{$data->nama_instansi}}</td>
                       <td>{{$data->judul_kegiatan}}</td>
-                      <td>{{$data->mulai->format('d-m-Y')}}</td>
+                      <td>{{$data->mulai}}</td>
                       <td>{{$data->selesai}}</td>
                       <td style="text-align: center">
                           <div class="mini ui buttons">

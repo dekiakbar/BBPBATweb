@@ -85,8 +85,19 @@ class PklController extends Controller
 
     public function download_csv(Request $req)
     {
-    	$pkl = Pkl::whereBetween('mulai', [$req->input('dari'), $req->input('sampai')])->get();
+    	$mulai = strtotime($req->input('mulai'));
+    	$selesai = strtotime($req->input('selesai'));
+    	$mulai = date('Y-m-d',$mulai);
+    	$selesai = date('Y-m-d',$selesai);
+
+    	$pkl =  Pkl::whereBetween('mulai', [$req->mulai, $req->selesai])->get();
+    	// return response()->json($pkl);
     	$csv = new \Laracsv\Export();
-    	$csv->build($pkl,['email','nama_lengkap'])->download();
+    	$csv->build($pkl,[
+    		'nama_kegiatan','nama_lengkap','email','ttl','alamat',
+    		'no','nama_instansi','alamat_instansi','alamat_tinggal',
+    		'judul_kegiatan','mulai','selesai','golongan'
+    	])
+    	->download();
     }
 }

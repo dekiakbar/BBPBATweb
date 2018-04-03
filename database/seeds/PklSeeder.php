@@ -30,8 +30,8 @@ class PklSeeder extends Seeder
     			'alamat_instansi' => $faker->address,
     			'alamat_tinggal' => $faker->address,
     			'judul_kegiatan' =>$faker->word,
-    			'mulai' => $faker->date($format = 'Y-m-d', $max = 2010),
-    			'selesai' => $faker->date($format = 'Y-m-d', $max = 'now'),
+    			'mulai' => $faker->dateTimeBetween($startDate = '-80 months', $endDate = '-10 months', $timezone = null),
+    			'selesai' => $faker->dateTimeBetween($startDate = '-5 months', $endDate = 'now', $timezone = null),
     			'golongan' => $faker->randomElement($gol),
         	]);
         }
