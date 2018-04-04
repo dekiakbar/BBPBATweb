@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pkl;
 
+use PDF;
 class PklController extends Controller
 {
 	public function index(Request $request)
@@ -99,5 +100,14 @@ class PklController extends Controller
     		'judul_kegiatan','mulai','selesai','golongan'
     	])
     	->download();
+    }
+
+    public function pdf($id)
+    {
+    	$data = Pkl::where('id',$id)->first();
+
+        // view()->share(['data'=>$data]);
+    	$pdf = PDF::loadView('pdf.magang',$data);
+    	return $pdf->stream('magang.pdf');
     }
 }

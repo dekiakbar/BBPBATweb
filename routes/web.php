@@ -213,6 +213,7 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('pkl/{id}/edit','PklController@edit')->name('pkl.edit');
 		Route::patch('pkl/{id}','PklController@perbaharui')->name('pkl.update');
 		Route::post('pkl/download','PklController@download_csv')->name('pkl.csv.download');
+		Route::get('pkl/pdf/{id}','PklController@pdf')->name('pdf');
 	});
 
 	//Route Login

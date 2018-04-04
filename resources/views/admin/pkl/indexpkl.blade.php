@@ -62,7 +62,7 @@
                             <a href="{{route('pkl.edit',$data->id)}}" class="ui green button">E</a>
                             <div class="or"></div>
                             <button class="ui red button">H</button>
-                            <button style="margin-left: 5px" class="ui blue button">PDF</button>
+                            <a href="{{route('pdf',$data->id)}}" style="margin-left: 5px" class="ui blue button">PDF</a>
                           
                           </div>
                           

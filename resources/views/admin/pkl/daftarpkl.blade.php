@@ -180,7 +180,7 @@
               <div class="default text">Golongan Darah</div>
               <div class="menu">
                 <div class="item" data-value="A">A</div>
-                <div class="item" data-value="ABs">B</div>
+                <div class="item" data-value="AB">B</div>
                 <div class="item" data-value="AB">AB</div>
                 <div class="item" data-value="O">O</div>
               </div>
