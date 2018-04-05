@@ -166,7 +166,7 @@ return [
         Unisharp\Ckeditor\ServiceProvider::class,
         Chencha\Share\ShareServiceProvider::class,
         \hisorange\BrowserDetect\ServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+        // Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...

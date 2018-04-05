@@ -25,11 +25,11 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{$data->nama_lengkap}}</td>
+                {{-- <td>{{$data->nama_lengkap}}</td>
                 <td>{{$data->nama_instansi}}</td>
                 <td>{{$data->judul_kegiatan}}</td>
                 <td>{{$data->mulai}}</td>
-                <td>{{$data->selesai}}</td>
+                <td>{{$data->selesai}}</td> --}}
             </tr>
         </tbody>
     </table>
