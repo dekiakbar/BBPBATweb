@@ -7,7 +7,7 @@ function buatSlug(){
 //deopdown pada menu semantic
 $('.ui.dropdown')
   	.dropdown({
-  		on : 'hover'
+  	on : 'hover'
 });
 
 $('.ui.fluid.dropdown')
@@ -100,3 +100,12 @@ function tentang(){
     blurring:true
   }).modal('show');
 }
+
+//datepicker form index pkl
+$(function(){
+  $("#minimal").datepicker();
+});
+
+$(function(){
+  $("#maksimal").datepicker();
+});

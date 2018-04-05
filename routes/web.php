@@ -205,6 +205,15 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::get('shop/produk/{slug}/edit','ShopCont@edit')->name('shop.edit');
 		Route::patch('shop/produk/{slug}','ShopCont@simpan')->name('shop.update');
 		Route::delete('shop/produk/{slug}','ShopCont@hapus')->name('shop.hapus');
+
+		//===================================PKLAN===========================================
+		Route::get('pkl','PklController@index');
+		Route::get('pkl/tambah','PklController@tambah');
+		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
+		Route::get('pkl/{id}/edit','PklController@edit')->name('pkl.edit');
+		Route::patch('pkl/{id}','PklController@perbaharui')->name('pkl.update');
+		Route::post('pkl/download','PklController@download_csv')->name('pkl.csv.download');
+		Route::get('pkl/pdf/{id}','PklController@pdf')->name('pdf');
 	});
 
 	//Route Login
