@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(KperpusSeeder::class);
         $this->call(BperpusSeeder::class);
         $this->call(PklSeeder::class);
+        $this->call(juktekSeeder::class);
     }
 }

@@ -90,7 +90,6 @@ class PklController extends Controller
     	$selesai = date('Y-m-d',strtotime($req->input('sampai')));
 
     	$pkl =  Pkl::whereBetween('mulai', [$mulai, $selesai])->get();
-    	//return response()->json($pkl);
     	$csv = new \Laracsv\Export();
     	$csv->build($pkl,[
     		'nama_kegiatan','nama_lengkap','email','ttl','alamat',
@@ -103,8 +102,6 @@ class PklController extends Controller
     public function pdf($id)
     {
     	$data = Pkl::where('id',$id)->first();
-
-        // view()->share(['data'=>$data]);
     	$pdf = PDF::loadView('pdf.magang',compact('data'));
     	return $pdf->download('magang.pdf');
     }
