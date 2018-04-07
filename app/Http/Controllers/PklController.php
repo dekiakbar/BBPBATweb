@@ -107,7 +107,7 @@ class PklController extends Controller
     	$data = Pkl::where('id',$id)->first();
 
         // view()->share(['data'=>$data]);
-    	$pdf = PDF::loadView('pdf.magang');
+    	$pdf = PDF::loadView('pdf.magang',compact('data'));
     	return $pdf->download('magang.pdf');
     }
 }
