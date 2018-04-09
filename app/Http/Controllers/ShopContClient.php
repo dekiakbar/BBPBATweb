@@ -33,4 +33,6 @@ class ShopContClient extends Controller
     	return view('shop.Index',compact('datas','kats','kategoris'))->with('no',($request->input('page',1)-1)*10);
     }
 
+    
+
 }

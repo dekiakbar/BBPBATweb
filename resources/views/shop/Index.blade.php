@@ -73,7 +73,7 @@
     <h3 class="ui center aligned header" style="margin-bottom: 30px">BBPBAT MARKET</h3>
     <div style="margin-left: 70px" class="ui stackable column grid">
       <div style="text-align: center" class="fifteen wide column">
-        <img style="width: 1700px; height: 400px" class="ui massive rounded image" src="jpg/1.jpg">
+        {{-- <img style="width: 1700px; height: 400px" class="ui massive rounded image" src="jpg/1.jpg"> --}}
         </div>
         <div style="text-align: center" class="fifteen wide column">
             <div class="ui blue three item inverted menu">
