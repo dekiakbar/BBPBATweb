@@ -95,11 +95,12 @@
 			              	<img class="ui image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
 			              	<div class="content">
 			              	  	<span class="right floated">
+			              	  		<label>Stok :</label>
 			              	    	<i class="gift icon"></i>
 			              	    	<a>{{$data->stok}}</a>
 			              	  	</span>
 			              	    <i class="dollar sign icon"></i>
-			              	  	<a>{{$data->harga}}</a>
+			              	  	<a>Rp.{{$data->harga}}</a>
 			              	</div>
 			               	<div class="content">
 			               	 	<a class="ui icon button">
