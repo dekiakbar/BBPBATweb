@@ -178,14 +178,15 @@
 				      <div class="ui dimmer">
 				        <div class="content">
 				          <div class="center">
-				            <a href="{{ asset('storage/news') }}/{{$n->file}}" class="ui inverted button" style="margin-top: 50%;">Download</a>
+				            <a href="{{ asset('storage/news') }}/{{$n->file}}" class="ui inverted button">Download</a>
 				          </div>
 				        </div>
 				      </div>
 				    <div class="content">
 				      <a class="header">{{$n->judul}}</a>
+				      <p>{{$n->deskripsi}}</p>
 				      <div class="meta">
-				        <span class="date">{{$n->created_at->format('d-m-Y')}}</span>
+				        <span class="date">{{$n->created_at}}</span>
 				      </div>
 				    </div>	  
 				  </div>

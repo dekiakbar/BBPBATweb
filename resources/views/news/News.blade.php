@@ -104,26 +104,24 @@
 <div class="ui container">
 	<div class="ui two column stackable grid">
 
-	@foreach()
+	@foreach($beritas as $b)
 		<div class="eight wide column">
 			<div class="ui segment piled raised">
-				<h2>Judul News</h2>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<h2>{{$b->judul}}</h2>
+					{{$b->deskripsi}}
 						 <br>
 					  <div class="column">
-					  	<div class="ui button" tabindex="0">
-					  Download
+					 <div class="ui button" tabindex="0">
+					  <a class="ui button blue" href="{{ asset('storage/news') }}/{{$b->file}}">Download</a>
 					</div>
 			  </div>
 			</div>
 		</div>
 	@endforeach
 
+	</div>
+	<div class="ui container center aligned">
+		{{ $beritas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
 	</div>
 </div>
 

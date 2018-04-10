@@ -14,4 +14,10 @@ class PortalController extends Controller
     	$news = News::latest()->take(5)->get();
 		return view('index',compact('juknis','news'));
     }
+
+    public function news(Request $req)
+    {
+    	$beritas = News::paginate(10);
+    	return view('news.News',compact('beritas'))->with('no',($req->input('page',1)-1)*10);
+    }
 }

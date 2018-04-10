@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(juktekSeeder::class);
         $this->call(kshopSeeder::class);
         $this->call(shopSeeder::class);
+        $this->call(newSeeder::class);
     }
 }

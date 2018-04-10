@@ -232,7 +232,7 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-
+	Route::get('news','PortalController@news');
 	Route::get('juknis','JuknisContClient@index');
 	Route::get('/','PortalController@index');
 
