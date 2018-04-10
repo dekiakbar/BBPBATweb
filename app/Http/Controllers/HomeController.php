@@ -13,6 +13,7 @@ use App\Tag;
 use App\Kategori;
 use App\User;
 use App\Tamu;
+use App\Medsos;
 
 class HomeController extends Controller
 {
@@ -141,5 +142,17 @@ class HomeController extends Controller
                 return redirect('admin/');
             }
         }
+    }
+
+
+    public function medsos(Request $req,$id){
+        $link = findOrFail($id);
+        $link->fb = $req->input('fb');
+        $link->tweet = $req->input('tweet');
+        $link->google = $req->input('google');
+        $link->ig = $req->input('ig');
+        $link->save();
+        
+        return redirect('admin/poetal');
     }
 }

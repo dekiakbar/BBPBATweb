@@ -156,6 +156,9 @@
       @endforeach
   </tbody>
 </table>
+<div class="ui container center aligned">
+    {{ $datas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
+</div>
   </div><footer style="margin-top: 10px;">
     <div class="ui segment center aligned blue">
       <p>&copy;2018

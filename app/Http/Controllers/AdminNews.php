@@ -12,10 +12,10 @@ class AdminNews extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
-        $datas = News::all();
-        return view('admin.news.IndexNews',compact('datas'));        
+        $datas = News::paginate(10);
+        return view('admin.news.IndexNews',compact('datas'))->with('no',($req->input('page',1)-1)*10);        
     }
 
     /**

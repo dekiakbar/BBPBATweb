@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Juktek;
 use App\News;
+use App\Medsos;
 
 class PortalController extends Controller
 {
