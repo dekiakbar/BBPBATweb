@@ -6,12 +6,12 @@
     <div class="ui column stackable grid container">
         <div class="column">
             
-            <h4>Range</h4>
+            <h4>Filter Tanggal Mulai Magang</h4>
               <form class="ui form" method="post" action="{{route('pkl.csv.download')}}">
                 {{csrf_field()}}
                 <div class="three fields">
                   <div class="field">
-                    <label>Mulai Magang</label>
+                    <label>Dari</label>
                     <div class="ui calendar">
                       <div class="ui input left icon">
                         <i class="calendar icon"></i>
@@ -20,7 +20,7 @@
                     </div>
                   </div>
                   <div class="field">
-                    <label>Akhir Magang</label>
+                    <label>Sampai</label>
                     <div class="ui calendar">
                       <div class="ui input left icon">
                         <i class="calendar icon"></i>

@@ -138,10 +138,19 @@ Route::domain('bbpbat.com')->group(function(){
 
 	Route::group(['prefix' => 'admin','middleware' => 'auth'],function(){
 
-		Route::get('/',function(){
-			return view('admin.dashboard');
-		});
+		//Route Admin Dashboard
+			Route::get('/',function(){
+				return view('admin.dashboard');
+			});
+
+			Route::get('portal','AdminPortalCont@index');
 		
+		//=============================================
+		//route News
+		Route::resource('news','AdminNews',[
+			'except' => 'show'
+		]);
+
 		//route admin Petunjuk teknis
 		Route::get('juktek/tambah','JuktekController@tambah');
 		Route::post('juktek/tambah','JuktekController@simpan')->name('juktek.simpan');
@@ -227,7 +236,7 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 	Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-
+	Route::get('news','PortalController@news');
 	Route::get('juknis','JuknisContClient@index');
 	Route::get('/','PortalController@index');
 

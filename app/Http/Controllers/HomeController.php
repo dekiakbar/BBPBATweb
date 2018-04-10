@@ -13,6 +13,7 @@ use App\Tag;
 use App\Kategori;
 use App\User;
 use App\Tamu;
+use App\Medsos;
 
 class HomeController extends Controller
 {

@@ -168,134 +168,41 @@
 	<br>
     	<h3>News</h3>
     </div>
-<div class="ui five column grid">
-	<div class="column">
-	    <div class="ui segment">
-	      <div class="ui special cards">
-			  <div class="card">
-			    <div class="blurring dimmable image">
-			      <div class="ui dimmer">
-			        <div class="content">
-			          <div class="center">
-			            <div class="ui inverted button" style="margin-top: 50%;">Selanjutnya</div>
-			          </div>
-			        </div>
-			      </div>
-			      <img src="images/7.jpeg">
-			    <div class="content">
-			      <a class="header">Judul Artikel</a>
-			      <div class="meta">
-			        <span class="date">Created in Sep 2014</span>
-			      </div>
-			    </div>	  
-			  </div>
-			 </div>
-		   </div>
+		<div class="ui five column grid">
+			@foreach($news as $n)
+				<div class="column">
+				    <div class="ui segment">
+				      <div class="ui special cards">
+						  <div class="card">
+						    <div class="blurring dimmable image">
+						      <div class="ui dimmer">
+						        <div class="content">
+						          <div class="center">
+						            <a href="{{ asset('storage/news') }}/{{$n->file}}" class="ui inverted button">Download</a>
+						          </div>
+						        </div>
+						      </div>
+						    <div class="content">
+						      <a class="header">{{$n->judul}}</a>
+						      <p>{{$n->deskripsi}}</p>
+						      <div class="meta">
+						        <span class="date">{{$n->created_at}}</span>
+						      </div>
+						    </div>	  
+						  </div>
+						 </div>
+					   </div>
+					</div>
+				</div>
+			@endforeach
+
 		</div>
-	</div>
 
-  	<div class="column">
-	    <div class="ui segment">
-	       <div class="ui special cards">
-				<div class="card">
-				    <div class="blurring dimmable image">
-				      	<div class="ui dimmer">
-				      	  	<div class="content">
-				      	    	<div class="center">
-				      	      		<div class="ui inverted button" style="margin-top: 50%;">Selanjutnya</div>
-				      	    	</div>
-				      	  	</div>
-				      	</div>
-				      	<img src="images/7.jpeg">
-				    	<div class="content">
-				    	  	<a class="header">Judul Artikel</a>
-				    	  	<div class="meta">
-				    	    	<span class="date">Created in Sep 2014</span>
-				    	  	</div>
-				    	</div>	  
-				  	</div>
-				</div>
-	    	</div>
-	  	</div>
-	</div>
-
-  <div class="column">
-    <div class="ui segment">
-      	<div class="ui special cards">
-			<div class="card">
-			  	<div class="blurring dimmable image">
-			    	<div class="ui dimmer">
-			    	  	<div class="content">
-			    	    	<div class="center">
-			    	      		<div class="ui inverted button" style="margin-top: 50%;">Selanjutnya</div>
-			    	    	</div>
-			    	  	</div>
-			    	</div>
-			    	<img src="images/7.jpeg">
-			  		<div class="content">
-			  		  	<a class="header">Judul Artikel</a>
-			  		  	<div class="meta">
-			  		    	<span class="date">Created in Sep 2014</span>
-			  		  	</div>
-			  		</div>	  
-				</div>
-			</div>
-    	</div>
-  	</div>
-  </div>
-
-	<div class="column">
-	    <div class="ui segment">
-	      <div class="ui special cards">
-			  <div class="card">
-			    <div class="blurring dimmable image">
-			      <div class="ui dimmer">
-			        <div class="content">
-			          <div class="center">
-			            <div class="ui inverted button" style="margin-top: 50%;">Selanjutnya</div>
-			          </div>
-			        </div>
-			      </div>
-			      <img src="images/7.jpeg">
-			    <div class="content">
-			      <a class="header">Judul Artikel</a>
-			      <div class="meta">
-			        <span class="date">Created in Sep 2014</span>
-			      </div>
-			    </div>	  
-			  </div>
-			 </div>
-	      </div>
-	    </div>
-	</div>
-
-
-<div class="column">
-    <div class="ui segment">
-     <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		            <div class="ui inverted button" style="margin-top: 50%;">Selanjutnya</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Artikel</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
+	<div class="ui centered grid">
+	<br>
+    	<a href="{{url('/news')}}" class="ui button inverted blue" style="margin-bottom: 10px;">Selengkapnya</a>
     </div>
-  </div>
-</div>
-</div>
-</div>
+	</div>
 </div>
 </div>
 

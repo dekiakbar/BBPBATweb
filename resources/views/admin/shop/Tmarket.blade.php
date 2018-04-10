@@ -19,17 +19,6 @@
             <div class="ui right labeled input">
               <label for="harga" class="ui label">Rp.</label>
               <input type="text" placeholder="Harga Ikan" name="harga">
-              <div class="ui dropdown label" >
-              	<input type="hidden" name="harga1" >
-                <div class="text">Ekor</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  <div class="item" data-value="ekor">Ekor</div>
-                  <div class="item" data-value="kg">Kg</div>
-                  <div class="item" data-value="pasang">Pasang</div>
-                  <div class="item" data-value="paket">Paket</div>
-                </div>
-              </div>
             </div>
           </div>
             </div>
@@ -52,9 +41,6 @@
             <label>Stock Ikan</label>
             <div class="ui right labeled input">
               <input type="text" placeholder="Stock Ikan" name="stok">
-              <div class="ui label">
-                <div class="text">Ekor</div>
-              </div>
             </div>
           </div>
             <div class="field">

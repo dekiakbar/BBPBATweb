@@ -73,7 +73,7 @@
     <h3 class="ui center aligned header" style="margin-bottom: 30px">BBPBAT MARKET</h3>
     <div style="margin-left: 70px" class="ui stackable column grid">
       <div style="text-align: center" class="fifteen wide column">
-        <img style="width: 1700px; height: 400px" class="ui massive rounded image" src="jpg/1.jpg">
+        {{-- <img style="width: 1700px; height: 400px" class="ui massive rounded image" src="jpg/1.jpg"> --}}
         </div>
         <div style="text-align: center" class="fifteen wide column">
             <div class="ui blue three item inverted menu">
@@ -95,11 +95,12 @@
 			              	<img class="ui image" src="{{asset('storage/shop')}}/{{$data->foto}}"> 
 			              	<div class="content">
 			              	  	<span class="right floated">
+			              	  		<label>Stok :</label>
 			              	    	<i class="gift icon"></i>
 			              	    	<a>{{$data->stok}}</a>
 			              	  	</span>
 			              	    <i class="dollar sign icon"></i>
-			              	  	<a>{{$data->harga}}</a>
+			              	  	<a>Rp.{{$data->harga}}</a>
 			              	</div>
 			               	<div class="content">
 			               	 	<a class="ui icon button">
