@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PklSeeder::class);
         $this->call(juktekSeeder::class);
         $this->call(kshopSeeder::class);
+        $this->call(shopSeeder::class);
     }
 }
