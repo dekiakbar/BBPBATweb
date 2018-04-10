@@ -25,7 +25,7 @@ class AdminNews extends Controller
      */
     public function create()
     {
-        return view();
+        return view('');
     }
 
     /**
@@ -105,6 +105,7 @@ class AdminNews extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hapus = News::findOrFail($id);
+        $hapus->delete();
     }
 }
