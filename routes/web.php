@@ -142,6 +142,11 @@ Route::domain('bbpbat.com')->group(function(){
 			return view('admin.dashboard');
 		});
 		
+		//route News
+		Route::resource('news','AdminNews',[
+			'except' => 'show'
+		]);
+
 		//route admin Petunjuk teknis
 		Route::get('juktek/tambah','JuktekController@tambah');
 		Route::post('juktek/tambah','JuktekController@simpan')->name('juktek.simpan');
