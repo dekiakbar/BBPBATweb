@@ -168,36 +168,41 @@
 	<br>
     	<h3>News</h3>
     </div>
-<div class="ui five column grid">
-	@foreach($news as $n)
-		<div class="column">
-		    <div class="ui segment">
-		      <div class="ui special cards">
-				  <div class="card">
-				    <div class="blurring dimmable image">
-				      <div class="ui dimmer">
-				        <div class="content">
-				          <div class="center">
-				            <a href="{{ asset('storage/news') }}/{{$n->file}}" class="ui inverted button">Download</a>
-				          </div>
-				        </div>
-				      </div>
-				    <div class="content">
-				      <a class="header">{{$n->judul}}</a>
-				      <p>{{$n->deskripsi}}</p>
-				      <div class="meta">
-				        <span class="date">{{$n->created_at}}</span>
-				      </div>
-				    </div>	  
-				  </div>
-				 </div>
-			   </div>
-			</div>
-		</div>
-	@endforeach
+		<div class="ui five column grid">
+			@foreach($news as $n)
+				<div class="column">
+				    <div class="ui segment">
+				      <div class="ui special cards">
+						  <div class="card">
+						    <div class="blurring dimmable image">
+						      <div class="ui dimmer">
+						        <div class="content">
+						          <div class="center">
+						            <a href="{{ asset('storage/news') }}/{{$n->file}}" class="ui inverted button">Download</a>
+						          </div>
+						        </div>
+						      </div>
+						    <div class="content">
+						      <a class="header">{{$n->judul}}</a>
+						      <p>{{$n->deskripsi}}</p>
+						      <div class="meta">
+						        <span class="date">{{$n->created_at}}</span>
+						      </div>
+						    </div>	  
+						  </div>
+						 </div>
+					   </div>
+					</div>
+				</div>
+			@endforeach
 
-</div>
-</div>
+		</div>
+
+	<div class="ui centered grid">
+	<br>
+    	<a href="{{url('/news')}}" class="ui button inverted blue" style="margin-bottom: 10px;">Selengkapnya</a>
+    </div>
+	</div>
 </div>
 </div>
 
