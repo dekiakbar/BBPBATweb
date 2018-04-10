@@ -120,6 +120,8 @@
 	@endforeach
 
 	</div>
+	<br>
+	<br>
 	<div class="ui container center aligned">
 		{{ $beritas->appends(\Request::except('page'))->links('pagination.semantic-ui') }}
 	</div>
