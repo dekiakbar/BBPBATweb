@@ -143,16 +143,4 @@ class HomeController extends Controller
             }
         }
     }
-
-
-    public function medsos(Request $req,$id){
-        $link = findOrFail($id);
-        $link->fb = $req->input('fb');
-        $link->tweet = $req->input('tweet');
-        $link->google = $req->input('google');
-        $link->ig = $req->input('ig');
-        $link->save();
-        
-        return redirect('admin/poetal');
-    }
 }

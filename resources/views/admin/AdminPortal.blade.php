@@ -198,12 +198,6 @@
             <input type="text" name="" placeholder="Instagram Account">
             </div>
           </div>
-            <div class="two fields">
-            <div class="field">
-            <label>Link Youtube</label>
-            <input type="text" name="" placeholder="Youtube Account">
-            </div>
-          </div>
             <button class="blue ui button" type="submit">Submit</button>
         </form>
         </div>
