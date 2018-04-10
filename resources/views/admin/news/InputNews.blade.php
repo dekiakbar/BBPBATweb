@@ -6,8 +6,8 @@
   <meta name="" content="">
   <title>Input News</title>
   <meta name="csrf-token" content="">
-  <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link rel="stylesheet" type="text/css" href="css/manual.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
 <body>
@@ -108,43 +108,43 @@
 
 <div class="ui container">
    <div class="ui segment">
-      <div class="ui form">
-        <div class="two fields">
-          <div class="field">
-            <label>Judul</label>
-            <input placeholder="Isi Judul Buku" type="text">
-          </div>
+      <form class="ui form" method="post" action="{{ route('news.store') }}" enctype="multipart/form-data">
+        {{csrf_field()}}
+            <div class="two fields">
+              <div class="field">
+                <label>Judul</label>
+                <input placeholder="Isi Judul Buku" type="text" name="judul">
+              </div>
 
-    <div class="field">
-       <div class="ui stackable centered grid">
+              <div class="field">
+                 <div class="ui stackable centered grid">
+                    <div class="six wide column center aligned">
+                      <label>File</label>
+                      <input type="file" name="file"> 
+                    </div>
+                  </div>
+              </div>
+            </div>
+                <div class="ui form">
+                    <div class="field">
+                      <label>Deskripsi</label>
+                      <textarea name="deskripsi"></textarea>
+                </div>
+              </div>
+
+              <div class="ui stackable centered grid">
           <div class="six wide column center aligned">
-            <label>File</label>
-            <input type="file" name="file"> 
+            <button type="submit" class="ui button" tabindex="0">Simpan</button>
           </div>
         </div>
-    </div>
-        </div>
-         
-            <div class="ui form">
-                <div class="field">
-                  <label>Deskripsi</label>
-                  <textarea></textarea>
-                  </div>
-            </div>      
-        </div>
+      
+        </form>
      </div>
 </div>
       </div>
   </div>
 
 <br>
-
-       <div class="ui stackable centered grid">
-       <div class="six wide column center aligned">
-   <div class="ui button" tabindex="0">Simpan
-  </div>
-</div>
-</div>
 </div>
 
 </body>
@@ -160,8 +160,8 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/manual.js"></script>
+  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
   <script type="text/javascript">
     $('.ui.dropdown').dropdown();
   </script>

@@ -6,11 +6,31 @@
   <meta name="" content="">
   <title>Index Admin News</title>
   <meta name="csrf-token" content="">
-  <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link rel="stylesheet" type="text/css" href="css/manual.css">
-  <link rel="stylesheet" type="text/css" href="{{asset('css/semantic/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 </head>
 <body>
+
+   <div class="ui small modal">
+        <div class="ui icon header">
+            <i class="trash icon"></i>
+            Hapus Data Ini
+        </div>
+        <div class="content right floated">
+            <p>Data yang telah dihapus tidak bisa dikembalikan, Anda yakin ingin menghapus data ini?</p>
+        </div>
+        <div class="actions">
+            <div class="ui red inverted cancel inverted button tidak">
+                <i class="remove icon"></i>
+                Tidak
+            </div>
+            <div class="ui green ok inverted button tidak ya">
+                <i class="checkmark icon"></i>
+                Iya
+            </div>
+        </div>
+    </div>
+
   <div class="ui secondary pointing menu grid computer only blue">
     <div class="header item ">
         Laravel Artikel
@@ -116,24 +136,24 @@
       <th>Judul Buku</th>
       <th>Deskripsi</th>
       <th>File</th>
+      <th>Opsi</th>
   </tr>
 </thead>
   <tbody>
-      <td>
-        <td>
+      @foreach($datas as $d)
+        <tr>
+          <td>{{$d->judul}}</td>
+          <td>{{$d->deskripsi}}</td>
+          <td><a href="{{ asset('storage/news') }}/{{$d->file}}">Lihat</a></td>
           <td>
-            <div class="sixteen wide column center aligned">
-        <a class="ui button teal"><i class="edit icon"></i> Edit</a>
-        <a class="ui button red"><i class="trash icon"></i> Hapus</a>
-        </form>
-      </td>
-      </td>
-    </td>
-  </td>
-</td>
-    </tr>
-  </div>
-</div>
+            <div class="ui mini buttons">
+              <a href="{{ route('news.edit',$d->id) }}" class="ui green button">Edit</a>
+              <div class="or"></div>
+              <a onclick="delet(this)" id="hapus" data-slug="{{ route('news.destroy',$d->id) }}" data-token="{{ csrf_token() }}" class="ui red button">H</a>
+            </div>
+          </td>
+        </tr>
+      @endforeach
   </tbody>
 </table>
   </div><footer style="margin-top: 10px;">
@@ -147,8 +167,39 @@
     </div>
   </footer>
 
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/manual.js"></script>
+  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
+  <script type="text/javascript">
+    function delet(data)
+        {
+           var token = data.getAttribute('data-token');
+           var hapus = data.getAttribute('data-slug'); 
+           $('.ui.small.modal')
+              .modal({
+                 onApprove: function (e) {
+                    if (e.hasClass('ya')) {
+                        $.ajax({
+                            url: hapus,
+                            type: 'POST',
+                            data: {_method: 'DELETE', _token :token, },
+                            success:function(msg){
+                                // console.log(hapus);
+                                setTimeout(
+                                   function() 
+                                   {
+                                      location.reload();
+                                   }, 0001
+                                );  
+                            }
+                          })
+                    }
+                 },
+                 blurring: true,
+                 transition: 'fade in'
+              })
+           .modal('show');
+        }  
+  </script>
 
 </body>
 </html>

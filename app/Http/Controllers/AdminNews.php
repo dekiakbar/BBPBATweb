@@ -15,7 +15,7 @@ class AdminNews extends Controller
     public function index()
     {
         $datas = News::all();
-        return view('',compact('datas'));        
+        return view('admin.news.IndexNews',compact('datas'));        
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminNews extends Controller
      */
     public function create()
     {
-        return view('');
+        return view('admin.news.InputNews');
     }
 
     /**
@@ -43,13 +43,13 @@ class AdminNews extends Controller
 
         $simpan = News::create([
             'judul' => $request->input('judul'),
-            'deskripsi' => $request->inut('deskripsi'),
+            'deskripsi' => $request->input('deskripsi'),
             'file' => $nama
         ]);
 
         $simpan->save();
 
-        return redirect('admin/news');
+        return redirect('admin/news/create');
     }
 
     /**
@@ -61,7 +61,7 @@ class AdminNews extends Controller
     public function edit($id)
     {
         $edit = News::findOrFail($id);
-        return view('',compact('edit'));
+        return view('admin.news.EditNews',compact('edit'));
     }
 
     /**

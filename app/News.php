@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $fillable = ['judul','deskripsi','foto'];
+    protected $fillable = ['judul','deskripsi','file'];
     protected $table = 'news';
 }
