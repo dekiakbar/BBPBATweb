@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(kshopSeeder::class);
         $this->call(shopSeeder::class);
         $this->call(newSeeder::class);
+        $this->call(medsosSeeder::class);
     }
 }

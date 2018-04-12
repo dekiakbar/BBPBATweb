@@ -9,10 +9,11 @@ class AdminPortalCont extends Controller
 {
     public function index()
     {
-    	return view('admin.AdminPortal');
+        $medsos = Medsos::firstOrFail();
+    	return view('admin.AdminPortal',compact('medsos'));
     }
 
-      public function medsos(Request $req,$id){
+    public function medsos(Request $req,$id){
         $link = Medsos::findOrFail($id);
         $link->fb = $req->input('fb');
         $link->tweet = $req->input('tweet');
@@ -20,6 +21,8 @@ class AdminPortalCont extends Controller
         $link->ig = $req->input('ig');
         $link->save();
         
-        return redirect('admin/poetal');
+        return redirect('admin/portal');
     }
+
+
 }

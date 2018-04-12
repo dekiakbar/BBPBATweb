@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="" content="">
-	<title>template admin nyah</title>
+	<title>Admin | Portal Input</title>
 	<meta name="csrf-token" content="">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
@@ -177,25 +177,27 @@
     <div class="ui one column stackable grid container">
     <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form">
+        <form class="ui form" action="{{ route('admin.medsos',$medsos->id) }}" method="post">
+            {{csrf_field()}}
+            <input type="hidden" name="_method" value="patch">
           <div class="two fields">
             <div class="field">
             <label>Link Facebook</label>
-            <input type="text" name="" placeholder="Facebook Account">
+            <input type="text" name="fb" placeholder="Facebook Account" value="{{$medsos->fb}}">
             </div>
             <div class="field">
             <label>Link Twitter</label>
-            <input type="text" name="" placeholder="Twitter Account">
+            <input type="text" name="tweet" placeholder="Twitter Account" value="{{$medsos->tweet}}">
             </div>
           </div>
             <div class="two fields">
             <div class="field">
             <label>Link Google Plus</label>
-            <input type="text" name="" placeholder="google+ Account">
+            <input type="text" name="google" placeholder="google+ Account" value="{{$medsos->google}}">
             </div>
             <div class="field">
             <label>Link Instagram</label>
-            <input type="text" name="" placeholder="Instagram Account">
+            <input type="text" name="ig" placeholder="Instagram Account" value="{{$medsos->ig}}">
             </div>
           </div>
             <button class="blue ui button" type="submit">Submit</button>
