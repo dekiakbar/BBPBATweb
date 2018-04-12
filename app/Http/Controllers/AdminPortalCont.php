@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Medsos;
+use App\About;
 
 class AdminPortalCont extends Controller
 {
     public function index()
     {
+        $ab = About::firstOrFail();
         $medsos = Medsos::firstOrFail();
-    	return view('admin.AdminPortal',compact('medsos'));
+    	return view('admin.AdminPortal',compact('medsos','ab'));
     }
 
     public function medsos(Request $req,$id){
@@ -24,5 +26,30 @@ class AdminPortalCont extends Controller
         return redirect('admin/portal');
     }
 
+    public function about(Request $req,$id)
+    {
+        if ($req->hasFile('foto')) {
 
+            $foto   = $req->file('foto');
+            $nama   = time().'.'.$foto->getClientOriginalExtension();
+            $lokasi = public_path('/storage/about');
+            $status = $foto->move($lokasi, $nama);
+
+            $ab = About::findOrFail($id);
+            $ab->visi = $req->input('visi');
+            $ab->misi = $req->input('misi');
+            $ab->foto = $nama;
+            $ab->tentang = $req->input('tentang');
+            $ab->save();
+            return redirect('admin/portal');
+        }else{
+            $ab = About::findOrFail($id);
+            $ab->visi = $req->input('visi');
+            $ab->misi = $req->input('misi');
+            $ab->foto = $req->input('fotoLama');
+            $ab->tentang = $req->input('tentang');
+            $ab->save();
+            return redirect('admin/portal');
+        }
+    }
 }

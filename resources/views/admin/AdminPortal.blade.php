@@ -212,24 +212,27 @@
         <div class="ui one column stackable grid container">
             <div class="ui one column raised segment">
           <div class="column">
-            <form class="ui form">
+            <form class="ui form" action="{{ route('admin.about',$ab->id) }}" method="post">
+                {{csrf_field()}}
+                <input type="hidden" name="_method" value="patch">
                 <div class="field">
                 <label>Visi</label>
-                <textarea rows="7"></textarea>
+                <textarea name="visi" rows="7">{{$ab->visi}}</textarea>
                 </div>
                 <div class="two fields">
                 <div style="width: 700px" class="field">
                 <label>Misi</label>
-                <textarea rows="7"></textarea>
+                <textarea name="misi" rows="7">{{$ab->misi}}</textarea>
                 </div>
                 <div class="field">
                 <label>Uplode Gambar About</label>
-                <input type="file" name="first-name" placeholder="Nama Ikan">
+                <input type="file" name="foto">
+                <input type="hidden" name="fotoLama" value="{{$ab->foto}}">
               </div>
               </div>
                 <div class="field">
                 <label>Tentang</label>
-                <textarea rows="4"></textarea>
+                <textarea name="tentang" rows="4">{{$ab->tentang}}</textarea>
                 </div>
                 <button class="green ui button" type="submit">Submit</button>
             </form>

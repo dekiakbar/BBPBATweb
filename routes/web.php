@@ -145,6 +145,7 @@ Route::domain('bbpbat.com')->group(function(){
 
 			Route::get('portal','AdminPortalCont@index');
 			Route::patch('portal/medsos/{id}','AdminPortalCont@medsos')->name('admin.medsos');
+			Route::patch('portal/about/{id}','AdminPortalCont@about')->name('admin.about');
 		
 		//=============================================
 		//route News
