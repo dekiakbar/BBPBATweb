@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Medsos;
 use App\About;
+use App\Slider;
 
 class AdminPortalCont extends Controller
 {
@@ -49,6 +50,25 @@ class AdminPortalCont extends Controller
             $ab->foto = $req->input('fotoLama');
             $ab->tentang = $req->input('tentang');
             $ab->save();
+            return redirect('admin/portal');
+        }
+    }
+
+    public function slider(Request $req)
+    {
+        if ($req->hasFile('foto')) {
+
+            $foto   = $req->file('foto');
+            $nama   = time().'.'.$foto->getClientOriginalExtension();
+            $lokasi = public_path('/storage/slider');
+            $status = $foto->move($lokasi, $nama);
+
+            $s = Slider::create([
+                'judul' => $req->input('judul'),
+                'deskripsi' => $req->input('deskripsi'),
+                'foto' => $nama,
+            ]);
+            
             return redirect('admin/portal');
         }
     }
