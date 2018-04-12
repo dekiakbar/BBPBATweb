@@ -11,6 +11,49 @@
 
 </head>
 <body>
+
+    @foreach($sliders as $sl)
+        <div class="ui modal hadiah" id="{{md5($sl->id.'slider')}}">
+            <i class="close icon"></i><br>
+            <div class="ui one column stackable grid container">
+                <div style="margin-left: 1px" class="ui one column grid">
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <h3 class="ui center aligned header" style="margin-bottom: 30px">EDIT DATA SLIDER</h3>
+                      <div class="column">
+                        <form class="ui form" method="post" action="{{ route('admin.slider',$sl->id) }}" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="patch">
+                            <div class="two fields">
+                            <div class="field">
+                            <label>Judul Slider</label>
+                            <input type="text" name="judul" placeholder="Judul Slider" value="{{$sl->judul}}">
+                            </div>
+                            <div class="field">
+                            <label>Upload Foto</label>
+                            <input type="file" name="foto">
+                            <input type="hidden" name="slide" value="{{$sl->foto}}">
+                            </div>
+                            </div>
+                            <div class="field">
+                            <label>Keterangan</label>
+                            <textarea rows="7" name="keterangan">{{$sl->deskripsi}}</textarea>
+                            </div>
+                            <button class="blue ui button" type="submit">Edit</button>
+                        </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui positive rights icon button">
+                  Close
+                </div>
+            </div>
+        </div>
+    @endforeach
+
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
     		Laravel Artikel
@@ -99,82 +142,43 @@
       <a class="item" data-tab="second">Media Sosial</a>
       <a class="item" data-tab="third">About</a>
     </div>
-    <div class="ui bottom attached tab segment" data-tab="first">
-    <h3 class="ui center aligned header" style="margin-bottom: 30px">INPUT IMAGE SLIDER</h3>
+    
+    <div class="ui bottom attached tab segment active" data-tab="first">
+    <h3 class="ui center aligned header" style="margin-bottom: 30px">IMAGE SLIDER</h3>
     <div class="ui one column stackable grid container">
-    <div class="ui one column raised segment">
-      <div class="column">
-        <form class="ui form">
-          <div class="two fields">
-            <div class="field">
-                <label>Slider 1</label>
-                <input type="file" name=""><br><br>
-            </div>
-            <div class="field">
-                <label>Judul</label>
-                <input type="text" name="" placeholder="Masukan Judul Slide">
-                <label>Keterangan</label>
-                <textarea rows="4"></textarea>
-            </div>
-          </div>
-            <div class="ui divider"></div>
-            <div class="two fields">
-            <div class="field">
-                <label>Slider 2</label>
-                <input type="file" name=""><br><br>
-            </div>
-            <div class="field">
-                <label>Judul</label>
-                <input type="text" name="" placeholder="Masukan Judul Slide">
-                <label>Keterangan</label>
-                <textarea rows="4"></textarea>
-            </div>
-          </div>
-            <div class="ui divider"></div>
-            <div class="two fields">
-            <div class="field">
-                <label>Slider 3</label>
-                <input type="file" name=""><br><br>
-            </div>
-            <div class="field">
-                <label>Judul</label>
-                <input type="text" name="" placeholder="Masukan Judul Slide">
-                <label>Keterangan</label>
-                <textarea rows="4"></textarea>
-            </div>
-          </div>
-            <div class="ui divider"></div>
-            <div class="two fields">
-            <div class="field">
-                <label>Slider 4</label>
-                <input type="file" name=""><br><br>
-            </div>
-            <div class="field">
-                <label>Judul</label>
-                <input type="text" name="" placeholder="Masukan Judul Slide">
-                <label>Keterangan</label>
-                <textarea rows="4"></textarea>
-            </div>
-          </div>
-            <div class="ui divider"></div>
-            <div class="two fields">
-            <div class="field">
-                <label>Slider 5</label>
-                <input type="file" name=""><br><br>
-            </div>
-            <div class="field">
-                <label>Judul</label>
-                <input type="text" name="" placeholder="Masukan Judul Slide">
-                <label>Keterangan</label>
-                <textarea rows="4"></textarea>
-            </div>
-          </div>
-            <button class="green ui right floated button" type="submit">Submit</button>
-        </form>
+        <br>
+
+        <div class="ui column stackable grid container">
+        <div class="column">
+            <table class="ui celled table">
+              <thead>
+                <tr>
+                <th>Judul</th>
+                <th>Gambar</th>
+                <th>Deskripsi</th>
+               <th class="one wide column" >Opsi</th>
+              </tr></thead>
+              <tbody>
+                @foreach($sliders as $s)
+                    <tr>
+                        <td>{{$s->judul}}</td>
+                        <td><img class="ui tiny image" src="{{ asset('storage/slider') }}/{{$s->foto}}"></td>
+                        <td>{{$s->deskripsi}}</td>
+                        <td style="text-align: center">
+                            <div class="mini ui buttons">
+                              <button class="ui green button" data-id="{{md5($s->id.'slider')}}" onclick="gift(this)" >Edit</button>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+              </tbody>
+            </table>
         </div>
-        </div>
-        <br><br><br>
     </div>
+
+    </div>
+    <br>
+    <br>
     </div>
         
     <div class="ui bottom attached tab segment active" data-tab="second">
@@ -262,6 +266,16 @@
 
 	<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
-    <script>$('.menu .item').tab();</script>
+    <script>
+        $('.menu .item').tab();
+
+        function gift(data)
+        {
+            // $('.ui.modal.hadiah').modal('show');
+            var edit = data.getAttribute('data-id');
+            var id = '#'+edit;
+            $(id).modal('show');
+        }
+    </script>
 </body>
 </html>

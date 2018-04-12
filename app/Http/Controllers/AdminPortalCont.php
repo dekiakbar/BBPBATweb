@@ -13,7 +13,8 @@ class AdminPortalCont extends Controller
     {
         $ab = About::firstOrFail();
         $medsos = Medsos::firstOrFail();
-    	return view('admin.AdminPortal',compact('medsos','ab'));
+        $sliders = Slider::all();
+    	return view('admin.AdminPortal',compact('medsos','ab','sliders'));
     }
 
     public function medsos(Request $req,$id){
@@ -54,7 +55,7 @@ class AdminPortalCont extends Controller
         }
     }
 
-    public function slider(Request $req)
+    public function slider(Request $req,$id)
     {
         if ($req->hasFile('foto')) {
 
@@ -63,12 +64,21 @@ class AdminPortalCont extends Controller
             $lokasi = public_path('/storage/slider');
             $status = $foto->move($lokasi, $nama);
 
-            $s = Slider::create([
-                'judul' => $req->input('judul'),
-                'deskripsi' => $req->input('deskripsi'),
-                'foto' => $nama,
-            ]);
+            $s = Slider::findOrFail($id);
+            $s->judul = $req->input('judul');
+            $s->deskripsi = $req->input('keterangan');
+            $s->foto = $nama;
+            $s->save();
             
+            return redirect('admin/portal');
+        }else{
+
+            $s = Slider::findOrFail($id);
+            $s->judul = $req->input('judul');
+            $s->deskripsi = $req->input('keterangan');
+            $s->foto = $req->input('slide');
+            $s->save();
+
             return redirect('admin/portal');
         }
     }
