@@ -33,7 +33,7 @@
 		<i class="close icon"></i>
 		<div class="image content">
    			<div class="ui medium image">
-      			<img src="images/7.jpeg">
+      			<img src="{{ asset('storage/about') }}/{{$about->foto}}">
     		</div>
     		<div class="description">
       			<div class="ui header">About</div>
@@ -43,25 +43,14 @@
 						<div class="eight wide column">
 							<div class="ui raised piled segment ">
 								<h1 class="ui center aligned grid" style="margin: 5px;">VISI</h1>
-								
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								{{$about->visi}}
 							</div>
 						</div>
 
 						<div class="eight wide column">
 							<div class="ui segment raised piled">
 								<h1 class="ui center aligned grid" style="margin: 5px;">MISI</h1>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								{{$about->misi}}
 							  </div>
 						</div>
 					</div>
@@ -71,12 +60,7 @@
 					<div class="sixteen wide column">
 						<div class="ui segment piled raised">
 						<h1 class="ui center aligned grid" style="margin: 5px;">Tentang</h1>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						{{$about->tentang}}
 				  		</div>
 					</div>
 				</div>
@@ -162,11 +146,57 @@
 
 			</div><!-- /slider-wrapper -->
 
+
+<div class="ui segment">
+<div class="ui segment">
+	<div class="ui centered grid">
+	<br>
+<h2>News</h2>
+</div>
+<div class="ui five column grid">
+  
+	@foreach($posts as $p)
+		<div class="column">
+		    <div class="ui segment">
+		      <div class="ui special cards">
+				  <div class="card">
+				    <div class="blurring dimmable image">
+				      <div class="ui dimmer">
+				        <div class="content">
+				          <div class="center">
+				            <a href="http://blog.bbpbat.com:8000/detail/{{$p->slug}}" class="ui inverted button" >Lihat</a>
+				          </div>
+				        </div>
+				      </div>
+				      <img src="{{asset('storage/foto')}}/{{$p->foto}}">
+				    <div class="content">
+				      <a class="header">{{$p->judul}}</a>
+				      <div class="meta">
+				        <span class="date">{{$p->created_at}}</span>
+				      </div>
+				    </div>	  
+				  </div>
+				 </div>
+			   </div>
+			</div>
+		</div>
+	@endforeach
+a
+<div class="ui grid" style="margin: 0 auto;">
+	<div class="ui inverted segment">
+		<a href="http://blog.bbpbat.com:8000" class="ui inverted orange button">Halaman Lain</a>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
 <div class="ui segment">
 	<div class="ui inverted segment">
 	<div class="ui centered grid">
 	<br>
-    	<h3>News</h3>
+    	<h3>Pengumuman</h3>
     </div>
 		<div class="ui five column grid">
 			@foreach($news as $n)
@@ -242,112 +272,7 @@
 			</div>
 		</div>
 	@endforeach
-
-{{--   <div class="column">
-    <div class="ui segment">
-       <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		             <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-</div>
-
-  <div class="column">
-    <div class="ui segment">
-      <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		           <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-  </div>
-
-<div class="column">
-    <div class="ui segment">
-      <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		            <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-  </div>
-
-
-<div class="column">
-    <div class="ui segment">
-     <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		             <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-</div>
- --}}
+a
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
 		<a href="{{url('juknis')}}" class="ui inverted orange button">Halaman Lain</a>
@@ -379,22 +304,22 @@
 <br>
 
 <div class="ui centered grid">
-<button class="ui facebook button">
+<a href="{{$medsos->fb}}" class="ui facebook button">
   <i class="facebook icon"></i>
   Facebook
-</button>
-<button class="ui twitter button">
+</a>
+<a href="{{$medsos->tweet}}" class="ui twitter button">
   <i class="twitter icon"></i>
   Twitter
-</button>
-<button class="ui google plus button">
+</a>
+<a href="{{$medsos->google}}" class="ui google plus button">
   <i class="google plus icon"></i>
   Google Plus
-</button>
-<button class="ui instagram button">
+</a>
+<a href="{{$medsos->ig}}" class="ui instagram button">
   <i class="instagram icon"></i>
   Instagram
-</button>
+</a>
 </div>
 <br>
 <br>

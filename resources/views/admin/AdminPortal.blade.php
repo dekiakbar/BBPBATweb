@@ -107,63 +107,68 @@
         <form class="ui form">
           <div class="two fields">
             <div class="field">
-            <label>Slider 1</label>
-            <input type="file" name=""><br><br>
-            <input type="text" name="" placeholder="Masukan Judul Slide">
-          </div>
+                <label>Slider 1</label>
+                <input type="file" name=""><br><br>
+            </div>
             <div class="field">
-            <label>Keterangan</label>
-            <textarea rows="4"></textarea>
+                <label>Judul</label>
+                <input type="text" name="" placeholder="Masukan Judul Slide">
+                <label>Keterangan</label>
+                <textarea rows="4"></textarea>
             </div>
-            </div>
+          </div>
             <div class="ui divider"></div>
             <div class="two fields">
             <div class="field">
-            <label>Slider 2</label>
-            <input type="file" name=""><br><br>
-            <input type="text" name="" placeholder="Masukan Judul Slide">
-          </div>
+                <label>Slider 2</label>
+                <input type="file" name=""><br><br>
+            </div>
             <div class="field">
-            <label>Keterangan</label>
-            <textarea rows="4"></textarea>
+                <label>Judul</label>
+                <input type="text" name="" placeholder="Masukan Judul Slide">
+                <label>Keterangan</label>
+                <textarea rows="4"></textarea>
             </div>
-            </div>
+          </div>
             <div class="ui divider"></div>
             <div class="two fields">
             <div class="field">
-            <label>Slider 3</label>
-            <input type="file" name=""><br><br>
-            <input type="text" name="" placeholder="Masukan Judul Slide">
-          </div>
+                <label>Slider 3</label>
+                <input type="file" name=""><br><br>
+            </div>
             <div class="field">
-            <label>Keterangan</label>
-            <textarea rows="4"></textarea>
+                <label>Judul</label>
+                <input type="text" name="" placeholder="Masukan Judul Slide">
+                <label>Keterangan</label>
+                <textarea rows="4"></textarea>
             </div>
-            </div>
+          </div>
             <div class="ui divider"></div>
             <div class="two fields">
             <div class="field">
-            <label>Slider 4</label>
-            <input type="file" name=""><br><br>
-            <input type="text" name="" placeholder="Masukan Judul Slide">
-          </div>
+                <label>Slider 4</label>
+                <input type="file" name=""><br><br>
+            </div>
             <div class="field">
-            <label>Keterangan</label>
-            <textarea rows="4"></textarea>
+                <label>Judul</label>
+                <input type="text" name="" placeholder="Masukan Judul Slide">
+                <label>Keterangan</label>
+                <textarea rows="4"></textarea>
             </div>
-            </div>
+          </div>
             <div class="ui divider"></div>
             <div class="two fields">
             <div class="field">
-            <label>Slider 5</label>
-            <input type="file" name=""><br><br>
-            <input type="text" name="" placeholder="Masukan Judul Slide">
-          </div>
+                <label>Slider 5</label>
+                <input type="file" name=""><br><br>
+            </div>
             <div class="field">
-            <label>Keterangan</label>
-            <textarea rows="4"></textarea>
+                <label>Judul</label>
+                <input type="text" name="" placeholder="Masukan Judul Slide">
+                <label>Keterangan</label>
+                <textarea rows="4"></textarea>
             </div>
-            </div>
+          </div>
             <button class="green ui right floated button" type="submit">Submit</button>
         </form>
         </div>
@@ -212,7 +217,7 @@
         <div class="ui one column stackable grid container">
             <div class="ui one column raised segment">
           <div class="column">
-            <form class="ui form" action="{{ route('admin.about',$ab->id) }}" method="post">
+            <form class="ui form" action="{{ route('admin.about',$ab->id) }}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="patch">
                 <div class="field">
