@@ -17,6 +17,11 @@ class Pesan extends Migration
             $table->increments('id');
             $table->integer('shop_id')->unsigned();
             $table->string('jumlah');
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('email');
+            $table->string('pos');
+            $table->string('hp');
             $table->timestamps();
         });
     }

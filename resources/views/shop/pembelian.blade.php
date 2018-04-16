@@ -6,8 +6,8 @@
 	<meta name="" content="">
 	<title>template admin nyah</title>
 	<meta name="csrf-token" content="">
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="css/manual.css'">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
 <body>
@@ -99,35 +99,40 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form">
+        <form class="ui form" action="" method="">
           <div class="two fields">
+          	{{csrf_field()}}
+          	<input type="hidden" name="_method" value="patch">
+
+          	<input type="hidden" name="shop_id" value="{{$data->id}}">
+
             <div class="field">
             <label>Nama Lengkap</label>
-            <input type="text" name="first-name" placeholder="Masukan Nama Lengkap">
+            <input type="text" name="nama" placeholder="Masukan Nama Lengkap">
           </div>
             <div class="field">
             <label>Alamat Lengkap</label>
-            <input type="text" name="first-name" placeholder="Masukan Alamat Lengkap">
+            <input type="text" name="alamat" placeholder="Masukan Alamat Lengkap">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Email</label>
-            <input type="text" name="first-name" placeholder="Masukan Alamat Email">
+            <input type="text" name="email" placeholder="Masukan Alamat Email">
           </div>
             <div class="field">
             <label>Kode Pos</label>
-            <input type="text" name="first-name" placeholder="Masukan Kode Pos">
+            <input type="text" name="pos" placeholder="Masukan Kode Pos">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Qty</label>
-            <input type="text" name="first-name" placeholder="Masukan Jumlah Pesanan">
+            <input type="text" name="jumlah" placeholder="Masukan Jumlah Pesanan">
           </div>
             <div class="field">
             <label>No. Hp</label>
-            <input type="text" name="first-name" placeholder="Masukan No. Hp">
+            <input type="text" name="no" placeholder="Masukan No. Hp">
           </div>
             </div>
             <button class="ui button" type="submit">Submit</button>
@@ -150,7 +155,7 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/manual.js"></script>
+	<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
 </body>
 </html>

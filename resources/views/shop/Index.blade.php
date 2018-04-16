@@ -25,14 +25,6 @@
 			    @endforeach		  	
 			</div>
 		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Keranjang</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>List Barang</a>
-			    <a href="" class="item"><i class="icon list"></i>Pembayaran</a>
-		  	</div>
-		</div>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
@@ -55,13 +47,6 @@
 				      		<a class="item">Ikan</a>
 				      		<a class="item">Kodok</a>
                             <a class="item">Udang</a>
-				    	</div>
-				  	</div>
-				  	<div class="item">
-				    	<div class="header">Keranjang</div>
-				    	<div class="menu">
-				      		<a class="item">List Barang</a>
-				      		<a class="item">Pembayaran</a>
 				    	</div>
 				  	</div>
 		  		</div>
@@ -99,11 +84,13 @@
 			              	    	<i class="gift icon"></i>
 			              	    	<a>{{$data->stok}}</a>
 			              	  	</span>
-			              	    <i class="dollar sign icon"></i>
+			              	    <i class="chart icon"></i>
 			              	  	<a>Rp.{{$data->harga}}</a>
+			              	  	<div class="ui divider"></div>
+			              	  	<p>{{$data->keterangan}}</p>
 			              	</div>
 			               	<div class="content">
-			               	 	<a class="ui icon button">
+			               	 	<a href="{{ route('shop.tampil.beli',$data->id) }}" class="ui icon button">
 			               	   		<i class="shopping cart icon"></i>
 			               	 	</a>
 			              	</div>

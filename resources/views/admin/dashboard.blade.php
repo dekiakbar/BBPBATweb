@@ -26,7 +26,7 @@
         <div style="margin-left: 100px; margin-right: 100px; opacity: 0.7" class="ui raised segment">
             <div class="ui stackable center aligned four column grid">
                 <div class="column">
-                    <a href="" class="ui icon button">
+                    <a href="{{ url('admin/portal') }}" class="ui icon button">
                       <i style="width: 150px; height: 100px" class="newspaper icon"><p>PORTAL</p></i>
                     </a>
                 </div>

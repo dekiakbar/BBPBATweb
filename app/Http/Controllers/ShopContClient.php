@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Shop;
 use App\Kshop;
+use App\Pesan;
+
 class ShopContClient extends Controller
 {
     public function index(Request $request)
@@ -33,6 +35,27 @@ class ShopContClient extends Controller
     	return view('shop.Index',compact('datas','kats','kategoris'))->with('no',($request->input('page',1)-1)*10);
     }
 
-    
+    public function tampil_beli($id)
+    {
+        $data = Shop::findOrFail($id);
+        return view('shop.pembelian',compact('data'));
+    }
+
+    public function beli(Request $req,$id)
+    {
+        $beli = Shop::findOrFail($id);
+        $beli->stok -= $req->input('jumlah');
+        $beli->save();
+
+        $pesan = Pesan::create([
+            'nama' => $req->input('nama'),
+            'alamat' => $req->input('alamat'),
+            'email' => $req->input('email'),
+            'pos' => $req->input('pos'),
+            'jumlah' => $req->input('jumlah'),
+            'no' => $req->input('no'),
+            'shop_id' => $req->input('shop_id'),
+        ]);
+    }
 
 }
