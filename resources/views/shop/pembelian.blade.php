@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="" content="">
-	<title>template admin nyah</title>
+	<title>BBPBAT | Keranjang Belanja</title>
 	<meta name="csrf-token" content="">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
@@ -13,53 +13,13 @@
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
-    		Laravel Artikel
+    		<a href="{{ url('/') }}">Market BBPBAT</a>
   		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Artikel</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Artikel</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Artikel</a>
-		  	</div>
-		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Kategori</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Kategori</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Kategori</a>
-		  	</div>
-		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Tag</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Tag</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Tag</a>
-		  	</div>
-		</div>
-		<div class="right menu">
-		  	<a href="" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
-		  		<div class="hidden content">
-					<i class="sign out icon"></i>
-				</div>
-				<div class="visible content">
-					Keluar    
-				</div>
-		  	</a>
-		  	<form id="keluar" action="" method="POST" style="display: none;">
- 
-            </form>
-		</div>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
 		<div class="header item">
-    		Laravel Artikel
-  		</div>
-  		<div class="right menu">
-  			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
+    		<a href="{{ url('/') }}">Market BBPBAT</a>
   		</div>
 	</div>
 
@@ -99,7 +59,7 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form" action="" method="">
+        <form class="ui form" action="{{ route('shop.beli',$data->id) }}" method="post">
           <div class="two fields">
           	{{csrf_field()}}
           	<input type="hidden" name="_method" value="patch">

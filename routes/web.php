@@ -127,6 +127,7 @@ Route::domain('shop.bbpbat.com')->group(function(){
 	Route::get('/','ShopContClient@index');
 	Route::get('/kategori/{id}','ShopContClient@kategori')->name('shop.kategori');
 	Route::get('beli/{id}','ShopContClient@tampil_beli')->name('shop.tampil.beli');
+	Route::patch('beli/{id}','ShopContClient@beli')->name('shop.beli');
 });
 
 /*

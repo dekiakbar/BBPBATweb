@@ -44,7 +44,7 @@ class ShopContClient extends Controller
     public function beli(Request $req,$id)
     {
         $beli = Shop::findOrFail($id);
-        $beli->stok -= $req->input('jumlah');
+        $beli->stok = $beli->stok-$req->input('jumlah');
         $beli->save();
 
         $pesan = Pesan::create([
@@ -53,9 +53,13 @@ class ShopContClient extends Controller
             'email' => $req->input('email'),
             'pos' => $req->input('pos'),
             'jumlah' => $req->input('jumlah'),
-            'no' => $req->input('no'),
+            'hp' => $req->input('no'),
             'shop_id' => $req->input('shop_id'),
         ]);
+
+        $pesan->save();
+
+        return redirect('/');
     }
 
 }
