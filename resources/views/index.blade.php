@@ -24,6 +24,22 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
 	.mySlides {display:none;}
+	.demo-2 .bg-img-1 {
+	background-image: url("{{asset('storage/slider')}}/{{$slider1->foto}}");
+	}
+	.demo-2 .bg-img-2 {
+		background-image: url("{{asset('storage/slider')}}/{{$slider2->foto}}");
+	}
+	.demo-2 .bg-img-3 {
+		background-image: url("{{asset('storage/slider')}}/{{$slider3->foto}}");
+	}
+	.demo-2 .bg-img-4 {
+		background-image: url("{{asset('storage/slider')}}/{{$slider4->foto}}");
+	}
+	.demo-2 .bg-img-5 {
+		background-image: url("{{asset('storage/slider')}}/{{$slider5->foto}}");
+	}
+
 	</style>
 
 </head>
@@ -33,7 +49,7 @@
 		<i class="close icon"></i>
 		<div class="image content">
    			<div class="ui medium image">
-      			<img src="images/7.jpeg">
+      			<img src="{{ asset('storage/about') }}/{{$about->foto}}">
     		</div>
     		<div class="description">
       			<div class="ui header">About</div>
@@ -43,25 +59,14 @@
 						<div class="eight wide column">
 							<div class="ui raised piled segment ">
 								<h1 class="ui center aligned grid" style="margin: 5px;">VISI</h1>
-								
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								{{$about->visi}}
 							</div>
 						</div>
 
 						<div class="eight wide column">
 							<div class="ui segment raised piled">
 								<h1 class="ui center aligned grid" style="margin: 5px;">MISI</h1>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								{{$about->misi}}
 							  </div>
 						</div>
 					</div>
@@ -71,12 +76,7 @@
 					<div class="sixteen wide column">
 						<div class="ui segment piled raised">
 						<h1 class="ui center aligned grid" style="margin: 5px;">Tentang</h1>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						{{$about->tentang}}
 				  		</div>
 					</div>
 				</div>
@@ -113,41 +113,40 @@
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
-							<h2>A bene placito.</h2>
-							<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p><cite>Ralph Waldo Emerson</cite></blockquote>
+							<h2>{{$slider1->judul}}</h2>
+							<blockquote>{{$slider1->deskripsi}}</blockquote>
 						</div>
 					</div>
 					
 					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-2"></div>
-							<h2>Regula aurea.</h2>
-							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+							<h2>{{$slider2->judul}}</h2>
+							<blockquote>{{$slider2->deskripsi}}</blockquote>
 						</div>
 					</div>
 					
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-3"></div>
-							<h2>Dum spiro, spero.</h2>
-							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+							<h2>{{$slider3->judul}}</h2>
+							<blockquote>{{$slider3->deskripsi}}</blockquote>
 						</div>
 					</div>
 					
 					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-4"></div>
-							<h2>Donna nobis pacem.</h2>
-							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+							<h2>{{$slider4->judul}}</h2>
+							<blockquote>{{$slider4->deskripsi}}</blockquote>
 						</div>
 					</div>
 					
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-5"></div>
-							<h2>Acta Non Verba.</h2>
-							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+							<h2>{{$slider5->judul}}.</h2>
+							<blockquote>{{$slider5->deskripsi}}</blockquote>
 						</div>
 					</div>
 				</div><!-- /sl-slider -->
@@ -162,11 +161,57 @@
 
 			</div><!-- /slider-wrapper -->
 
+
+<div class="ui segment">
+<div class="ui segment">
+	<div class="ui centered grid">
+	<br>
+<h2>News</h2>
+</div>
+<div class="ui five column grid">
+  
+	@foreach($posts as $p)
+		<div class="column">
+		    <div class="ui segment">
+		      <div class="ui special cards">
+				  <div class="card">
+				    <div class="blurring dimmable image">
+				      <div class="ui dimmer">
+				        <div class="content">
+				          <div class="center">
+				            <a href="http://blog.bbpbat.com:8000/detail/{{$p->slug}}" class="ui inverted button" >Lihat</a>
+				          </div>
+				        </div>
+				      </div>
+				      <img src="{{asset('storage/foto')}}/{{$p->foto}}">
+				    <div class="content">
+				      <a class="header">{{$p->judul}}</a>
+				      <div class="meta">
+				        <span class="date">{{$p->created_at}}</span>
+				      </div>
+				    </div>	  
+				  </div>
+				 </div>
+			   </div>
+			</div>
+		</div>
+	@endforeach
+a
+<div class="ui grid" style="margin: 0 auto;">
+	<div class="ui inverted segment">
+		<a href="http://blog.bbpbat.com:8000" class="ui inverted orange button">Halaman Lain</a>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
 <div class="ui segment">
 	<div class="ui inverted segment">
 	<div class="ui centered grid">
 	<br>
-    	<h3>News</h3>
+    	<h3>Pengumuman</h3>
     </div>
 		<div class="ui five column grid">
 			@foreach($news as $n)
@@ -242,112 +287,7 @@
 			</div>
 		</div>
 	@endforeach
-
-{{--   <div class="column">
-    <div class="ui segment">
-       <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		             <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-</div>
-
-  <div class="column">
-    <div class="ui segment">
-      <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		           <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-  </div>
-
-<div class="column">
-    <div class="ui segment">
-      <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		            <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-  </div>
-
-
-<div class="column">
-    <div class="ui segment">
-     <div class="ui special cards">
-		  <div class="card">
-		    <div class="blurring dimmable image">
-		      <div class="ui dimmer">
-		        <div class="content">
-		          <div class="center">
-		             <div class="ui inverted button" style="margin-top: 35%;">lihat</div>
-		            <div class="ui inverted button" style="margin-top: 10%;">Download</div>
-		          </div>
-		        </div>
-		      </div>
-		      <img src="images/7.jpeg">
-		    <div class="content">
-		      <a class="header">Judul Petunjuk teknis</a>
-		      <div class="meta">
-		        <span class="date">Created in Sep 2014</span>
-		      </div>
-		    </div>	  
-		  </div>
-		 </div>
-    </div>
-  </div>
-</div>
- --}}
+a
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
 		<a href="{{url('juknis')}}" class="ui inverted orange button">Halaman Lain</a>
@@ -379,22 +319,22 @@
 <br>
 
 <div class="ui centered grid">
-<button class="ui facebook button">
+<a href="{{$medsos->fb}}" class="ui facebook button">
   <i class="facebook icon"></i>
   Facebook
-</button>
-<button class="ui twitter button">
+</a>
+<a href="{{$medsos->tweet}}" class="ui twitter button">
   <i class="twitter icon"></i>
   Twitter
-</button>
-<button class="ui google plus button">
+</a>
+<a href="{{$medsos->google}}" class="ui google plus button">
   <i class="google plus icon"></i>
   Google Plus
-</button>
-<button class="ui instagram button">
+</a>
+<a href="{{$medsos->ig}}" class="ui instagram button">
   <i class="instagram icon"></i>
   Instagram
-</button>
+</a>
 </div>
 <br>
 <br>

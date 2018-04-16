@@ -4,62 +4,22 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="" content="">
-	<title>template admin nyah</title>
+	<title>BBPBAT | Keranjang Belanja</title>
 	<meta name="csrf-token" content="">
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="css/manual.css'">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
-    		Laravel Artikel
+    		<a href="{{ url('/') }}">Market BBPBAT</a>
   		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Artikel</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Artikel</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Artikel</a>
-		  	</div>
-		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Kategori</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Kategori</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Kategori</a>
-		  	</div>
-		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Tag</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Tambah Tag</a>
-			    <a href="" class="item"><i class="icon list"></i>Daftar Tag</a>
-		  	</div>
-		</div>
-		<div class="right menu">
-		  	<a href="" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
-		  		<div class="hidden content">
-					<i class="sign out icon"></i>
-				</div>
-				<div class="visible content">
-					Keluar    
-				</div>
-		  	</a>
-		  	<form id="keluar" action="" method="POST" style="display: none;">
- 
-            </form>
-		</div>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
 		<div class="header item">
-    		Laravel Artikel
-  		</div>
-  		<div class="right menu">
-  			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
+    		<a href="{{ url('/') }}">Market BBPBAT</a>
   		</div>
 	</div>
 
@@ -99,35 +59,40 @@
     <div class="ui one column stackable grid container">
         <div class="ui one column raised segment">
       <div class="column">
-        <form class="ui form">
+        <form class="ui form" action="{{ route('shop.beli',$data->id) }}" method="post">
           <div class="two fields">
+          	{{csrf_field()}}
+          	<input type="hidden" name="_method" value="patch">
+
+          	<input type="hidden" name="shop_id" value="{{$data->id}}">
+
             <div class="field">
             <label>Nama Lengkap</label>
-            <input type="text" name="first-name" placeholder="Masukan Nama Lengkap">
+            <input type="text" name="nama" placeholder="Masukan Nama Lengkap">
           </div>
             <div class="field">
             <label>Alamat Lengkap</label>
-            <input type="text" name="first-name" placeholder="Masukan Alamat Lengkap">
+            <input type="text" name="alamat" placeholder="Masukan Alamat Lengkap">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Email</label>
-            <input type="text" name="first-name" placeholder="Masukan Alamat Email">
+            <input type="text" name="email" placeholder="Masukan Alamat Email">
           </div>
             <div class="field">
             <label>Kode Pos</label>
-            <input type="text" name="first-name" placeholder="Masukan Kode Pos">
+            <input type="text" name="pos" placeholder="Masukan Kode Pos">
           </div>
             </div>
             <div class="two fields">
             <div class="field">
             <label>Qty</label>
-            <input type="text" name="first-name" placeholder="Masukan Jumlah Pesanan">
+            <input type="text" name="jumlah" placeholder="Masukan Jumlah Pesanan">
           </div>
             <div class="field">
             <label>No. Hp</label>
-            <input type="text" name="first-name" placeholder="Masukan No. Hp">
+            <input type="text" name="no" placeholder="Masukan No. Hp">
           </div>
             </div>
             <button class="ui button" type="submit">Submit</button>
@@ -150,7 +115,7 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/manual.js"></script>
+	<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/manual.js')}}"></script>
 </body>
 </html>

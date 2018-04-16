@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pesan extends Migration
+class About extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class Pesan extends Migration
      */
     public function up()
     {
-        Schema::create('pesan', function (Blueprint $table) {
+        Schema::create('about', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('shop_id')->unsigned();
-            $table->string('jumlah');
-            $table->string('nama');
-            $table->string('alamat');
-            $table->string('email');
-            $table->string('pos');
-            $table->string('hp');
+            $table->text('visi');
+            $table->text('misi');
+            $table->string('foto');
+            $table->text('tentang');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class Pesan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pesan');
+        Schema::dropIfExists('about');
     }
 }

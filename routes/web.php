@@ -126,6 +126,8 @@ Route::domain('shop.bbpbat.com')->group(function(){
 
 	Route::get('/','ShopContClient@index');
 	Route::get('/kategori/{id}','ShopContClient@kategori')->name('shop.kategori');
+	Route::get('beli/{id}','ShopContClient@tampil_beli')->name('shop.tampil.beli');
+	Route::patch('beli/{id}','ShopContClient@beli')->name('shop.beli');
 });
 
 /*
@@ -144,6 +146,9 @@ Route::domain('bbpbat.com')->group(function(){
 			});
 
 			Route::get('portal','AdminPortalCont@index');
+			Route::patch('portal/medsos/{id}','AdminPortalCont@medsos')->name('admin.medsos');
+			Route::patch('portal/about/{id}','AdminPortalCont@about')->name('admin.about');
+			Route::patch('portal/slider/{id}','AdminPortalCont@slider')->name('admin.slider');
 		
 		//=============================================
 		//route News
