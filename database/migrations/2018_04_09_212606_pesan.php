@@ -22,6 +22,7 @@ class Pesan extends Migration
             $table->string('email');
             $table->string('pos');
             $table->string('hp');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

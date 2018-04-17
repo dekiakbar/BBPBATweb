@@ -220,6 +220,9 @@ Route::domain('bbpbat.com')->group(function(){
 		Route::patch('shop/produk/{slug}','ShopCont@simpan')->name('shop.update');
 		Route::delete('shop/produk/{slug}','ShopCont@hapus')->name('shop.hapus');
 
+		//verifikasi pesanan
+		Route::get('shop/verif','AdminPortalCont@tampil_verif_shop');
+
 		//===================================PKLAN===========================================
 		Route::get('pkl','PklController@index');
 		Route::get('pkl/tambah','PklController@tambah');

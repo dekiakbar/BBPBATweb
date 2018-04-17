@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Medsos;
 use App\About;
 use App\Slider;
-
+use App\Pesan;
 class AdminPortalCont extends Controller
 {
     public function index()
@@ -81,5 +81,17 @@ class AdminPortalCont extends Controller
 
             return redirect('admin/portal');
         }
+    }
+
+    public function tampil_verif_shop(Request $req){
+        $datas = Pesan::with('shop')->paginate(10);
+        return view('admin.shop.listbarang',compact('datas'))->with('no',($req->input('page',1)-1)*10);
+    }
+
+    public function verif_shop($id)
+    {
+        $verif = Pesan::where('id',$id)->firstOrFail();
+        $verif->storage = true;
+        return redirect('admin/shop/verif');
     }
 }
