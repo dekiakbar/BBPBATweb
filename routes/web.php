@@ -222,6 +222,8 @@ Route::domain('bbpbat.com')->group(function(){
 
 		//verifikasi pesanan
 		Route::get('shop/verif','AdminPortalCont@tampil_verif_shop');
+		Route::patch('shop/verif/{id}','AdminPortalCont@verif_shop')->name('acc.pesan.shop');
+		Route::delete('shop/verif/{id}','AdminPortalCont@pesan_hapus')->name('pesan.delete');
 
 		//===================================PKLAN===========================================
 		Route::get('pkl','PklController@index');

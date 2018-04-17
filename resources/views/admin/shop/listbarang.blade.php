@@ -41,13 +41,15 @@
 	                    <td style="text-align: center">
 	                        <div class="mini ui buttons">
 	                          <a onclick="event.preventDefault();document.getElementById('acc').submit();" class="ui green button"><i class="checkmark icon"></i></a>
-	                          <form action="" method="post" style="display: none;" id="acc">
+	                          <form action="{{ route('acc.pesan.shop',$d->id) }}" method="post" style="display: none;" id="acc">
+	                          	<input type="hidden" name="_method" value="patch">
 	                          	{{csrf_field()}}
 	                          </form>
 	                          <div class="or"></div>
-	                          <a href="" class="ui red button"><i class="trash icon"></i></a>
-	                          <form action="" method="" style="display: none;">
-	                          	
+	                          <a onclick="event.preventDefault();document.getElementById('delpesan').submit();" class="ui red button"><i class="trash icon"></i></a>
+	                          <form id="delpesan" action="{{ route('pesan.delete',$d->id) }}" method="POST" style="display: none;">
+	                          	{{csrf_field()}}
+	                          	{{method_field('DELETE')}}
 	                          </form>
 	                        </div>
 	                    </td>

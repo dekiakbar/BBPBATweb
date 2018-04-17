@@ -88,10 +88,18 @@ class AdminPortalCont extends Controller
         return view('admin.shop.listbarang',compact('datas'))->with('no',($req->input('page',1)-1)*10);
     }
 
-    public function verif_shop($id)
+    public function verif_shop(Request $request,$id)
     {
         $verif = Pesan::where('id',$id)->firstOrFail();
-        $verif->storage = true;
+        $verif->status = true;
+        $verif->save();
+        return redirect('admin/shop/verif');
+    }
+
+    public function pesan_hapus($id)
+    {
+        $h = Pesan::where('id',$id)->get();
+        $h->delete();
         return redirect('admin/shop/verif');
     }
 }
