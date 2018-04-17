@@ -98,8 +98,7 @@ class AdminPortalCont extends Controller
 
     public function pesan_hapus($id)
     {
-        $h = Pesan::where('id',$id)->get();
-        $h->delete();
+        $h = Pesan::where('id',$id)->delete();
         return redirect('admin/shop/verif');
     }
 }
