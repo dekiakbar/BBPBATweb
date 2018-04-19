@@ -123,11 +123,18 @@ Route::domain('shop.bbpbat.com')->group(function(){
 	// Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 	// Route::post('login', 'Auth\LoginController@login');
 	// Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+	Route::get('/list',function(){
+		return view('shop.keranjang');
+	});
 
 	Route::get('/','ShopContClient@index');
 	Route::get('/kategori/{id}','ShopContClient@kategori')->name('shop.kategori');
+
 	Route::get('beli/{id}','ShopContClient@tampil_beli')->name('shop.tampil.beli');
 	Route::patch('beli/{id}','ShopContClient@beli')->name('shop.beli');
+
+	Route::get('pembeli/{email}','ShopContClient@keranjang')->name('shop.keranjang');
+	// Route::get('pembeli/tambah/{email}','ShopContClient@keranjang')->name('shop.tambah');
 });
 
 /*
@@ -249,6 +256,10 @@ Route::domain('bbpbat.com')->group(function(){
 	Route::get('news','PortalController@news');
 	Route::get('juknis','JuknisContClient@index');
 	Route::get('/','PortalController@index');
+
+	//pklan
+	Route::get('pkl/tambah','PklController@tambah');
+		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
 
 });
 
