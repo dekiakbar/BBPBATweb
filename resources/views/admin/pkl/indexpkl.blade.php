@@ -59,9 +59,9 @@
                       <td>{{$data->selesai}}</td>
                       <td style="text-align: center">
                           <div class="mini ui buttons">
-                            <a href="{{route('pkl.edit',$data->id)}}" class="ui green button">E</a>
+                            <a href="{{route('pkl.edit',$data->id)}}" class="ui green button"><i class="edit icon"></i></a>
                             <div class="or"></div>
-                            <button class="ui red button">H</button>
+                            <button id="hapus" onclick="hapus(this)"  class="ui red button"><i class="trash icon"></i></button>
                             <a href="{{route('pdf',$data->id)}}" style="margin-left: 5px" class="ui blue button">PDF</a>
                           
                           </div>

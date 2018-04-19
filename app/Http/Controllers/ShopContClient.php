@@ -59,7 +59,24 @@ class ShopContClient extends Controller
 
         $pesan->save();
 
-        return redirect('/');
+        return redirect('pembeli/'.encrypt($req->input('email')));
+    }
+
+    public function keranjang($email)
+    {
+        $datas = Pesan::with('shop')->where('email',decrypt($email))->get();
+        return view('shop.keranjang',compact('datas'));
+    }
+
+    public function pesan_hapus($id)
+    {
+
+        $d = Pesan::where('id',$id)->firstOrFail();
+        $s = Shop::where('id',$d->shop_id)->firstOrFail();
+        $s->stok += $d->jumlah;
+        $s->save();
+        $h = Pesan::where('id',$id)->delete();
+        return back();
     }
 
 }

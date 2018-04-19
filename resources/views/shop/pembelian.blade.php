@@ -13,13 +13,16 @@
 <body>
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
-    		<a href="{{ url('/') }}">Market BBPBAT</a>
+    		Market BBPBAT
   		</div>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">
 		<div class="header item">
-    		<a href="{{ url('/') }}">Market BBPBAT</a>
+    		Laravel Artikel
+  		</div>
+  		<div class="right menu">
+  			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
   		</div>
 	</div>
 
@@ -29,24 +32,11 @@
 	  		<div class="ui grid center aligned">
 		  		<div class="ui vertical menu">
 		  			<div class="item">
-				    	<div class="header">Artikel</div>
+				    	<div class="header">Kategori</div>
 				    	<div class="menu">
-				      		<a class="item">Tambah Artikel</a>
-				      		<a class="item">Daftar Artikel</a>
-				    	</div>
-				  	</div>
-			  		<div class="item">
-			    		<div class="header">Kategori</div>
-			    		<div class="menu">
-			      			<a class="item">Tambah Kategori</a>
-			      			<a class="item">Daftar Kategori</a>
-			    		</div>
-			  		</div>
-				  	<div class="item">
-				    	<div class="header">Tag</div>
-				    	<div class="menu">
-				      		<a class="item">Tambah Tag</a>
-				      		<a class="item">Daftar Tag</a>
+				      		<a class="item">Ikan</a>
+				      		<a class="item">Kodok</a>
+                            <a class="item">Udang</a>
 				    	</div>
 				  	</div>
 		  		</div>
