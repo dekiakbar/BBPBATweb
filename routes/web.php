@@ -135,6 +135,8 @@ Route::domain('shop.bbpbat.com')->group(function(){
 
 	Route::get('pembeli/{email}','ShopContClient@keranjang')->name('shop.keranjang');
 	// Route::get('pembeli/tambah/{email}','ShopContClient@keranjang')->name('shop.tambah');
+
+	Route::delete('shop/verif/{id}','ShopContClient@pesan_hapus')->name('shop.delete.keranjang');
 });
 
 /*

@@ -51,6 +51,7 @@
 	                <th>Qty</th>
 	                <th>Keterangan</th>
 	                <th>Total</th>
+	                <th>Opsi</th>
 	              </tr>
 	          </thead>
               <tbody>
@@ -62,6 +63,14 @@
 	                    <td>{{$d->jumlah}}</td>
 	                    <td>{{$d->shop->keterangan}}</td>
 	                    <td>Rp.{{$d->jumlah*$d->shop->harga}}</td>
+	                	<td>
+	                		<a onclick="event.preventDefault();document.getElementById('delpesan').submit();" class="ui red button"><i class="trash icon"></i></a>
+	                          <form id="delpesan" action="{{ route('shop.delete.keranjang',$d->id) }}" method="POST" style="display: none;">
+	                          	<input type="hidden" name="id" value="{{$d->id}}">
+	                          	{{csrf_field()}}
+	                          	{{method_field('DELETE')}}
+	                          </form>
+	                	</td>
 	                </tr>
                 @endforeach
               </tbody>
