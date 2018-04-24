@@ -95,8 +95,11 @@
 
             <header class="clearfix">
 			
-				<h1>BBPABT <span>Official Website</span></h1>
-				
+				{{-- <h1>BBPBAT <span>Official Website</span></h1> --}}
+				<a href="#">
+					<img src="{{ asset('/storage/fix/1.png') }}" style="max-height: 100px;max-width: 100px;margin-top: -15px;">
+				</a>
+				{{-- <h5>BBPBAT <span>Website</span></h5> --}}
 				<nav class="codrops-demos">
 					<a>Home</a>
 					<a href="http://perpus.bbpbat.com:8000">Perpustakaan</a>
@@ -196,7 +199,6 @@
 			</div>
 		</div>
 	@endforeach
-a
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
 		<a href="http://blog.bbpbat.com:8000" class="ui inverted orange button">Halaman Lain</a>
@@ -287,7 +289,6 @@ a
 			</div>
 		</div>
 	@endforeach
-a
 <div class="ui grid" style="margin: 0 auto;">
 	<div class="ui inverted segment">
 		<a href="{{url('juknis')}}" class="ui inverted orange button">Halaman Lain</a>
