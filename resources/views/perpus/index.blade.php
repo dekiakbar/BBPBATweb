@@ -12,8 +12,11 @@
 		    </div>
 		</div>
   		<div class="thirteen wide stretched column">
-    		<div class="ui segment">
+    		<div class="ui segment" style="background-color: lightblue">
           		<div class="ui segment">
+          			<div class="ui grid center aligned">
+          				<h3 style="margin:20px 0;">Daftar Buku Perpustakaan BBPBAT Kota Sukabumi</h3>
+          			</div>
   					<div class="sixteen wide column" style="float: right;margin-bottom: 5px">
 						<form method="post" action="{{route('perpus.cari')}}">
 							{{csrf_field()}}

@@ -42,6 +42,30 @@
 
 	</style>
 
+	<SCRIPT>
+		expireDate = new Date
+		expireDate.setMonth(expireDate.getMonth()+6)
+		jcount = eval(cookieVal("jaafarCounter"))
+		jcount++
+		document.cookie = "jaafarCounter="+jcount+";expires=" + expireDate.toGMTString()
+
+		function cookieVal(cookieName) {
+		thisCookie = document.cookie.split("; ")
+		for (i=0; i<thisCookie.length; i++){
+		if (cookieName == thisCookie[i].split("=")[0]){
+		return thisCookie[i].split("=")[1]
+		}
+		}
+		return 0
+		}
+
+		function page_counter(){
+		for (i=0;i<(7-jcount.toString().length);i++)
+		document.write('<span class="counter">0</span>')
+		for (y=0;y<(jcount.toString().length);y++)
+		document.write('<span class="counter">'+jcount.toString().charAt(y)+'</span>')
+		}
+</SCRIPT>
 </head>
 <body>
 
@@ -85,7 +109,7 @@
       	</div>
   	</div>
 
-        <div class="container demo-2">
+        <div class="container demo-2" style="background-color: skyblue">
 		
 			<!-- Codrops top bar -->
             <div class="codrops-top clearfix">
@@ -94,22 +118,31 @@
             </div><!--/ Codrops top bar -->
 
             <header class="clearfix">
-			
+
 				{{-- <h1>BBPBAT <span>Official Website</span></h1> --}}
-				<a href="#">
-					<img src="{{ asset('/storage/fix/1.png') }}" style="max-height: 100px;max-width: 100px;margin-top: -15px;">
+				<a style="font-size: 50px;" href="#">
+					<img src="{{ asset('/storage/fix/1.png') }}" style=" width: 200px; margin-top: -30px;">
+					BBPBAT <span>Website</span>
 				</a>
-				{{-- <h5>BBPBAT <span>Website</span></h5> --}}
 				<nav class="codrops-demos">
-					<a>Home</a>
-					<a href="http://perpus.bbpbat.com:8000">Perpustakaan</a>
-					<a href="http://shop.bbpbat.com:8000">Market</a>
-					<a href="http://blog.bbpbat.com:8000">Blog</a>
+					
+				 <div style=" width: 430px; background-color: white; height: 60px;margin-top: -25px;" class="ui menu">
+    <div class="ui container">
+      <a href="#" class="item">Home</a>
+      <a href="http://perpus.bbpbat.com:8000" class="item">Perpustakaan</a>
+      <a href="http://shop.bbpbat.com:8000" class="item">E-layanan</a>
+      <div class="ui dropdown">
+      	
+      </div>
+      <a href="http://blog.bbpbat.com:8000" class="item">Blog</a>
+
+    </div>
+  </div>
 				</nav>
 				
 			</header>
 
-            <div id="slider" class="sl-slider-wrapper">
+            <div id="slider" class="sl-slider-wrapper" style="margin-top: -20px;">
 
 				<div class="sl-slider">
 				
@@ -165,17 +198,18 @@
 			</div><!-- /slider-wrapper -->
 
 
+
 <div class="ui segment">
-<div class="ui segment">
+<div class="ui segment" style="background-color: lightblue">
 	<div class="ui centered grid">
 	<br>
-<h2>News</h2>
+<h2 style="color: white">News</h2>
 </div>
 <div class="ui five column grid">
   
 	@foreach($posts as $p)
 		<div class="column">
-		    <div class="ui segment">
+		    <div class="ui segment blue tiled">
 		      <div class="ui special cards">
 				  <div class="card">
 				    <div class="blurring dimmable image">
@@ -186,7 +220,7 @@
 				          </div>
 				        </div>
 				      </div>
-				      <img src="{{asset('storage/foto')}}/{{$p->foto}}">
+				      <img src="{{asset('storage/foto')}}/{{$p->foto}}" style="height: 150px;width: 200px;">
 				    <div class="content">
 				      <a class="header">{{$p->judul}}</a>
 				      <div class="meta">
@@ -200,22 +234,26 @@
 		</div>
 	@endforeach
 <div class="ui grid" style="margin: 0 auto;">
-	<div class="ui inverted segment">
-		<a href="http://blog.bbpbat.com:8000" class="ui inverted orange button">Halaman Lain</a>
-	</div>
+		<a style="margin: 10px 0;" href="http://blog.bbpbat.com:8000" class="ui black button">Halaman Lain</a>
 </div>
 </div>
 </div>
+</div>
+
+<div class="ui grid center aligned">
+	<div style="margin: 10px 0;">
+		<a class="twitter-timeline" data-width="800" data-height="400" href="https://twitter.com/bbpbat_sukabumi?ref_src=twsrc%5Etfw">Tweets by bbpbat_sukabumi</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</div> 
 </div>
 
 
 <div class="ui segment">
-	<div class="ui inverted segment">
+	<div class="ui segment" style="background-color: lightblue">
 	<div class="ui centered grid">
 	<br>
-    	<h3>Pengumuman</h3>
+    	<h3 style="color: white">Pengumuman</h3>
     </div>
-		<div class="ui five column grid">
+		<div class="ui five column grid" style="background-color: lightblue">
 			@foreach($news as $n)
 				<div class="column">
 				    <div class="ui segment">
@@ -230,7 +268,7 @@
 						        </div>
 						      </div>
 						    <div class="content">
-						      <a class="header">{{$n->judul}}</a>
+						      <a class="header" style="word-wrap: break-word;">{{$n->judul}}</a>
 						      <p>{{$n->deskripsi}}</p>
 						      <div class="meta">
 						        <span class="date">{{$n->created_at}}</span>
@@ -247,7 +285,7 @@
 
 	<div class="ui centered grid">
 	<br>
-    	<a href="{{url('/news')}}" class="ui button inverted blue" style="margin-bottom: 10px;">Selengkapnya</a>
+    	<a href="{{url('/news')}}" class="ui button black" style="margin-bottom: 10px;">Selengkapnya</a>
     </div>
 	</div>
 </div>
@@ -255,17 +293,16 @@
 
 
 
-<div class="ui segment">
-<div class="ui segment">
+<div class="ui segment blue" style="background-color: skyblue">
 	<div class="ui centered grid">
 	<br>
-<h2>Petunjuk Teknis</h2>
+<h2 style="color: white">Petunjuk Teknis</h2>
 </div>
-<div class="ui five column grid">
+<div class="ui five column grid" >
   
 	@foreach($juknis as $juktek)
 		<div class="column">
-		    <div class="ui segment">
+		    <div class="ui segment blue">
 		      <div class="ui special cards">
 				  <div class="card">
 				    <div class="blurring dimmable image">
@@ -276,7 +313,7 @@
 				          </div>
 				        </div>
 				      </div>
-				      <img src="{{asset('storage/juktek')}}/{{$juktek->foto}}">
+				      <img src="{{asset('storage/juktek')}}/{{$juktek->foto}}" style="height: 150px;width: 200px;">
 				    <div class="content">
 				      <a class="header">{{$juktek->judul_juktek}}</a>
 				      <div class="meta">
@@ -290,34 +327,40 @@
 		</div>
 	@endforeach
 <div class="ui grid" style="margin: 0 auto;">
-	<div class="ui inverted segment">
-		<a href="{{url('juknis')}}" class="ui inverted orange button">Halaman Lain</a>
-	</div>
-</div>
+		<a style="margin:10px 0;" href="{{url('juknis')}}" class="ui black button">Halaman Lain</a>
 </div>
 </div>
 </div>
 
 
-<div class="ui segment">
+<div class="ui segment blue">
 <div class="ui centered grid">
 {{-- <div class="ui inverted segment"> --}}
 
-<button class="ui inverted orange button" onclick="about()">About</button>
+<button class="ui blue button" onclick="about()" style="margin: 10px 0;margin-left: 25px;">Profile Balai</button>
 <br>
 	{{-- </div> --}}
 </div>
 </div>
 
-<div class="ui segment">
+<div class="ui segment blue">
 	<div class="ui inverted segment">
 <div class="ui centered grid">
 <br>
-<h2>Contact Us</h2>
+<h2 style="margin-left: -20px;">Contact Us</h2>
 </div>
 <br>
   <br>
 <br>
+
+
+	<div class="ui big button blue" style="margin-left: 1100px;"> 
+		Visitor : 
+		<SCRIPT>
+		page_counter(jcount);
+		</SCRIPT>
+	</div>
+
 
 <div class="ui centered grid">
 <a href="{{$medsos->fb}}" class="ui facebook button">

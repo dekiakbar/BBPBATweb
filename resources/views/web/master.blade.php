@@ -13,9 +13,9 @@
 </head>
 <body>
 
-	<div class="ui secondary pointing menu blue">
-		<a href="{{ url('/') }}" class="header item">
-    		Blog
+	<div class="ui secondary pointing menu blue" style="background-color: lightblue">
+		<a href="{{ url('/news') }}" class="header item">
+    		News
 		</a>
 		<a class="active item">
 			Home

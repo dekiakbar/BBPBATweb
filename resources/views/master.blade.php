@@ -13,33 +13,33 @@
 
 </head>
 <body>
-	<div class="ui secondary pointing menu grid computer only blue">
+	<div class="ui secondary pointing menu grid computer only blue" style="background-color: skyblue">
 		<div class="header item ">
     		@yield('header') 
   		</div>
   		<a href="{{url('http://bbpbat.com:8000')}}" class="item">
   			Website BBPBAT
   		</a>
-  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="item @yield('1')">
+  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="item">
 			Perpustakaan
 		</a>
-		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item @yield('2')">
+		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
 		 	Blog
 		</a>
-		<a class="item @yield('3')">
+		<a class="item">
 			Market
 		</a>
-		<a class="item @yield('4')">
+		<a class="item">
 			Juknis
 		</a>
 	</div>
 
-	<div class="ui menu grid mobile only" style="margin-top: 0px;">
+	<div class="ui menu grid mobile only blue" style="margin-top: 0px;">
 		<div class="header item">
     		BBPBAT
   		</div>
   		<div class="right menu">
-  			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
+  			<a class="ui item mobile only blue" onclick="tampil();"><i class="icon list blue"></i></a>
   		</div>
 	</div>
 
