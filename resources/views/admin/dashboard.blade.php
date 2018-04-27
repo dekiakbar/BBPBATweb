@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/manual.css'">
 
 </head>
-<body style="background-image: url(jpg/1.jpg);background-size: contain">
+<body style="background-color: lightblue">
 <img class="ui image" src="">
     
 	
@@ -46,6 +46,18 @@
                 <div class="column">
                 <a href="{{url('admin/shop/produk')}}" class="ui icon button">
                   <i style="width: 150px; height: 100px" class="shopping cart icon"><p>MARKETS</p></i>
+                </a>
+                </div>
+
+                <div class="column">
+                <a href="{{url('admin/juktek')}}" class="ui icon button">
+                  <i style="width: 150px; height: 100px" class="setting icon"><p>Juktek</p></i>
+                </a>
+                </div>
+
+                <div class="column">
+                <a href="{{url('admin/pkl')}}" class="ui icon button">
+                  <i style="width: 150px; height: 100px" class="setting icon"><p>Daftar PKL</p></i>
                 </a>
                 </div>
                 
