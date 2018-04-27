@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: lightblue">
 	<div class="ui secondary pointing menu grid computer only blue">
-		<a href="{{ url('admin/portal') }}" class="header item ">
+		<a href="{{ url('admin') }}" class="header item ">
     		Super Admin Dashboard
   		</a>
 		<div class="ui pointing dropdown link item">

@@ -11,52 +11,8 @@
 
 </head>
 <body style="background-color: lightblue">
-
-    @foreach($sliders as $sl)
-        <div class="ui modal hadiah" id="{{md5($sl->id.'slider')}}">
-            <i class="close icon"></i><br>
-            <div class="ui one column stackable grid container">
-                <div style="margin-left: 1px" class="ui one column grid">
-                  <div class="column">
-                    <div class="ui raised segment">
-                      <h3 class="ui center aligned header" style="margin-bottom: 30px">EDIT DATA SLIDER</h3>
-                      <div class="column">
-                        <form class="ui form" method="post" action="{{ route('admin.slider',$sl->id) }}" enctype="multipart/form-data">
-                            {{csrf_field()}}
-                            <input type="hidden" name="_method" value="patch">
-                            <div class="two fields">
-                            <div class="field">
-                            <label>Judul Slider</label>
-                            <input type="text" name="judul" placeholder="Judul Slider" value="{{$sl->judul}}">
-                            </div>
-                            <div class="field">
-                            <label>Upload Foto</label>
-                            <input type="file" name="foto">
-                            <input type="hidden" name="slide" value="{{$sl->foto}}">
-                            </div>
-                            </div>
-                            <div class="field">
-                            <label>Keterangan</label>
-                            <textarea rows="7" name="keterangan">{{$sl->deskripsi}}</textarea>
-                            </div>
-                            <button class="blue ui button" type="submit">Edit</button>
-                        </form>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="actions">
-                <div class="ui positive rights icon button">
-                  Close
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-
     <div class="ui secondary pointing menu grid computer only blue">
-        <a href="{{ url('admin/portal') }}" class="header item ">
+        <a href="{{ url('admin/') }}" class="header item ">
             Super Admin Dashboard
         </a>
         <div class="ui pointing dropdown link item">
@@ -112,6 +68,48 @@
             </form>
         </div>
     </div>
+
+        @foreach($sliders as $sl)
+        <div class="ui modal hadiah" id="{{md5($sl->id.'slider')}}">
+            <i class="close icon"></i><br>
+            <div class="ui one column stackable grid container">
+                <div style="margin-left: 1px" class="ui one column grid">
+                  <div class="column">
+                    <div class="ui raised segment">
+                      <h3 class="ui center aligned header" style="margin-bottom: 30px">EDIT DATA SLIDER</h3>
+                      <div class="column">
+                        <form class="ui form" method="post" action="{{ route('admin.slider',$sl->id) }}" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <input type="hidden" name="_method" value="patch">
+                            <div class="two fields">
+                            <div class="field">
+                            <label>Judul Slider</label>
+                            <input type="text" name="judul" placeholder="Judul Slider" value="{{$sl->judul}}">
+                            </div>
+                            <div class="field">
+                            <label>Upload Foto</label>
+                            <input type="file" name="foto">
+                            <input type="hidden" name="slide" value="{{$sl->foto}}">
+                            </div>
+                            </div>
+                            <div class="field">
+                            <label>Keterangan</label>
+                            <textarea rows="7" name="keterangan">{{$sl->deskripsi}}</textarea>
+                            </div>
+                            <button class="blue ui button" type="submit">Edit</button>
+                        </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui positive rights icon button">
+                  Close
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <div style="margin-left: 100px; margin-right: 100px" class="column">
     <div class="ui top attached tabular menu">
