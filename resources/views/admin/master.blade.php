@@ -53,6 +53,15 @@
 			    <a href="{{ url('admin/shop/kategori') }}" class="item"><i class="icon list"></i>Daftar Kategori</a>
 		  	</div>
 		</div>
+
+		<div class="ui pointing dropdown link item">
+			<span class="text">Magang</span>
+			<i class="dropdown icon"></i>
+			<div class="menu">
+			    <a href="{{ url('admin/shop/produk/tambah') }}" class="item"><i class="icon plus"></i>Data PKL</a>
+		  	</div>
+		</div>
+
 		<div class="right menu">
 		  	<a href="{{ route('logout') }}" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
 		  		<div class="hidden content">
