@@ -126,16 +126,13 @@
 				</a>
 				<nav class="codrops-demos">
 					
-				 <div style=" width: 430px; background-color: white; height: 60px;margin-top: -25px;" class="ui menu">
+				 <div style=" width: 490px; background-color: white; height: 60px;margin-top: -25px;" class="ui menu">
     <div class="ui container">
       <a href="#" class="item">Home</a>
-      <a href="http://perpus.bbpbat.com:8000" class="item">Perpustakaan</a>
-      <a href="http://shop.bbpbat.com:8000" class="item">E-layanan</a>
-      <div class="ui dropdown">
-      	
-      </div>
-      <a href="http://blog.bbpbat.com:8000" class="item">Blog</a>
-
+      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+      <a href="{{ route('blog') }}" class="item">Berita</a>
+      <a href="{{ route('shop') }}">Market</a>
+	
     </div>
   </div>
 				</nav>

@@ -43,7 +43,7 @@ Route::domain('blog.bbpbat.com')->group(function () {
 	// });
 
 		//route web user
-		Route::get('/', 'WebController@tampil');
+		Route::get('/', 'WebController@tampil')->name('blog');
 		Route::get('kategori/{kategori}','WebController@kategori');
 		Route::get('tag/{tag}','WebController@tag');
 		Route::post('/','WebController@cari');
@@ -92,7 +92,7 @@ Route::domain('perpus.bbpbat.com')->group(function(){
 	// });
 
 	//Route User Web
-	Route::get('/','WebPerpusCont@tampil');
+	Route::get('/','WebPerpusCont@tampil')->name('perpus');
 	Route::post('/','WebPerpusCont@cari')->name('perpus.cari');
 	Route::get('/kategori/{kategori}','WebPerpusCont@kategori')->name('perpus.kategori');
 
@@ -127,7 +127,7 @@ Route::domain('shop.bbpbat.com')->group(function(){
 		return view('shop.keranjang');
 	});
 
-	Route::get('/','ShopContClient@index');
+	Route::get('/','ShopContClient@index')->name('shop');
 	Route::get('/kategori/{id}','ShopContClient@kategori')->name('shop.kategori');
 
 	Route::get('beli/{id}','ShopContClient@tampil_beli')->name('shop.tampil.beli');
