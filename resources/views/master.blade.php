@@ -12,8 +12,8 @@
   	<link rel="stylesheet" href="/resources/demos/style.css">  	
 
 </head>
-<body>
-	<div class="ui secondary pointing menu grid computer only blue" style="background-color: skyblue">
+<body style="background-color: skyblue">
+	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
     		@yield('header') 
   		</div>

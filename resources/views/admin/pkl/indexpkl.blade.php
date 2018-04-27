@@ -1,4 +1,4 @@
-@extends('master')
+@extends('admin.master')
 @section('judul','Daftar Data Program Magang')
 
 @section('isi')

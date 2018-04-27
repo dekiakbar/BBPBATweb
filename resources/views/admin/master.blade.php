@@ -9,11 +9,11 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/manual.css') }}">
 </head>
-<body>
+<body style="background-color: lightblue">
 	<div class="ui secondary pointing menu grid computer only blue">
-		<div class="header item ">
+		<a href="{{ url('admin/portal') }}" class="header item ">
     		Super Admin Dashboard
-  		</div>
+  		</a>
 		<div class="ui pointing dropdown link item">
 			<span class="text">Portal</span>
 			<i class="dropdown icon"></i>
