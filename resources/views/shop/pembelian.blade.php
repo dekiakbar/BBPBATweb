@@ -10,38 +10,17 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
-<body>
+<body style="background-color: lightblue">
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
     		Market BBPBAT
   		</div>
-	</div>
 
-	<div class="ui menu grid mobile only" style="margin-top: 0px;">
-		<div class="header item">
-    		Laravel Artikel
-  		</div>
-  		<div class="right menu">
-  			<a class="ui item mobile only" onclick="tampil();"><i class="icon list blue"></i></a>
-  		</div>
-	</div>
-
-	<div class="ui longer modal">
-	  	<div class="header">Menu</div>
-	  	<div class="content">
-	  		<div class="ui grid center aligned">
-		  		<div class="ui vertical menu">
-		  			<div class="item">
-				    	<div class="header">Kategori</div>
-				    	<div class="menu">
-				      		<a class="item">Ikan</a>
-				      		<a class="item">Kodok</a>
-                            <a class="item">Udang</a>
-				    	</div>
-				  	</div>
-		  		</div>
-			</div>
-		</div>
+      <a href="{{ route('landing') }}" class="item">Home</a>
+        <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+        <a href="{{ route('blog') }}" class="item">Berita</a>
+        <a href="{{ route('shop') }}" class="item">Market</a>
+        <a href="{{ route('pkl') }}" class="item">E-layanan</a>
 	</div>
 
 

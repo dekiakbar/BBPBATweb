@@ -10,41 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="css/manual.css'">
 
 </head>
-<body>
+<body style="background-color: lightblue">
 	<div class="ui secondary pointing menu grid computer only blue">
-		<div class="header item ">
-    		Laravel Artikel
-  		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Kategori</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>Ikan</a>
-			    <a href="" class="item"><i class="icon list"></i>kodok</a>
-                <a href="" class="item"><i class="icon list"></i>Udang</a>
-		  	</div>
-		</div>
-		<div class="ui pointing dropdown link item">
-			<span class="text">Keranjang</span>
-			<i class="dropdown icon"></i>
-			<div class="menu">
-			    <a href="" class="item"><i class="icon plus"></i>List Barang</a>
-			    <a href="" class="item"><i class="icon list"></i>Pembayaran</a>
-		  	</div>
-		</div>
-		<div class="right menu">
-		  	<a href="" class="ui item animated fade button teal" onclick="event.preventDefault();document.getElementById('keluar').submit();">
-		  		<div class="hidden content">
-					<i class="sign out icon"></i>
-				</div>
-				<div class="visible content">
-					Keluar    
-				</div>
-		  	</a>
-		  	<form id="keluar" action="" method="POST" style="display: none;">
- 
-            </form>
-		</div>
+		<a href="{{ route('landing') }}" class="item">Home</a>
+	      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+	      <a href="{{ route('blog') }}" class="item">Berita</a>
+	      <a href="{{ route('shop') }}" class="item">Market</a>
+	      <a href="{{ route('pkl') }}" class="item">E-layanan</a>
 	</div>
 
 	<div class="ui menu grid mobile only" style="margin-top: 0px;">

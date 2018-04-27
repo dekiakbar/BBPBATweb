@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('css/manual.css')}}">
 
 </head>
-<body>
+<body style="background-color: lightblue">
 	<div class="ui secondary pointing menu grid computer only blue">
 		<div class="header item ">
     		Market BBPBAT
@@ -23,12 +23,11 @@
 	  		<div class="ui grid center aligned">
 		  		<div class="ui vertical menu">
 		  			<div class="item">
-				    	<div class="header">Kategori</div>
-				    	<div class="menu">
-				      		<a class="item">Ikan</a>
-				      		<a class="item">Kodok</a>
-                            <a class="item">Udang</a>
-				    	</div>
+				    	<a href="{{ route('landing') }}" class="item">Home</a>
+	      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+	      <a href="{{ route('blog') }}" class="item">Berita</a>
+	      <a href="{{ route('shop') }}" class="item">Market</a>
+	      <a href="{{ route('pkl') }}" class="item">E-layanan</a>
 				  	</div>
 		  		</div>
 			</div>
