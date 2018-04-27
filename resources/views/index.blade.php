@@ -126,14 +126,15 @@
 				</a>
 				<nav class="codrops-demos">
 					
-				 <div style=" width: 490px; background-color: white; height: 60px;margin-top: -25px;" class="ui menu">
-    <div class="ui container">
-      <a href="#" class="item">Home</a>
-      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
-      <a href="{{ route('blog') }}" class="item">Berita</a>
-      <a href="{{ route('shop') }}">Market</a>
-	
-    </div>
+				 <div style=" width: 550px; background-color: white; height: 60px;margin-top: -25px;" class="ui menu">
+			    <div class="ui container">
+			      		<a href="#" class="item">Home</a>
+				      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+				      <a href="{{ route('blog') }}" class="item">Berita</a>
+				      <a href="{{ route('shop') }}" class="item">Market</a>
+				      <a href="{{ route('pkl') }}" class="item">E-layanan</a>
+				
+			    </div>
   </div>
 				</nav>
 				

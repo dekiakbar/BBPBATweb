@@ -257,11 +257,11 @@ Route::domain('bbpbat.com')->group(function(){
 
 	Route::get('news','PortalController@news');
 	Route::get('juknis','JuknisContClient@index');
-	Route::get('/','PortalController@index');
+	Route::get('/','PortalController@index')->name('landing');
 
 	//pklan
-	Route::get('pkl/tambah','PklController@tambah');
-		Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
+	Route::get('pkl/tambah','PklController@tambah')->name('pkl');
+	Route::post('pkl/tambah','PklController@simpan')->name('pkl.tambah');
 
 });
 

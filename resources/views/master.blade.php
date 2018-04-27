@@ -17,21 +17,12 @@
 		<div class="header item ">
     		@yield('header') 
   		</div>
-  		<a href="{{url('http://bbpbat.com:8000')}}" class="item">
-  			Website BBPBAT
-  		</a>
-  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="item">
-			Perpustakaan
-		</a>
-		<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
-		 	Blog
-		</a>
-		<a class="item">
-			Market
-		</a>
-		<a class="item">
-			Juknis
-		</a>
+  		 <a href="{{ route('landing') }}" class="item">Home</a>
+	      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+	      <a href="{{ route('blog') }}" class="item">Berita</a>
+	      <a href="{{ route('shop') }}" class="item">Market</a>
+	      <a href="{{ route('pkl') }}" class="item">E-layanan</a>
+
 	</div>
 
 	<div class="ui menu grid mobile only blue" style="margin-top: 0px;">
@@ -41,28 +32,6 @@
   		<div class="right menu">
   			<a class="ui item mobile only blue" onclick="tampil();"><i class="icon list blue"></i></a>
   		</div>
-	</div>
-
-	<div class="ui longer modal">
-	  	<div class="header">Menu</div>
-	  	<div class="content">
-	  		<div class="ui grid center aligned">
-		  		<div class="ui vertical menu">
-		  			<a class="item">
-			  			Website
-			  		</a>
-			  		<a href="{{url('http://perpus.bbpbat.go.id:8000')}}" class="active item">
-						Perpustakaan
-					</a>
-					<a href="{{url('http://blog.bbpbat.go.id:8000')}}" class="item">
-					 	Blog
-					</a>
-					<a class="item">
-						Market
-					</a>
-		  		</div>
-			</div>
-		</div>
 	</div>
 
 	@yield('isi')

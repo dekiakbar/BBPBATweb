@@ -14,15 +14,11 @@
 <body>
 
 	<div class="ui secondary pointing menu blue" style="background-color: lightblue">
-		<a href="{{ url('/news') }}" class="header item">
-    		News
-		</a>
-		<a class="active item">
-			Home
-		</a>
-		<a onclick="tentang()" class="item">
-			Tentang
-		</a>
+		 <a href="{{ route('landing') }}" class="item">Home</a>
+	      <a href="{{ route('perpus') }}" class="item">Perpustakaan</a>
+	      <a href="{{ route('blog') }}" class="item">Berita</a>
+	      <a href="{{ route('shop') }}" class="item">Market</a>
+	      <a href="{{ route('pkl') }}" class="item">E-layanan</a>
 	</div>
 
 	{{-- seksi tentang website --}}
